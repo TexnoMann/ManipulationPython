@@ -1,4 +1,5 @@
 from ev3dev.ev3 import *
+from time import sleep, time
 
 
 class StateJoint:
@@ -16,4 +17,6 @@ class StateJoint:
     def getCurrentSpeed(self):
         return self.__currentSpeed
 
-
+    def startStateMonitor(self):
+        while True:
+            sleep()

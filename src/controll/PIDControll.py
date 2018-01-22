@@ -1,43 +1,56 @@
 from ev3dev.ev3 import *
-from time import time
+from time import *
 from math import pi
 from math import copysign
 
-DT = 0.015
-Pk = 3
-Ik = 50
-MaxPower = PowerSupply.measured_volts
+#TODO: New thread
+
+class PIDController:
+
+    def __init__(self, __P, __I, __D, __updateTime, __motor):
+        self.__P = __P
+        self.__I = __I
+        self.__D = __D
+        self.__updateTime = __updateTime
+        self.__motor = __motor
+        self.__p = 0
+        self.__i = 0
+        self.__startTime = time()
+        self.__desiredSpeed = 0
+        self.__currentSpeed = 0
+        self.__currentAngle = 0
+        self.__firstAngle = 0
+        self.__firstSpeed = 0
+        self.__currentSpeedError = 0
+        self.__firstSpeedError = 0
+        self.__u = 0
+        self.__times = 0
+        self.moving = False
+
+    def setSpeedController(self, desiredSpeed):
+        self.__desiredSpeed = desiredSpeed
+
+    def startPIDController(self):
+        motor = self.__motor
+        motor.reset()
+        while self.moving:
+
+            self.__firstAngle = self.__currentAngle
+            self.__currentAngle = motor.position*pi/180.0
+            self.__firstSpeed = self.__currentSpeed
+            self.__currentSpeed = (self.__currentAngle-self.__firstAngle)/self.__updateTime
+            self.__firstSpeedError = self.__currentSpeedError
+            self.__currentSpeedError = self.__desiredSpeed-self.__currentSpeed
+
+            self.__p = self.__currentSpeedError*self.__P
+            self.__i += self.__currentSpeedError*self.__updateTime*self.__Ik
+            self.__u = (self.__p+self.__i);
+            if abs(self.__u) > 100:
+                self.__u = copysign(1, self.__u)*100
+            motor.run_direct(duty_cycle_sp=self.__u)
+            sleep(self.__updateTime)
+
+        motor.run_direct(duty_cycle_sp=0)
 
 
-def main():
-    motor=LargeMotor(OUTPUT_A)
-    p = 0
-    i = 0
-    startTime=time()
-    desiredSpeed=1.0
-    currentSpeed=0
-    currentAngle=0
-    firstAngle=0
-    firstSpeed=0
-    currentSpeedError=0
-    firstSpeedError=0
-    u = 0
 
-    motor.reset()
-
-    while motor.position < 120:
-
-        firstAngle = currentAngle
-        currentAngle = motor.position*pi/180.0
-        firstSpeed=currentSpeed
-        currentSpeed=(currentAngle-firstAngle)*DT
-        firstSpeedError=currentSpeedError
-        currentSpeedError=desiredSpeed-currentSpeed
-
-        p = currentSpeedError*Pk
-        i += currentSpeedError*DT*Ik
-        u = (p+i)
-        if abs(u) > 100:
-            u = copysign(1, u)*100
-        motor.run_direct(duty_cycle_sp=u)
-        time.sleep(DT)
