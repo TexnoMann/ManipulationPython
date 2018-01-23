@@ -1,12 +1,13 @@
 from ev3dev.ev3 import *
-
+from src.state.State import StateJoint
+from src.controll.Controller import ControllerJoint
+from src.util.Joint import Joint
 from time import *
 
-i = 0
-lcd = Screen()
-while i < 20:
-    lcd.clear()
-    lcd.draw.text((10, 10), "sdfsdsd")
-    lcd.update()
-    sleep(1)
-    i+=1
+
+def main():
+    pass
+
+
+if __name__ == '__main__':
+     main()
