@@ -71,3 +71,4 @@ class PIDSpeedController:
     def getSignalAngleController(self):
         
         return self.__uA
+
