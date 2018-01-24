@@ -1,13 +1,13 @@
 from ev3dev.ev3 import *
-from src.state.State import StateJoint
-from src.controll.Controller import ControllerJoint
-from src.util.Joint import Joint
+from src.util.JointManager import *
 from time import *
 
 
 def main():
-    pass
-
+    while True:
+        J1.controllerJoint.setDesiredSpeed(1.0)
+        J1.controllerJoint.moveStart()
+        J2.controllerJoint.setDesiredSpeed(1.0)
 
 if __name__ == '__main__':
      main()

@@ -26,7 +26,7 @@ class StateJoint:
     def startStateMonitor(self):
         while True:
             self.__lastAngle = self.__currentAngle
-            self.__currentAngle = self.__motor.rotation
+            self.__currentAngle = self.__motor.position
             self.__currentSpeed = (self.__currentAngle - self.__lastAngle)*pi/180
             if self.__currentSpeed > 0.01:
                 self.moving = True

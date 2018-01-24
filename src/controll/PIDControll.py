@@ -19,16 +19,17 @@ class PIDSpeedController:
         self.__startTime = time()
         self.__desiredSpeed = 0
         self.__currentSpeed = 0
-        self.currentAngle = 0
+        self.__currentAngle = 0
         self.__firstAngle = 0
         self.__firstSpeed = 0
         self.__currentSpeedError = 0
         self.__firstSpeedError = 0
         self.__u = 0
+        self.__uA = 0
         self.__times = 0
         self.power = False
-        self.holding = False
-        self.threadController = Thread(target=self.startPIDController)
+        self._holding = False
+        self.threadController = Thread(target=self.startPIDSpeedController)
         self.threadController.setDaemon(True)
         self.threadController.start()
 
@@ -39,11 +40,11 @@ class PIDSpeedController:
             self.__currentAngle = currentAngle
 
 
-    def startPIDController(self):
+    def startPIDSpeedController(self):
         while True:
             if self.power:
                 #Holding Joint
-                if self.__holding:
+                if self._holding:
                     self.__motor.stop(stop_action='break')
                 else:
                     self.__firstAngle = self.__currentAngle
@@ -53,7 +54,7 @@ class PIDSpeedController:
                     self.__currentSpeedError = self.__desiredSpeed-self.__currentSpeed
 
                     self.__p = self.__currentSpeedError*self.__P
-                    self.__i += self.__currentSpeedError*self.__updateTime*self.__Ik
+                    self.__i += self.__currentSpeedError*self.__updateTime*self.__I
                     self.__u = (self.__p+self.__i)
                     if abs(self.__u) > 100:
                         self.__u = copysign(1, self.__u)*100
@@ -65,31 +66,8 @@ class PIDSpeedController:
 
     def stop(self, holding):
         self.power = False
-        if holding:
-            self.holding = True
+        self._holding = holding
 
-
-class PIDAngleController():
-    def __init__(self, __P, __I, __D, __updateTime, __motor):
-        self.__P = __P
-        self.__I = __I
-        self.__D = __D
-        self.__updateTime = __updateTime
-        self.__motor = __motor
-        self.__p = 0
-        self.__i = 0
-        self.__startTime = time()
-        self.__desiredSpeed = 0
-        self.__currentSpeed = 0
-        self.__currentAngle = 0
-        self.__firstAngle = 0
-        self.__firstSpeed = 0
-        self.__currentSpeedError = 0
-        self.__firstSpeedError = 0
-        self.__u = 0
-        self.__times = 0
-        self.power = False
-        self.holding = False
-        self.threadController = Thread(target=self.startPIDController)
-        self.threadController.setDaemon(True)
-        self.threadController.start()
+    def getSignalAngleController(self):
+        
+        return self.__uA

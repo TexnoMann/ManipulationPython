@@ -14,7 +14,7 @@ class ControllerJoint:
 
     def setDesiredSpeed(self, desiredSpeed):
         self.__desiredSpeed = desiredSpeed
-        self.__controller.setSpeed(self.__desiredSpeed)
+        self.__controller.setDesiredSpeed(self.__desiredSpeed)
 
     def setDesiredAngle(self, desiredAngle):
         self.__desiredAngle = desiredAngle
@@ -26,6 +26,10 @@ class ControllerJoint:
         return self.__desiredAngle
 
     def sendCurrentAngle(self, angle):
-        self.__messageLock.acquire()
         self.__controller.setCurrentAngle(angle)
-        self.__messageLock.release()
+
+    def moveStart(self):
+        self.__controller.move()
+
+    def moveStop(self, holding):
+        self.__controller.stop(holding)
