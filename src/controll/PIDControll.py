@@ -22,6 +22,8 @@ class PIDSpeedController:
         self.__currentAngle = 0
         self.__firstAngle = 0
         self.__firstSpeed = 0
+        self.__firstAngleError = 0
+        self.__secondAngleError = 0
         self.__currentSpeedError = 0
         self.__firstSpeedError = 0
         self.__u = 0
@@ -45,7 +47,7 @@ class PIDSpeedController:
             if self.power:
                 #Holding Joint
                 if self._holding:
-                    self.__motor.stop(stop_action='break')
+                    self.__motor.stop(stop_action='hold')
                 else:
                     self.__firstAngle = self.__currentAngle
                     self.__firstSpeed = self.__currentSpeed
@@ -69,6 +71,7 @@ class PIDSpeedController:
         self._holding = holding
 
     def getSignalAngleController(self):
-        
+        self.__firstAngleError = self.__secondAngleError
+        self.__secondAngleError = self.__desiredAngle-self.__currentAngle
         return self.__uA
 
