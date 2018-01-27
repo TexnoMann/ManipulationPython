@@ -6,7 +6,8 @@ from threading import Thread, Lock
 
 
 class StateJoint:
-    def __init__(self, __motor, __updateTime):
+    def __init__(self, __motor, __updateTime, __jointLock):
+        self.__jointLock = __jointLock
         self.__motor = __motor
         self.__updateTime = __updateTime
         self.__currentSpeed = 0
@@ -26,7 +27,9 @@ class StateJoint:
     def startStateMonitor(self):
         while True:
             self.__lastAngle = self.__currentAngle
+            self.__jointLock.acquire()
             self.__currentAngle = self.__motor.position
+            self.__jointLock.release()
             self.__currentSpeed = (self.__currentAngle - self.__lastAngle)*pi/180
             if self.__currentSpeed > 0.01:
                 self.moving = True

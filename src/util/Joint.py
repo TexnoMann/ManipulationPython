@@ -1,7 +1,7 @@
 from time import sleep
-from src.controll.Controller import *
 
-from threading import Thread
+
+from threading import Thread, Lock
 
 DT = 0.010
 
@@ -9,11 +9,7 @@ class Joint:
     def __init__(self, controllerJoint, stateJoint):
         self.controllerJoint = controllerJoint
         self.stateJoint = stateJoint
-        self.__messageThread = Thread(target=self.jointMove)
-        self.__messageThread.setDaemon(True)
-        self.__messageThread.start()
+        self.controllerJoint.getMotor().reset()
 
-    def jointMove(self):
-        while True:
-            self.controllerJoint.sendCurrentAngle(self.stateJoint.getCurrentAngle())
-            sleep(DT)
+
+
