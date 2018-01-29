@@ -10,28 +10,29 @@ class StateJoint:
         self.__jointLock = __jointLock
         self.__motor = __motor
         self.__updateTime = __updateTime
-        self.__currentSpeed = 0
-        self.__currentAngle = 0
-        self.__lastAngle = 0
-        self.moving = False
+        self.__currentSpeed = [0, 0, 0]
+        self.__currentAngle = [0, 0, 0]
+        self.__lastAngle = [0, 0, 0]
+        self.moving = [False, False, False]
         self.threadState = Thread(target=self.startStateMonitor)
         self.threadState.setDaemon(True)
         self.threadState.start()
 
-    def getCurrentAngle(self):
-        return self.__currentAngle
+    def getCurrentAngle(self, numberJoint):
+        return self.__currentAngle[numberJoint]
 
-    def getCurrentSpeed(self):
-        return self.__currentSpeed
+    def getCurrentSpeed(self, numberJoint):
+        return self.__currentSpeed[numberJoint]
 
     def startStateMonitor(self):
         while True:
-            self.__lastAngle = self.__currentAngle
-            self.__jointLock.acquire()
-            self.__currentAngle = self.__motor.position
-            self.__jointLock.release()
-            self.__currentSpeed = (self.__currentAngle - self.__lastAngle)*pi/180
-            if self.__currentSpeed > 0.01:
-                self.moving = True
+            for i in range(0, len(self.__motor)):
+                self.__lastAngle[i] = self.__currentAngle[i]
+                self.__jointLock[i].acquire()
+                self.__currentAngle[i] = self.__motor[i].position
+                self.__jointLock[i].release()
+                self.__currentSpeed[i] = (self.__currentAngle[i] - self.__lastAngle[i])*pi/180
+                if self.__currentSpeed[i] > 0.02:
+                    self.moving[i] = True
             sleep(self.__updateTime)
 

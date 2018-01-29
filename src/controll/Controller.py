@@ -70,13 +70,13 @@ class PIDSpeedController:
                 self.__motor.run_direct(duty_cycle_sp=self.__u)
                 self.__jointLock.release()
                 currenttime = time()
-                sleep(self.__updateTime - (currenttime - lasttime))
+                sleep(self.__updateTime-(currenttime-lasttime))
             else:
                 self.__motor.run_direct(duty_cycle_sp=0)
                 # Holding Joint
                 if self._holding:
                     self.__motor.stop(stop_action='hold')
-                sleep(0.050)
+                sleep(self.__updateTime)
 
 
     def move(self):
@@ -86,6 +86,7 @@ class PIDSpeedController:
         self.power = False
         self._holding = holding
 
+# TODO: AngleController
     def getSignalAngleController(self):
         self.__firstAngleError = self.__secondAngleError
         self.__secondAngleError = self.__desiredAngle-self.__currentAngle
