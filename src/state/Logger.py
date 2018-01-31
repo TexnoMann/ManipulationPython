@@ -20,7 +20,6 @@ class Logger():
             if not self.__queue.empty():
                 if self.__lcdFlag:
                     self.__lcd.draw.text((10, 10), self.__queue.get_nowait())
-                print(self.__queue)
 
     def putMessage(self, message):
         self.__lastMessage = self.__currentMessage
