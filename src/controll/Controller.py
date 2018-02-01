@@ -31,7 +31,7 @@ class PIDSpeedController:
         self.__u = 0
         self.__uA = 0
         self.__times = 0
-        self.__positionError= 0.04
+        self.__positionError = 0.04
         self.power = False
         self.angleMode = False
         self._holding = False
@@ -47,6 +47,8 @@ class PIDSpeedController:
     def setDesiredAngle(self, desiredAngle):
         self.__jointLock.acquire()
         self.__desiredAngle = desiredAngle
+        if desiredAngle < 0:
+            self.__desiredSpeed = abs(self.__desiredSpeed)*-1
         self.__jointLock.release()
 
     def startPIDSpeedController(self):
@@ -99,7 +101,7 @@ class PIDSpeedController:
         return self.__motor
 
     def __inPosition(self):
-        if abs(self.__desiredAngle-self.stateJoint.getCurrentAngle()) <= 0.04:
+        if abs(self.__desiredAngle-self.stateJoint.getCurrentAngle()) <= 0.02:
             self.power = False
             return True
         else:

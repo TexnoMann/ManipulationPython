@@ -28,7 +28,7 @@ class StateJoint:
         self.__currentAngle = self.__motor.position*pi/180/self.__pCount
         self.__currentSpeed = (self.__currentAngle - self.__lastAngle)/self.__updateTime
         self.__jointLock.release()
-        if self.__currentSpeed > 0.03:
+        if self.__currentSpeed > 0.02:
             self.__jointLock.acquire()
             self.moving = True
             self.__jointLock.release()
