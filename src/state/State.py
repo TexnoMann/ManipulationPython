@@ -14,7 +14,7 @@ class StateJoint:
         self.__currentSpeed = 0
         self.__currentAngle = 0
         self.__lastAngle = 0
-        self.moving = False
+        self.__moving = False
 
     def getCurrentAngle(self):
         return self.__currentAngle
@@ -30,11 +30,11 @@ class StateJoint:
         self.__jointLock.release()
         if self.__currentSpeed > 0.02:
             self.__jointLock.acquire()
-            self.moving = True
+            self.__moving = True
             self.__jointLock.release()
         else:
             self.__jointLock.acquire()
-            self.moving = False
+            self.__moving = False
             self.__jointLock.release()
 
 

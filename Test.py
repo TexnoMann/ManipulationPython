@@ -1,15 +1,12 @@
 from src.util.JointManager import *
+from src.numKinematic.PZK import *
 
 def main():
-    J0.moveToAngle(0.8, 0.02)
-    J1.moveToAngle(0.8, 0.02)
-    J2.moveToAngle(1.5, -3)
-
-    sleep(8)
-    J0.stop(True)
-    J1.stop(True)
-    J2.stop(True)
-    sleep(1)
+    for i in range(100):
+        theta=[J0.controllerJoint.stateJoint.getCurrentAngle(), J1.controllerJoint.stateJoint.getCurrentAngle(), J2.controllerJoint.stateJoint.getCurrentAngle()]
+        x_y_z = fKinematics.getXYZ(theta)
+        print("X:"+str(x_y_z[0]) + "      ", "Y:" + str(x_y_z[1])+"      ", "Z:" + str(x_y_z[2])+"      ")
+        sleep(1)
 
 if __name__ == "__main__" :
     main()

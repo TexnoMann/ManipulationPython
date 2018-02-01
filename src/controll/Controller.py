@@ -54,10 +54,10 @@ class PIDSpeedController:
     def startPIDSpeedController(self):
         currenttime = 0
         while True:
+            self.stateJoint.stateUpdate()
             if self.power:
                 if(self.angleMode and (not self.__inPosition())) or (not self.angleMode):
                     lasttime = time()
-                    self.stateJoint.stateUpdate()
                     self.__firstSpeedError = self.__currentSpeedError
                     self.__currentSpeedError = self.__desiredSpeed - self.stateJoint.getCurrentSpeed()
                     self.__p = self.__currentSpeedError * self.__P
