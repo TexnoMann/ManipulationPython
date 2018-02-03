@@ -5,12 +5,10 @@ from src.util.Joint import *
 from time import *
 from threading import Lock
 from src.controll.Controller import *
-from src.numKinematic.PZK import *
 
-#Configuration manipulator
-InstrL = 0
-a = [0.055, 0.15, 0.14+InstrL]
-d = [0.16, 0.0, 0.0]
+from src.util.Man import Manipulator
+
+
 
 # Created motor-objects for joints
 motor0 = LargeMotor(OUTPUT_A)
@@ -25,13 +23,15 @@ jointLock2 = Lock()
 
 
 # DIMOOOON Initialization JoinController: PI-for Speed, PID-for Angle
-controllerJoint0 = PIDSpeedController(3.63, 50.3, 0, 0.045, motor0, jointLock0, 5)
-controllerJoint1 = PIDSpeedController(3.63, 50.3, 0, 0.045, motor1, jointLock1, 5)
-controllerJoint2 = PIDSpeedController(3.63, 50.3, 0, 0.045, motor2, jointLock2, 3)
+controllerJoint0 = PIDSpeedController(3.63, 50.3, 0, 0.050, motor0, jointLock0, 5)
+controllerJoint1 = PIDSpeedController(3.63, 50.3, 0, 0.050, motor1, jointLock1, 5)
+controllerJoint2 = PIDSpeedController(3.63, 50.3, 0, 0.050, motor2, jointLock2, 3)
 
 # Initialization Joint
-J0 = Joint(controllerJoint0, 0, 1)
-J1 = Joint(controllerJoint1, 2.95, 1)
-J2 = Joint(controllerJoint2, 2.79, 1)
+J0 = Joint(controllerJoint0, 0, 1)  # Don't touch!
+J1 = Joint(controllerJoint1, 2.95, -1)  # Don't touch!
+J2 = Joint(controllerJoint2, 2.79, -1)  # Don't touch!
+joints = [J0, J1, J2]
 
-fKinematics = ForwardKinematic(a, d)
+manipulator = Manipulator(joints)
+

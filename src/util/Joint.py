@@ -26,3 +26,9 @@ class Joint:
 
     def stop(self, hold):
         self.controllerJoint.stop(hold)
+
+    def getCurrentAngle(self):
+        return self.controllerJoint.stateJoint.getCurrentAngle()*self.__invertMotor
+
+    def getCurrentSpeed(self):
+        return self.controllerJoint.stateJoint.getCurrentSpeed()*self.__invertMotor

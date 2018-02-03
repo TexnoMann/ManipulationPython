@@ -1,4 +1,4 @@
-syms theta0 theta1 theta2 a0 a1 a2 a3 d0 d1 d2 alpha0 alpha1 alpha2
+syms theta0 theta1 theta2 a0 a1 a2 a3 d0 d1 d2 alpha0 alpha1 alpha2 f 
 
 
 H01=sym([cos(theta0),0, sin(theta0),a0*cos(theta0);

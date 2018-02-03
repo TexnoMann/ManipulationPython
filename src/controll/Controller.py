@@ -88,8 +88,10 @@ class PIDSpeedController:
         self.__jointLock.release()
 
     def stop(self, holding):
+        self.__jointLock.acquire()
         self.power = False
         self._holding = holding
+        self.__jointLock.release()
 
     # TODO: AngleController
     def getSignalAngleController(self):
