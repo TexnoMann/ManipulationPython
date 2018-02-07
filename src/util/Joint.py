@@ -1,11 +1,12 @@
 from time import sleep
 
-
 from threading import Thread, Lock
 
 DT = 0.010
 
+
 class Joint:
+
     def __init__(self, controllerJoint, __invertMotor):
         self.__invertMotor = __invertMotor
         self.controllerJoint = controllerJoint
@@ -16,7 +17,7 @@ class Joint:
         self.controllerJoint.moveForever()
 
     def moveToAngle(self, speed, angle):
-        if angle < 0:
+        if angle < self.getCurrentAngle():
             speed = -speed
         self.controllerJoint.setDesiredSpeed(speed*self.__invertMotor)
         self.controllerJoint.setDesiredAngle(angle*self.__invertMotor)
@@ -33,5 +34,4 @@ class Joint:
 
     def isMoving(self):
         return not self.controllerJoint.stateJoint.isStalled()
-
 

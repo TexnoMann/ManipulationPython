@@ -1,6 +1,7 @@
 from src.util.JointManager import *
 
 def main():
+
     xyz = man.setPosition()
 
 

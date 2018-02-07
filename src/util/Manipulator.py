@@ -29,11 +29,11 @@ class Manipulator():
     def setPosition(self, speed, xyz):
         q = self.__inverseKinematic.getAngle(xyz[0], xyz[1], xyz[2])
         self.setJointAngle(speed, q)
+        self.waitMoving()
 
 
 
     def waitMoving(self):
         sleep(0.3)
         while self.joints[0].isMoving() or self.joints[1].isMoving() or self.joints[2].isMoving():
-            print(str(self.joints[0].isMoving()) + " " + str(self.joints[1].isMoving()) + " " + str(self.joints[2].isMoving()))
-            sleep(0.001)
+            sleep(0.1)
