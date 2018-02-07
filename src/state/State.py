@@ -14,7 +14,8 @@ class StateJoint:
         self.__currentSpeed = 0
         self.__currentAngle = 0
         self.__lastAngle = 0
-        self.moving = False
+        self.__moving = False
+        self.__stalled = True
 
     def getCurrentAngle(self):
         return self.__currentAngle
@@ -28,13 +29,16 @@ class StateJoint:
         self.__currentAngle = self.__motor.position*pi/180/self.__pCount
         self.__currentSpeed = (self.__currentAngle - self.__lastAngle)/self.__updateTime
         self.__jointLock.release()
-        if self.__currentSpeed > 0.03:
+        if abs(self.__currentSpeed) <= 0.03:
             self.__jointLock.acquire()
-            self.moving = True
+            self.__stalled = True
             self.__jointLock.release()
         else:
             self.__jointLock.acquire()
-            self.moving = False
+            self.__stalled = False
             self.__jointLock.release()
+
+    def isStalled(self):
+        return self.__stalled
 
 

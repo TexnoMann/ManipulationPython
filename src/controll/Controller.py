@@ -31,7 +31,7 @@ class PIDSpeedController:
         self.__u = 0
         self.__uA = 0
         self.__times = 0
-        self.__positionError= 0.04
+        self.__positionError = 0.04
         self.power = False
         self.angleMode = False
         self._holding = False
@@ -52,10 +52,10 @@ class PIDSpeedController:
     def startPIDSpeedController(self):
         currenttime = 0
         while True:
+            self.stateJoint.stateUpdate()
             if self.power:
                 if(self.angleMode and (not self.__inPosition())) or (not self.angleMode):
                     lasttime = time()
-                    self.stateJoint.stateUpdate()
                     self.__firstSpeedError = self.__currentSpeedError
                     self.__currentSpeedError = self.__desiredSpeed - self.stateJoint.getCurrentSpeed()
                     self.__p = self.__currentSpeedError * self.__P
@@ -67,10 +67,11 @@ class PIDSpeedController:
                     currenttime = time()
                     sleep(self.__updateTime - (currenttime - lasttime))
             else:
-                self.__motor.run_direct(duty_cycle_sp=0)
                 # Holding Joint
                 if self._holding:
                     self.__motor.stop(stop_action='hold')
+                else :
+                    self.__motor.stop(duty_cycle_sp='0')
                 sleep(self.__updateTime)
 
     def moveForever(self):
