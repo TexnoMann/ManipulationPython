@@ -1,11 +1,12 @@
 from time import sleep
 
-
 from threading import Thread, Lock
 
 DT = 0.010
 
+
 class Joint:
+
     def __init__(self, controllerJoint, __invertMotor):
         self.__invertMotor = __invertMotor
         self.controllerJoint = controllerJoint
@@ -33,5 +34,3 @@ class Joint:
 
     def isMoving(self):
         return not self.controllerJoint.stateJoint.isStalled()
-
-
