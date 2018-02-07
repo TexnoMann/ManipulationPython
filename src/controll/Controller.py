@@ -69,10 +69,11 @@ class PIDSpeedController:
                     currenttime = time()
                     sleep(self.__updateTime - (currenttime - lasttime))
             else:
-                self.__motor.run_direct(duty_cycle_sp=0)
                 # Holding Joint
                 if self._holding:
                     self.__motor.stop(stop_action='hold')
+                else :
+                    self.__motor.stop(duty_cycle_sp='0')
                 sleep(self.__updateTime)
 
     def moveForever(self):
