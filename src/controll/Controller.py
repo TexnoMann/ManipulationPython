@@ -93,6 +93,16 @@ class PIDSpeedController:
         self.power = False
         self._holding = holding
         self.__jointLock.release()
+        self.__p = 0
+        self.__i = 0
+        self.__firstAngleError = 0
+        self.__secondAngleError = 0
+        self.__currentSpeedError = 0
+        self.__firstSpeedError = 0
+        self.__u = 0
+        self.__uA = 0
+        self.__times = 0
+
 
     # TODO: AngleController
     def getSignalAngleController(self):
