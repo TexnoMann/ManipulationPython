@@ -10,6 +10,7 @@ from src.util.Manipulator import *
 # Created motor-objects for joints
 motor0 = LargeMotor(OUTPUT_A)
 motor1 = LargeMotor(OUTPUT_B)
+motor1 = LargeMotor(OUTPUT_B)
 motor2 = LargeMotor(OUTPUT_C)
 
 

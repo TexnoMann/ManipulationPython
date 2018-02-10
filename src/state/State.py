@@ -41,4 +41,8 @@ class StateJoint:
     def isStalled(self):
         return self.__stalled
 
+    def removeSpeed(self):
+        self.__currentSpeed = 0
+        self.__lastAngle = self.__currentAngle
+
 
