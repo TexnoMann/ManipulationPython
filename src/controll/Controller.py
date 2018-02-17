@@ -121,3 +121,18 @@ class PIDSpeedController:
             return True
         else:
             return False
+
+    def resetController(self):
+        self.__p = 0
+        self.__i = 0
+        self.__firstAngleError = 0
+        self.__secondAngleError = 0
+        self.__currentSpeedError = 0
+        self.__firstSpeedError = 0
+        self.__desiredSpeed = 0
+        self.__u = 0
+        self.__uA = 0
+        self.__times = 0
+        self.stateJoint.removeSpeed()
+        self.stateJoint.resetState()
+        self.getMotor().reset()

@@ -1,6 +1,7 @@
 from src.util.Joint import *
 from src.numKinematic.OZK import *
 from src.numKinematic.PZK import *
+from src.controll.Calibration import *
 
 class Manipulator():
     def __init__(self, joints):
@@ -11,15 +12,16 @@ class Manipulator():
         self.joints = joints
         self.__inverseKinematic = InverseKinematic(self.__a, self.__d)
         self.__forwardKinematic = ForwardKinematic(self.__a, self.__d)
+        self.calibration = Calibration(joints)
 
     def setJointAngle(self, speed, q):
-        self.joints[0].moveToAngle(speed, q[0])
-        self.joints[1].moveToAngle(speed, q[1])
-        self.joints[2].moveToAngle(speed, q[2])
+        self.joints[0].moveToAngle(speed, q[0]-self.calibration.startAngle[0])
+        self.joints[1].moveToAngle(speed, q[1]-self.calibration.startAngle[1])
+        self.joints[2].moveToAngle(speed, q[2]-self.calibration.startAngle[2])
         self.waitMoving()
 
     def getJointAngle(self):
-        q = [self.joints[0].getCurrentAngle(), self.joints[1].getCurrentAngle(), self.joints[2].getCurrentAngle()]
+        q = [self.joints[0].getCurrentAngle()-self.calibration.startAngle[0], self.joints[1].getCurrentAngle()-self.calibration.startAngle[1], self.joints[2].getCurrentAngle()-self.calibration.startAngle[2]]
         return q
 
     def getPosition(self):
@@ -31,7 +33,8 @@ class Manipulator():
         self.setJointAngle(speed, q)
         self.waitMoving()
 
-
+    def moveHome(self):
+        self.calibration.calib()
 
     def waitMoving(self):
         sleep(0.3)

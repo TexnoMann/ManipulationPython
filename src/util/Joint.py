@@ -35,3 +35,8 @@ class Joint:
     def isMoving(self):
         return not self.controllerJoint.stateJoint.isStalled()
 
+    def reset(self):
+        self.stop(False)
+        self.controllerJoint.resetController()
+
+
