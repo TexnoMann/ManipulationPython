@@ -1,4 +1,5 @@
-syms theta0 theta1 theta2 a0 a1 a2 a3 d0 d1 d2 alpha0 alpha1 alpha2 f 
+syms theta0 theta1 theta2 a0 a1 a2 a3 d0 d1 d2 alpha0 alpha1 alpha2 f
+syms qs0 qs1 qs2
 
 theta0=theta0+pi/2;
 p00 = [0;0;0];
@@ -48,5 +49,8 @@ p02 = p01 + R01*p12;
 p03 = p02 + R02*p23;
 p0N = p03
 
-Jv=[cross(z00,(p0N-p00)),cross(z01,(p0N-p01)),cross(z02,(p0N-p02));
-    ]
+J=[cross(z00,(p0N-p00)),    cross(z01,(p0N-p01)),   cross(z02,(p0N-p02));
+        z00             ,           z01         ,           z02         ]
+    
+Ls=J*[qs0;qs1;qs2]
+    
