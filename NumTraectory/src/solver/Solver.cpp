@@ -1,0 +1,6 @@
+//
+// Created by texnoman on 27.02.18.
+//
+
+#include "Solver.h"
+

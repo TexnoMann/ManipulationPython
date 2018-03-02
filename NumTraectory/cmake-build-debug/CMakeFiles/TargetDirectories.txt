@@ -1,0 +1,3 @@
+/media/files/Man/NumTraectory/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/media/files/Man/NumTraectory/cmake-build-debug/CMakeFiles/edit_cache.dir
+/media/files/Man/NumTraectory/cmake-build-debug/CMakeFiles/NumTraectory.dir

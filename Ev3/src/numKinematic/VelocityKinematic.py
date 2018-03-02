@@ -1,0 +1,13 @@
+from math import *
+
+class VelocityOZK():
+
+    def __init__(self, __a, __d):
+        self.__a = __a
+        self.__d = __d
+
+    def getLinearSpeed(self, angularSpeed, currentAngle):
+        speedX = angularSpeed[0]*(-self.__a[0]*sin(currentAngle[0]) - self.__a[1]*cos(currentAngle[1] + pi/2)*sin(currentAngle[0]) - self.__a[2]*cos(currentAngle[2])*cos(currentAngle[1] + pi/2)*sin(currentAngle[0]) + self.__a[2]*sin(currentAngle[0])*sin(currentAngle[2])*sin(currentAngle[1] + pi/2)) - angularSpeed[2]*cos(currentAngle[0])*(self.__a[2]*cos(currentAngle[2])*sin(currentAngle[1] + pi/2) + self.__a[2]*cos(currentAngle[1] + pi/2)*sin(currentAngle[2])) - angularSpeed[1]*cos(currentAngle[0])*(self.__a[1]*sin(currentAngle[1] + pi/2) + self.__a[2]*cos(currentAngle[2])*sin(currentAngle[1] + pi/2) + self.__a[2]*cos(currentAngle[1] + pi/2)*sin(currentAngle[2]))
+        speedY = angularSpeed[0]*(self.__a[0]*cos(currentAngle[0]) + self.__a[1]*cos(currentAngle[0])*cos(currentAngle[1] + pi/2) + self.__a[2]*cos(currentAngle[0])*cos(currentAngle[2])*cos(currentAngle[1] + pi/2) - self.__a[2]*cos(currentAngle[0])*sin(currentAngle[2])*sin(currentAngle[1] + pi/2)) - angularSpeed[2]*sin(currentAngle[0])*(self.__a[2]*cos(currentAngle[2])*sin(currentAngle[1] + pi/2) + self.__a[2]*cos(currentAngle[1] + pi/2)*sin(currentAngle[2])) - angularSpeed[1]*sin(currentAngle[0])*(self.__a[1]*sin(currentAngle[1] + pi/2) + self.__a[2]*cos(currentAngle[2])*sin(currentAngle[1] + pi/2) + self.__a[2]*cos(currentAngle[1] + pi/2)*sin(currentAngle[2]))
+        speedZ = angularSpeed[2]*(cos(currentAngle[0])*(self.__a[2]*cos(currentAngle[0])*cos(currentAngle[2])*cos(currentAngle[1] + pi/2) - self.__a[2]*cos(currentAngle[0])*sin(currentAngle[2])*sin(currentAngle[1] + pi/2)) - sin(currentAngle[0])*(-self.__a[2]*cos(currentAngle[2])*cos(currentAngle[1] + pi/2)*sin(currentAngle[0]) + self.__a[2]*sin(currentAngle[0])*sin(currentAngle[2])*sin(currentAngle[1] + pi/2))) + angularSpeed[1]*(cos(currentAngle[0])*(self.__a[1]*cos(currentAngle[0])*cos(currentAngle[1] + pi/2) + self.__a[2]*cos(currentAngle[0])*cos(currentAngle[2])*cos(currentAngle[1] + pi/2) - self.__a[2]*cos(currentAngle[0])*sin(currentAngle[2])*sin(currentAngle[1] + pi/2)) - sin(currentAngle[0])*(- self.__a[1]*cos(currentAngle[1] + pi/2)*sin(currentAngle[0]) - self.__a[2]*cos(currentAngle[2])*cos(currentAngle[1] + pi/2)*sin(currentAngle[0]) + self.__a[2]*sin(currentAngle[0])*sin(currentAngle[2])*sin(currentAngle[1] + pi/2)))
+        return [speedX, speedY, speedZ]
