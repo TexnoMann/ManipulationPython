@@ -15,6 +15,12 @@ Data.h
 /media/files/Man/NumTraectory/src/input/Data.h
 
 /media/files/Man/NumTraectory/src/input/Data.h
+stdio.h
+-
+string.h
+-
+array
+-
 
 /media/files/Man/NumTraectory/src/main.cpp
 iostream
