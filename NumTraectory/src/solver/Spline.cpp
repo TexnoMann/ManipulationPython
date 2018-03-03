@@ -16,17 +16,24 @@ Spline::Spline(int n) {
 
     _Q=mat(_n, n);
     _Q.fill(0.0);
-    int linepair = 0;
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            if (i % 2 == 0) {
-                if (linepair == 0) _Q(i, 0) = 1;
-                else if (j == linepair) _Q(i, j) = _fact(j);
-                else _Q(i,j)=0;
-                linepair++;
+   float TT; // Current degree of time                                  There |
+    for(int j=0;j<n;j++) _Q(0,j)=(j==0)? 1: 0;                              //|
+                                                                            //|
+    for (int i = 1; i < n; i++) {                                           //|
+        for (int j = 0; j < n; j++) {                                       //|
+            if(i<n/2){                                                      //|
+                _Q(i,j)=  (i==j)? _fact(i): 0;                              //|
+            }                                                               //|
+            else if(i==n/2){                                                //|
+                _Q(i,j)=pow(t,j-(i-n/2));                                   //|
+            }                                                               //|
+            else {                                                          //|
+                TT = pow(t, j-(i-n/2));                //<====================+
+                _Q(i, j) = TT*(j-(i-1-n/2))*_Q(i-1, j)/(TT*t);
             }
         }
     }
+    _Q(n/2,0)=1.0;
     cout<<_Q;
 }
 
