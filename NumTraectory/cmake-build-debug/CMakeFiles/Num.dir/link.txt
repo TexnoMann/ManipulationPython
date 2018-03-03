@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/Num.dir/src/main.cpp.o CMakeFiles/Num.dir/src/solver/Solver.cpp.o CMakeFiles/Num.dir/src/solver/Spline.cpp.o CMakeFiles/Num.dir/src/input/Data.cpp.o  -o Num 

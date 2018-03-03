@@ -6,37 +6,39 @@
 
 #IncludeRegexTransform: 
 
-/media/files/Man/NumTraectory/src/Test.cpp
+/media/cherginets/20937226112C3C6A/GO_GO_Robat/ManipulationPython/NumTraectory/src/Test.cpp
 armadillo
 -
 
-/media/files/Man/NumTraectory/src/input/Data.cpp
+/media/cherginets/20937226112C3C6A/GO_GO_Robat/ManipulationPython/NumTraectory/src/input/Data.cpp
 Data.h
-/media/files/Man/NumTraectory/src/input/Data.h
+/media/cherginets/20937226112C3C6A/GO_GO_Robat/ManipulationPython/NumTraectory/src/input/Data.h
 
-/media/files/Man/NumTraectory/src/input/Data.h
-
-/media/files/Man/NumTraectory/src/main.cpp
-iostream
+/media/cherginets/20937226112C3C6A/GO_GO_Robat/ManipulationPython/NumTraectory/src/input/Data.h
+stdio.h
 -
 
-/media/files/Man/NumTraectory/src/solver/Solver.cpp
+/media/cherginets/20937226112C3C6A/GO_GO_Robat/ManipulationPython/NumTraectory/src/main.cpp
+armadillo
+-
+
+/media/cherginets/20937226112C3C6A/GO_GO_Robat/ManipulationPython/NumTraectory/src/solver/Solver.cpp
 Solver.h
-/media/files/Man/NumTraectory/src/solver/Solver.h
+/media/cherginets/20937226112C3C6A/GO_GO_Robat/ManipulationPython/NumTraectory/src/solver/Solver.h
 
-/media/files/Man/NumTraectory/src/solver/Solver.h
+/media/cherginets/20937226112C3C6A/GO_GO_Robat/ManipulationPython/NumTraectory/src/solver/Solver.h
 Spline.h
-/media/files/Man/NumTraectory/src/solver/Spline.h
+/media/cherginets/20937226112C3C6A/GO_GO_Robat/ManipulationPython/NumTraectory/src/solver/Spline.h
 ../input/Data.h
-/media/files/Man/NumTraectory/src/input/Data.h
+/media/cherginets/20937226112C3C6A/GO_GO_Robat/ManipulationPython/NumTraectory/src/input/Data.h
 
-/media/files/Man/NumTraectory/src/solver/Spline.cpp
+/media/cherginets/20937226112C3C6A/GO_GO_Robat/ManipulationPython/NumTraectory/src/solver/Spline.cpp
 armadillo
 -
 Spline.h
-/media/files/Man/NumTraectory/src/solver/Spline.h
+/media/cherginets/20937226112C3C6A/GO_GO_Robat/ManipulationPython/NumTraectory/src/solver/Spline.h
 
-/media/files/Man/NumTraectory/src/solver/Spline.h
+/media/cherginets/20937226112C3C6A/GO_GO_Robat/ManipulationPython/NumTraectory/src/solver/Spline.h
 armadillo
 -
 
