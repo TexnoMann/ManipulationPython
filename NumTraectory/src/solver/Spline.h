@@ -9,16 +9,11 @@ using namespace std;
 using namespace arma;
 class Spline {
     public:
-<<<<<<< HEAD
         Spline(int n);
         mat getA(mat initCoords);
         mat get_q(mat _a, float t, int n);
         mat make_Q(float t, int n);
-=======
-        Spline(int n, int t);
-        float* getA(mat initCoords);
 
->>>>>>> e7b1abdb9887dd26f57dce0ce9a0764e1583755f
     private:
         mat initCoords;
         float time; //Normir time. Change how you want!

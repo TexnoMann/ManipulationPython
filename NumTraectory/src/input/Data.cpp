@@ -7,8 +7,7 @@
 
 Data::Data(string filename){
     _filename=  filename;
-    _file= fopen(filename.c_str(),"r");
-    std::perror("File opening failed");
+    _file.open(filename);
     if(!_file) {
         std::perror("File opening failed");
     }
@@ -19,7 +18,28 @@ Data::Data(string filename){
 
 }
 
-void Data::_convertToData(FILE *) {
-    while(c=)
-
+void Data::_convertToData(FILE* file) {
+    std::cout<<"Reading file...... " << "\n";
+    vector <float> num;
+    while(getline(file,line)){
+        num= splitLine(line, " ");
+    }
 }
+
+
+vector <float> splitLine(string line, string splitter){
+    vector <float> number;
+    char* cline = new char[line.length()+1];
+    strcpy(cline,line.c_str());
+    char* token = strtok(cline, splitter.c_str());
+    while(token != NULL){
+        cout<<"sdd";
+        number.push_back(atof(token));
+        token=strtok(NULL,splitter.c_str());
+    }
+    free(cline);
+    free(token);
+    return number;
+}
+
+
