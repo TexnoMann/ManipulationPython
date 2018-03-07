@@ -14,9 +14,19 @@ armadillo
 Data.h
 /media/cherginets/20937226112C3C6A/GO_GO_Robat/ManipulationPython/NumTraectory/src/input/Data.h
 
+<<<<<<< HEAD
+/media/files/Man/NumTraectory/src/input/Data.h
+stdio.h
+-
+string.h
+-
+array
+-
+=======
 /media/cherginets/20937226112C3C6A/GO_GO_Robat/ManipulationPython/NumTraectory/src/input/Data.h
 stdio.h
 -
+>>>>>>> ea2170076cd59c26dfad265635f45d0a7fe83875
 
 /media/cherginets/20937226112C3C6A/GO_GO_Robat/ManipulationPython/NumTraectory/src/main.cpp
 armadillo
