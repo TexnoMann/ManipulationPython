@@ -9,19 +9,16 @@ using namespace std;
 using namespace arma;
 class Spline {
     public:
-        Spline(int n);
-        mat getA(mat initCoords);
-        mat get_q(mat _a, float t, int n);
-        mat make_Q(float t, int n);
+        Spline(int n, float normTime);
+        mat getCoefficient(mat initCoords);
 
     private:
-        mat initCoords;
-        float time; //Normir time. Change how you want!
+        float _normTime;
         int _n;
         mat _a;
         mat _Q;
-        int _t;
         int _fact(int count);
+        mat _make_Q(float t);
 };
 
 

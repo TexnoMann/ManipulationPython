@@ -1,7 +1,7 @@
 //
 // Created by texnoman on 27.02.18.
 //
-#import <stdio.h>
+
 #include <string.h>
 #include <array>
 
@@ -17,9 +17,9 @@ public:
 
 private:
     string _filename;
-    FILE*_file;
-    float** _data;
-    void _convertToData(FILE*);
+    ifstream _file;
+    void _convertDataToMatrix();
+    vector <float> _splitLine(string line, string splitter);
 };
 
 

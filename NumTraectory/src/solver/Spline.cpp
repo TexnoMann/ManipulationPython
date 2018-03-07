@@ -7,22 +7,43 @@
 using namespace std;
 using namespace arma;
 
-Spline::Spline(int n, int t) {
+Spline::Spline(int n, float normTime) {
     _n = n;
-    _t=t;
-
+    _normTime=normTime;
     _a=mat(_n, 1);
     _a.fill(0.0);
-    _Q = make_Q(time, _n ); // Normir time
-    _Q=mat(_n, n);
+    _Q=mat(_n, _n);
     _Q.fill(0.0);
-    cout<<_Q;
 }
 
-mat Spline::getA(mat initCoords){
-    _a=inv(_Q)* initCoords;
+mat Spline::getCoefficient(mat initCoords){
+    _a=inv( _make_Q(_normTime) )* initCoords;
     return _a;
     }
+
+
+mat Spline:: _make_Q(float time){
+    _Q.fill(0.0);
+    float TT; // Current degree of time
+    for(int j=0;j<_n;j++) _Q(0,j)=(j==0)? 1: 0;
+
+    for (int i = 1; i <_n; i++) {
+        for (int j = 0; j <_n; j++) {
+            if(i<_n/2){
+                _Q(i,j)=  (i==j)? _fact(i): 0;
+            }
+            else if(i==_n/2){
+                _Q(i,j)=pow(time,j-(i-_n/2));
+            }
+            else {
+                TT = pow(time, j-(i-_n/2));
+                _Q(i, j) = TT*(j-(i-1-_n/2))*_Q(i-1, j)/(TT*time);
+            }
+        }
+    }
+    _Q(_n/2,0)=1.0;
+    return _Q;
+}
 
 int Spline::_fact(int count){
     int d=1;
@@ -30,31 +51,6 @@ int Spline::_fact(int count){
     return d;
 }
 
-mat Spline::get_q(mat _a, float t, int n){
-    return make_Q(t, n)*_a;
-}
 
-mat Spline:: make_Q(float t,int  n){   // Create Q
-    mat Q;
-    float TT; // Current degree of time                                  There |
-    for(int j=0;j<n;j++) Q(0,j)=(j==0)? 1: 0;                                //|
-                                                                             //|
-    for (int i = 1; i < n; i++) {                                            //|
-        for (int j = 0; j < n; j++) {                                        //|
-            if(i<n/2){                                                       //|
-                Q(i,j)=  (i==j)? _fact(i): 0;                                //|
-            }                                                                //|
-            else if(i==n/2){                                                 //|
-                Q(i,j)=pow(t,j-(i-n/2));                                     //|
-            }                                                                //|
-            else {                                                           //|
-                TT = pow(t, j-(i-n/2));                //<=====================+
-                Q(i, j) = TT*(j-(i-1-n/2))*Q(i-1, j)/(TT*t);
-            }
-        }
-    }
-    Q(n/2,0)=1.0;
-    return Q;
-}
 
 

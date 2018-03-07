@@ -8,19 +8,21 @@
 #ifndef MANNUM_SOLVER_H
 #define MANNUM_SOLVER_H
 
+using namespace arma;
+
 class Solver {
     public:
-        Solver( Data data);
-        void getSpline(float q0[], float q1[]);
-        arma::mat get_q(float t);
+        Solver( Data data, float normTime);
+        mat getCoords(float currentTime, mat a);
 
     private:
-        arma::mat _q;
-        Data _data();
-        float _q0;
-        float _q1;
+        mat _Q;
         int _n;
-        Spline _spline(int n);
+        mat _normTime;
+        Data _data(string filename);
+        Spline _spline(int n, float normTime);
+        mat _getPoly(float currentTime);
+        int _fact(int count);
 
 };
 

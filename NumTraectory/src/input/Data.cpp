@@ -3,38 +3,39 @@
 //
 
 #include <iostream>
+#include <fstream>
+#include <vector>
 #include "Data.h"
 
 Data::Data(string filename){
     _filename=  filename;
-    std::ifstream _file;
     _file.open(filename);
     if(!_file) {
         std::perror("File opening failed");
     }
     else{
-        _convertToData(_file);
+        _convertDataToMatrix();
     }
-
 
 }
 
-void Data::_convertToData(FILE* file) {
+void Data::_convertDataToMatrix(){
+    std::string line;
+    std::string splitter=" ";
     std::cout<<"Reading file...... " << "\n";
     vector <float> num;
-    while(getline(file,line)){
-        num=splitLine(line, " ");
+    while(getline(_file,line)){
+        num= _splitLine(line,splitter);
     }
 }
 
 
-vector <vect <float>> splitLine(string line, string splitter){
+vector <float> Data::_splitLine(string line, string splitter){
     vector <float> number;
     char* cline = new char[line.length()+1];
     strcpy(cline,line.c_str());
     char* token = strtok(cline, splitter.c_str());
     while(token != NULL){
-        cout<<"sdd";
         number.push_back(atof(token));
         token=strtok(NULL,splitter.c_str());
     }
