@@ -7,6 +7,7 @@
 
 Data::Data(string filename){
     _filename=  filename;
+    std::ifstream _file;
     _file.open(filename);
     if(!_file) {
         std::perror("File opening failed");
@@ -22,12 +23,12 @@ void Data::_convertToData(FILE* file) {
     std::cout<<"Reading file...... " << "\n";
     vector <float> num;
     while(getline(file,line)){
-        num= splitLine(line, " ");
+        num=splitLine(line, " ");
     }
 }
 
 
-vector <float> splitLine(string line, string splitter){
+vector <vect <float>> splitLine(string line, string splitter){
     vector <float> number;
     char* cline = new char[line.length()+1];
     strcpy(cline,line.c_str());
