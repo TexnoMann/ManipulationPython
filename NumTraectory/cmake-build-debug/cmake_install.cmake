@@ -1,4 +1,4 @@
-# Install script for directory: /media/cherginets/20937226112C3C6A/GO_GO_Robat/ManipulationPython/NumTraectory
+# Install script for directory: /media/files/Man/NumTraectory
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/media/cherginets/20937226112C3C6A/GO_GO_Robat/ManipulationPython/NumTraectory/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/media/files/Man/NumTraectory/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

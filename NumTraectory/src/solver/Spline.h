@@ -9,7 +9,7 @@ using namespace std;
 using namespace arma;
 class Spline {
     public:
-        Spline(int n);
+        Spline(int n, int t);
         float* getA(mat initCoords);
 
     private:
@@ -17,6 +17,7 @@ class Spline {
         int _n;
         mat _a;
         mat _Q;
+        int _t;
         int _fact(int count);
 };
 

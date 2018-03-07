@@ -1,15 +1,16 @@
 //
 // Created by texnoman on 27.02.18.
 //
-#include <armadillo>
+
 #include "Spline.h"
 
 
 using namespace std;
 using namespace arma;
 
-Spline::Spline(int n) {
+Spline::Spline(int n, int t) {
     _n = n;
+    _t=t;
 
     _a=mat(_n, 1);
     _a.fill(0.0);
@@ -25,11 +26,11 @@ Spline::Spline(int n) {
                 _Q(i,j)=  (i==j)? _fact(i): 0;                              //|
             }                                                               //|
             else if(i==n/2){                                                //|
-                _Q(i,j)=pow(t,j-(i-n/2));                                   //|
+                _Q(i,j)=pow(_t,j-(i-n/2));                                   //|
             }                                                               //|
             else {                                                          //|
-                TT = pow(t, j-(i-n/2));                //<====================+
-                _Q(i, j) = TT*(j-(i-1-n/2))*_Q(i-1, j)/(TT*t);
+                TT = pow(_t, j-(i-n/2));                //<====================+
+                _Q(i, j) = TT*(j-(i-1-n/2))*_Q(i-1, j)/(TT*_t);
             }
         }
     }
