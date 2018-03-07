@@ -1,21 +1,43 @@
 //
 // Created by texnoman on 27.02.18.
 //
-#include <armadillo>
+
 #include "Spline.h"
 
 using namespace std;
 using namespace arma;
 
-Spline::Spline(int n) {
+Spline::Spline(int n, int t) {
     _n = n;
+    _t=t;
 
     _a=mat(_n, 1);
     _a.fill(0.0);
     _Q = make_Q(time, _n ); // Normir time
     _Q=mat(_n, n);
     _Q.fill(0.0);
+<<<<<<< HEAD
 
+=======
+   float TT; // Current degree of time                                  There |
+    for(int j=0;j<n;j++) _Q(0,j)=(j==0)? 1: 0;                              //|
+                                                                            //|
+    for (int i = 1; i < n; i++) {                                           //|
+        for (int j = 0; j < n; j++) {                                       //|
+            if(i<n/2){                                                      //|
+                _Q(i,j)=  (i==j)? _fact(i): 0;                              //|
+            }                                                               //|
+            else if(i==n/2){                                                //|
+                _Q(i,j)=pow(_t,j-(i-n/2));                                   //|
+            }                                                               //|
+            else {                                                          //|
+                TT = pow(_t, j-(i-n/2));                //<====================+
+                _Q(i, j) = TT*(j-(i-1-n/2))*_Q(i-1, j)/(TT*_t);
+            }
+        }
+    }
+    _Q(n/2,0)=1.0;
+>>>>>>> e7b1abdb9887dd26f57dce0ce9a0764e1583755f
     cout<<_Q;
 }
 

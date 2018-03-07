@@ -12,13 +12,14 @@ using namespace std;
 
 class Data {
 public:
-    Data();
-    void getData(char* filename);
+    Data(string filename);
+    void getData(string filename);
 
 private:
     string _filename;
-    FILE _p;
+    FILE*_file;
     float** _data;
+    void _convertToData(FILE*);
 };
 
 
