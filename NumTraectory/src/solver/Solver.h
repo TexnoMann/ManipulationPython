@@ -12,17 +12,18 @@ using namespace arma;
 
 class Solver {
     public:
-        Solver( Data data, float normTime);
-        mat getCoords(float currentTime, mat a);
+        Solver(int n);
+
+    Solver();
+
+    mat getCoords(float currentTime, mat a);
 
     private:
         mat _Q;
         int _n;
-        mat _normTime;
-        Data _data(string filename);
-        Spline _spline(int n, float normTime);
+        mat _coords;
         mat _getPoly(float currentTime);
-        int _fact(int count);
+
 
 };
 

@@ -14,10 +14,14 @@ class Data {
 public:
     Data(string filename);
     void getData(string filename);
+    float getNormTime();
+    int getN();
 
 private:
     string _filename;
     ifstream _file;
+    int _n;
+    float _normTime;
     void _convertDataToMatrix();
     vector <float> _splitLine(string line, string splitter);
 };

@@ -8,6 +8,8 @@
 #include "Data.h"
 
 Data::Data(string filename){
+    _n=0;
+    _normTime=0;    //TODO: get normTime and scalePolynome in file.
     _filename=  filename;
     _file.open(filename);
     if(!_file) {
@@ -44,4 +46,12 @@ vector <float> Data::_splitLine(string line, string splitter){
     return number;
 }
 
+int Data::getN(){
+    return _n;
+
+}
+
+float Data::getNormTime() {
+    return _normTime;
+}
 
