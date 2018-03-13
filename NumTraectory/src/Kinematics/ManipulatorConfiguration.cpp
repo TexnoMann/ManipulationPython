@@ -3,8 +3,10 @@
 //
 
 #include "ManipulatorConfiguration.h"
+#include "../input/Data.h"
 
-ManipulatorConfiguration::ManipulatorConfiguration(float a[], float d[]) {
+ManipulatorConfiguration::ManipulatorConfiguration(Data _data) {
+    
     numberJoint= sizeof(a)/ sizeof(*a);
     aM=a;
     dM=d;

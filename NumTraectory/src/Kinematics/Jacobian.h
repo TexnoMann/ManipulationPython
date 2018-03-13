@@ -21,9 +21,8 @@ class Jacobian {
         mat getAbsoluteCoordsOrientation(mat relativeCoords, mat relativeSpeedOrientation);
 
     private:
-    float _a[];
-    float _d[];
-        ManipulatorConfiguration _configuration = ManipulatorConfiguration(nullptr, nullptr);
+        float _a[];
+        float _d[];
         mat getJacobianMatrixCoordsfromRRR(mat coordsMatrix);
 };
 

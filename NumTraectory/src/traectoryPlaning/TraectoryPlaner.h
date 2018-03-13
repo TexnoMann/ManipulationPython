@@ -5,6 +5,7 @@
 #include "../input/Data.h"
 #include "../solver/Spline.h"
 #include "../solver/Solver.h"
+#include "../Kinematics/ManipulatorConfiguration.h"
 
 #ifndef NUMTRAECTORY_TRAECTORYPLANER_H
 #define NUMTRAECTORY_TRAECTORYPLANER_H
@@ -15,7 +16,7 @@ using namespace std;
 
 class TraectoryPlaner {
     public:
-        TraectoryPlaner(string filename);
+        TraectoryPlaner(string filename, ManipulatorConfiguration configuration);
     private:
         float _normTime;
         float _n;
@@ -23,7 +24,6 @@ class TraectoryPlaner {
 
 
         mat _translateAbsToRelativeCoords(mat absCoord);
-
         mat _transtateRelativeToAbsCoords(mat relCoord);
 };
 
