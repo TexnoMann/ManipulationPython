@@ -9,12 +9,12 @@
 #define MANNUM_SOLVER_H
 
 using namespace arma;
+using namespace std;
 
 class Solver {
     public:
         Solver(int n);
 
-    Solver();
 
     mat getCoords(float currentTime, mat a);
 

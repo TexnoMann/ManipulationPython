@@ -6,12 +6,16 @@
 #include <fstream>
 #include <vector>
 #include "Data.h"
+#include <armadillo>
+
+using namespace std;
+using namespace arma;
 
 Data::Data(string filename){
     _n=0;
     _normTime=0;    //TODO: get normTime and scalePolynome in file.
     _filename=  filename;
-    _file.open(filename);
+    _file.open(_filename);
     if(!_file) {
         std::perror("File opening failed");
     }
@@ -27,8 +31,17 @@ void Data::_convertDataToMatrix(){
     std::cout<<"Reading file...... " << "\n";
     vector <float> num;
     while(getline(_file,line)){
-        num= _splitLine(line,splitter);
+        num = _splitLine(line,splitter);
+        mat coords(num.size(),1);
+        coords.fill(0.0);
+        for(int i=0;i<num.size();i++){
+            coords(i,1)=num[i];
+        }
+        _desiredCoords.push_back(coords);
     }
+
+
+
 }
 
 
@@ -48,8 +61,11 @@ vector <float> Data::_splitLine(string line, string splitter){
 
 int Data::getN(){
     return _n;
-
 }
+
+vector <mat> Data::getDesiredCoords(){
+
+};
 
 float Data::getNormTime() {
     return _normTime;

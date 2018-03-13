@@ -5,6 +5,7 @@
 #include "../input/Data.h"
 #include "Solver.h"
 #include <armadillo>
+#include <math.h>
 
 using namespace std;
 using namespace arma;
@@ -28,14 +29,13 @@ mat Solver::_getPoly(float currentTime) {
     _Q.fill(0.0);
     float TT; // Current degree of time
     for(int j=0;j<_n;j++) _Q(0,j)=(j==0)? 1: 0;
-
     for (int i = 0; i <_n; i++) {
         for (int j = 0; j <_n; j++) {
-            if(i==0) _Q(i, j) = pow(time, j - i);
-            else if(i==_n/2) _Q(i, j) = pow(time, j - (i - _n / 2));
+            if(i==0) _Q(i, j) = pow(currentTime, (j - i));
+            else if(i==_n/2) _Q(i, j) = pow(currentTime, (j - (i - _n / 2)));
 
             else if (i>_n/2) {
-                TT = pow(time, j-(i-_n/2));
+                TT = pow(currentTime, j-(i-_n/2));
                 _Q(i, j) = TT*(j-(i-1-_n/2))*_Q(i-1, j)/(TT*currentTime);
                 _Q(i-_n/2, j) = TT*(j-(i-1-_n/2))*_Q(i-1, j)/(TT*currentTime);
             }

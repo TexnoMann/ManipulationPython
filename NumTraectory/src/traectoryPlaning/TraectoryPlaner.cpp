@@ -4,7 +4,11 @@
 
 #include "TraectoryPlaner.h"
 
-TraectoryPlaner::TraectoryPlaner(string filename) {
-    _data(" ");
-    _data.getN();
+TraectoryPlaner::TraectoryPlaner(string filename){
+    _filename=filename;
+    Data _data(_filename);
+}
+
+mat TraectoryPlaner::_translateAbsToRelativeCoords(mat absCoord) {
+    
 }

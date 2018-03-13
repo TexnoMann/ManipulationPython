@@ -10,7 +10,9 @@ using namespace arma;
 class Spline {
     public:
         Spline(int n, float normTime);
-        mat getCoefficient(mat initCoords);
+
+
+    mat getCoefficient(mat initCoords);
 
     private:
         float _normTime;

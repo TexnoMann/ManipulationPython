@@ -4,20 +4,25 @@
 
 #include <string.h>
 #include <array>
+#include <vector>
+#include <armadillo>
+
 
 #ifndef MANNUM_DATA_H
 #define MANNUM_DATA_H
 
 using namespace std;
+using namespace arma;
 
 class Data {
 public:
     Data(string filename);
-    void getData(string filename);
+    vector<mat> getDesiredCoords();
     float getNormTime();
     int getN();
 
 private:
+    vector <mat> _desiredCoords;
     string _filename;
     ifstream _file;
     int _n;

@@ -20,9 +20,6 @@ class TraectoryPlaner {
         float _normTime;
         float _n;
         string _filename;
-        Data _data(string filename);
-        Spline _spline(int n, float normTime);
-        Solver _solver(int n);
 
 
         mat _translateAbsToRelativeCoords(mat absCoord);
