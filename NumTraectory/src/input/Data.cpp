@@ -28,15 +28,22 @@ Data::Data(string filename){
 void Data::_convertDataToMatrix(){
     std::string line;
     std::string splitter=" ";
-    std::cout<<"Reading file...... " << "\n";
+    std::cout<<"Reading file...... " << _filename<< "\n";
     vector <float> num;
+    getline(_file,line);
+    num= _splitLine(line,splitter);
+    _normTime=num[0];
+
     while(getline(_file,line)){
         num = _splitLine(line,splitter);
         mat coords(num.size(),1);
+        _n= num.size()-1;
         coords.fill(0.0);
+
         for(int i=0;i<num.size();i++){
             coords(i,1)=num[i];
         }
+
         _desiredCoords.push_back(coords);
     }
 
@@ -64,7 +71,7 @@ int Data::getN(){
 }
 
 vector <mat> Data::getDesiredCoords(){
-
+    return _desiredCoords;
 };
 
 float Data::getNormTime() {
