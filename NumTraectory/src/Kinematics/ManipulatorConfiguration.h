@@ -9,13 +9,16 @@
 class ManipulatorConfiguration {
     public:
         ManipulatorConfiguration(float a[], float d[]);
-        int numberJoint;
-        float aM[];
-        float dM[];
         float* getdM();
         float* getaM();
+        int getNumberJoint();
         void setdM(float* a);
         void setaM(float* d);
+
+    private:
+        float* _aM;
+        float* _dM;
+        int _numberJoint;
 };
 
 

@@ -5,25 +5,29 @@
 #include "ManipulatorConfiguration.h"
 #include "../input/Data.h"
 
-ManipulatorConfiguration::ManipulatorConfiguration(Data _data) {
-    
-    numberJoint= sizeof(a)/ sizeof(*a);
-    aM=a;
-    dM=d;
+ManipulatorConfiguration::ManipulatorConfiguration(float* a, float* d) {
+
+    _numberJoint= sizeof(a)/ sizeof(*a);
+    _aM=a;
+    _dM=d;
 }
 
 float* ManipulatorConfiguration::getaM() {
-    return aM;
+    return _aM;
 }
 
 float* ManipulatorConfiguration::getdM() {
-    return dM;
+    return _dM;
 }
 
 void ManipulatorConfiguration::setaM(float* a) {
-    aM=a;
+    _aM=a;
 }
 
 void ManipulatorConfiguration::setdM(float* d) {
-    dM=d;
+    _dM=d;
+}
+
+int ManipulatorConfiguration::getNumberJoint() {
+    return _numberJoint;
 }

@@ -22,7 +22,6 @@ public:
     int getN();
 
 private:
-    vector <float> defaultCoords;
     vector <mat> _desiredCoords;
     string _filename;
     ifstream _file;

@@ -22,6 +22,7 @@ mat Jacobian::getRelativeCoords(mat absoluteCoords, mat absoluteSpeed) {
 }
 
 mat Jacobian::getJacobianMatrixCoordsfromRRR(mat coordsMatrix) {
+
     float theta0=coordsMatrix(0,0);
     float theta1=coordsMatrix(1,0);
     float theta2=coordsMatrix(2,0);
