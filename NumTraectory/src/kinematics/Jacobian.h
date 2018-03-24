@@ -15,14 +15,14 @@ using namespace arma;
 class Jacobian {
     public:
         Jacobian(ManipulatorConfiguration configuration);
-        mat getRelativeCoordsSpeed(mat relativeCoords, mat absoluteSpeed);
-        mat getRelativeCoordsOrientation(mat absoluteCoords, mat absoluteSpeedOrientation);
-        mat getAbsoluteCoordsSpeed(mat relativeCoords, mat relativeSpeed);
-        mat getAbsoluteCoordsOrientation(mat relativeCoords, mat relativeSpeedOrientation);
+        colvec getRelativeCoordsSpeed(colvec relativeCoords, colvec absoluteSpeed);
+        mat getRelativeCoordsOrientation(colvec absoluteCoords, colvec absoluteSpeedOrientation);
+        colvec getAbsoluteCoordsSpeed(colvec relativeCoords, colvec relativeSpeed);
+        colvec getAbsoluteCoordsOrientation(colvec relativeCoords, colvec relativeSpeedOrientation);
 
     private:
         ManipulatorConfiguration _configuration;
-        mat getJacobianMatrixCoordsfromRRR(mat coordsMatrix);
+        mat getJacobianMatrixCoordsfromRRR(colvec coordsMatrix);
 };
 
 

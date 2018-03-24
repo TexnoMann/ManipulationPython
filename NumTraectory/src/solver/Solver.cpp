@@ -16,12 +16,13 @@ Solver::Solver(int n) {
     _n=n;
     _Q=mat(_n, _n);
     _Q.fill(0.0);
-    _coords=mat(_n,1);
+    _coords=colvec(_n,1);
     _coords.fill(0.0);
 }
 
-mat Solver::getCoords(float currentTime, mat a){
+colvec Solver::getCoords(float currentTime, colvec a){
     _coords=(_getPoly(currentTime) * a);
+    return _coords;
 }
 
 

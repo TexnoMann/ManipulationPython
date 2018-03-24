@@ -17,12 +17,12 @@ using namespace arma;
 class Data {
 public:
     Data(string filename);
-    vector<mat> getDesiredCoords();
+    vector<colvec> getDesiredCoords();
     float getNormTime();
     int getN();
 
 private:
-    vector <mat> _desiredCoords;
+    vector <colvec> _desiredCoords;
     string _filename;
     ifstream _file;
     int _n;

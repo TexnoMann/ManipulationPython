@@ -16,12 +16,12 @@ class Solver {
         Solver(int n);
 
 
-    mat getCoords(float currentTime, mat a);
+    colvec getCoords(float currentTime, colvec a);
 
     private:
         mat _Q;
         int _n;
-        mat _coords;
+        colvec _coords;
         mat _getPoly(float currentTime);
 
 

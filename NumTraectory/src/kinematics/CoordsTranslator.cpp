@@ -9,8 +9,8 @@ CoordsTranslator::CoordsTranslator(ManipulatorConfiguration configuration): _con
     _configuration=configuration;
 }
 
-mat CoordsTranslator::getRelativeCoords(mat absoluteCoords) {
-    mat q(_configuration.getNumberJoint(),1);
+colvec CoordsTranslator::getRelativeCoords(colvec absoluteCoords) {
+    colvec q(_configuration.getNumberJoint(),1);
     float* _a= _configuration.getaM();
     float* _d= _configuration.getdM();
 
@@ -41,29 +41,29 @@ mat CoordsTranslator::getRelativeCoords(mat absoluteCoords) {
 }
 
 
-mat CoordsTranslator::getAbsCoords(mat relativeCoords) {
-    mat xyz = {{_getX(relativeCoords), _getY(relativeCoords), _getZ(relativeCoords)}};
+colvec CoordsTranslator::getAbsCoords(colvec relativeCoords) {
+    colvec xyz = {_getX(relativeCoords), _getY(relativeCoords), _getZ(relativeCoords)};
     return xyz;
 }
 
 
 
 
-float CoordsTranslator::_getX(mat relativeCoords) {
+float CoordsTranslator::_getX(colvec relativeCoords) {
     float* _a= _configuration.getaM();
     float* _d= _configuration.getdM();
     float X= _a[0] * cos(relativeCoords(0,0)) + _d[1] * sin(relativeCoords(0,0)) + _d[2] * sin(relativeCoords(0,0)) + _a[1] * cos(relativeCoords(0,0)) * -sin(relativeCoords(1,0)) + _a[2] * cos(relativeCoords(0,0)) * -sin(relativeCoords(1,0)) * cos(relativeCoords(2,0)) - _a[2] * cos(relativeCoords(0,0)) * cos(relativeCoords(1,0)) * sin(relativeCoords(2,0));
     return X;
 }
 
-float CoordsTranslator::_getY(mat relativeCoords){
+float CoordsTranslator::_getY(colvec relativeCoords){
     float* _a= _configuration.getaM();
     float* _d= _configuration.getdM();
     float Y = _a[0] * sin(relativeCoords(0,0)) - _d[2] * cos(relativeCoords(0,0)) - _d[1] * cos(relativeCoords(0,0)) + _a[1] * -sin(relativeCoords(1,0)) * sin(relativeCoords(0,0)) + _a[2] * -sin(relativeCoords(1,0)) * cos(relativeCoords(2,0)) * sin(relativeCoords(0,0)) - _a[2] * sin(relativeCoords(0,0)) * cos(relativeCoords(1,0)) * sin(relativeCoords(2,0));
     return Y;
 }
 
-float CoordsTranslator::_getZ(mat relativeCoords) {
+float CoordsTranslator::_getZ(colvec relativeCoords) {
     float* _a= _configuration.getaM();
     float* _d= _configuration.getdM();
     float Z = _d[0] + _a[1] * cos(relativeCoords(1,0)) + _a[2] * -sin(relativeCoords(1,0)) * sin(relativeCoords(2,0)) + _a[2] * cos(relativeCoords(2,0)) * cos(relativeCoords(1,0));

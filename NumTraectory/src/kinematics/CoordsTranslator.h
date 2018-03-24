@@ -15,13 +15,13 @@ using namespace arma;
 class CoordsTranslator {
     public:
         CoordsTranslator(ManipulatorConfiguration configuration);
-        mat getAbsCoords(mat relativeCoords);
-        mat getRelativeCoords(mat absoluteCoords);
+        colvec getAbsCoords(colvec relativeCoords);
+        colvec getRelativeCoords(colvec absoluteCoords);
     private:
         ManipulatorConfiguration _configuration;
-        float _getX(mat relativeCoords);
-        float _getY(mat relativeCoords);
-        float _getZ(mat relativeCoords);
+        float _getX(colvec relativeCoords);
+        float _getY(colvec relativeCoords);
+        float _getZ(colvec relativeCoords);
 
 
 };

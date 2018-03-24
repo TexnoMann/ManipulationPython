@@ -21,23 +21,6 @@ TraectoryPlaner::TraectoryPlaner(string filename, ManipulatorConfiguration confi
 
 void TraectoryPlaner:: generateTrajectory(DataOut out){
 
-    int numberPoint = _data.getDesiredCoords().size();
-    int numberCoords=_data.getDesiredCoords()[0].size();
-
-    vector <mat> relCoordsList;
-
-
-    for(int i=1;i<numberPoint;i++){
-        mat coordsAbsFirst=_data.getDesiredCoords()[i-1];
-        mat coordsAbsSecond= _data.getDesiredCoords()[i];
-        mat absCoords(numberCoords,1);
-        for (int j=0;j<numberCoords;j++){
-            absCoords(j,0) = coordsAbsFirst(j,0);
-            absCoords(j+numberCoords,0) = coordsAbsSecond(j,0);
-
-
-        }
-    }
 }
 
 float TraectoryPlaner:: tuneTime(float time){
@@ -46,13 +29,13 @@ float TraectoryPlaner:: tuneTime(float time){
 }
 
 
-mat TraectoryPlaner::_getPolyValue(mat initCoords, float currentTime){
+colvec TraectoryPlaner::_getPolyValue(colvec initCoords, float currentTime){
     _coeff= _spline.getCoefficient(initCoords);
-    mat coords=_solver.getCoords(currentTime,_coeff);
+    colvec coords=_solver.getCoords(currentTime,_coeff);
     return coords;
 }
 
-mat TraectoryPlaner::InverseTaskKinematicSolv(mat relCoords) {
+mat TraectoryPlaner::InverseTaskKinematicSolv(mat) {
 
 }
 

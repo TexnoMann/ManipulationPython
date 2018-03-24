@@ -10,13 +10,13 @@ using namespace arma;
 Spline::Spline(int n, float normTime) {
     _n = n;
     _normTime=normTime;
-    _a=mat(_n, 1);
+    _a=colvec(_n, 1);
     _a.fill(0.0);
     _Q=mat(_n, _n);
     _Q.fill(0.0);
 }
 
-mat Spline::getCoefficient(mat initCoords){
+colvec Spline::getCoefficient(colvec initCoords){
     _a=inv( _make_Q(_normTime) )* initCoords;
     return _a;
     }

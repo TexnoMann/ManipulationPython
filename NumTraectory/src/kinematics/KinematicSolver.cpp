@@ -11,21 +11,19 @@ KinematicSolver::KinematicSolver(ManipulatorConfiguration configuration) :
 
         _defaultAbsLinearAcceleration = 0.02;
         _defaultAbsLinearSpeed = 0.1;
-        _defaultRelAcceleration = 0.3;
-        _defaultRelSpeed= 0.8;
-        
+
 }
 
-mat KinematicSolver::getRelativeCoords(mat absCoords) {
-    int numberCoords = absCoords.size();
-    mat relCoords(numberCoords,1);
-    relCoords.fill(0);
-    if(numberCoords<2) {
-        cout<< "Error init coords.";
-        exit(0);
-    }
-    else if(numberCoords==2){
+colvec KinematicSolver::getRelativeCoords(colvec initCoords) { //Matrix initCoords: (X,Y,Z,timetravel)
+    float X=initCoords(0,0);
+    float Y=initCoords(1,0);
+    float Z=initCoords(2,0);
+
+    colvec absCoordinats = {X,Y,Z};
+
+
+    return absCoordinats;
 
     }
 
-}
+

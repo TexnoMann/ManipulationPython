@@ -10,17 +10,17 @@ Jacobian::Jacobian(ManipulatorConfiguration configuration): _configuration(confi
 }
 
 
-mat Jacobian::getAbsoluteCoordsSpeed(mat relativeCoords, mat relativeSpeed) {
+colvec Jacobian::getAbsoluteCoordsSpeed(colvec relativeCoords, colvec relativeSpeed) {
     mat absoluteSpeed = getJacobianMatrixCoordsfromRRR(relativeCoords)*relativeSpeed;
     return absoluteSpeed;
 }
 
-mat Jacobian::getRelativeCoordsSpeed(mat relativeCoords, mat absoluteSpeed) {
+colvec Jacobian::getRelativeCoordsSpeed(colvec relativeCoords, colvec absoluteSpeed) {
     mat relativeSpeed = inv(getJacobianMatrixCoordsfromRRR(relativeCoords))*absoluteSpeed;
     return relativeSpeed;
 }
 
-mat Jacobian::getJacobianMatrixCoordsfromRRR(mat coordsMatrix) {
+mat Jacobian::getJacobianMatrixCoordsfromRRR(colvec coordsMatrix) {
     float* _a=_configuration.getaM();
     float* _d=_configuration.getdM();
     float theta0=coordsMatrix(0,0);

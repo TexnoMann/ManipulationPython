@@ -36,12 +36,12 @@ void Data::_convertDataToMatrix(){
 
     while(getline(_file,line)){
         num = _splitLine(line,splitter);
-        mat coords(num.size(),1);
+        colvec coords(num.size());
         _n= num.size()-1;
         coords.fill(0.0);
 
-        for(int i=0;i<num.size();i++){
-            coords(i,1)=num[i];
+        for(int i=0;i<_n;i++){
+            coords(i)=num[i];
         }
 
         _desiredCoords.push_back(coords);
@@ -70,7 +70,7 @@ int Data::getN(){
     return _n;
 }
 
-vector <mat> Data::getDesiredCoords(){
+vector <colvec> Data::getDesiredCoords(){ // (X, Y, Z, timeTravel)
     return _desiredCoords;
 };
 

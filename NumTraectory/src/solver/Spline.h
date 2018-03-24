@@ -12,12 +12,12 @@ class Spline {
         Spline(int n, float normTime);
 
 
-    mat getCoefficient(mat initCoords);
+    colvec getCoefficient(colvec initCoords);
 
     private:
         float _normTime;
         int _n;
-        mat _a;
+        colvec _a;
         mat _Q;
         int _fact(int count);
         mat _make_Q(float t);

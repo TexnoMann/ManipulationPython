@@ -27,9 +27,8 @@ class TraectoryPlaner {
 
         float _n;
         string _filename;
-        mat _poly;
-        mat _coeff;
-        mat _getPolyValue(mat initCoords, float currentTime);
+        colvec _coeff;
+        colvec _getPolyValue(colvec initCoords, float currentTime);
         float tuneTime(float time);
         mat InverseTaskKinematicSolv(mat relCoords);
 };
