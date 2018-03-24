@@ -82,7 +82,7 @@ class PIDSpeedController:
                 # Holding Joint
                 if self._holding:
                     self.__motor.stop(stop_action='hold')
-                else :
+                else:
                     self.__motor.stop(duty_cycle_sp='0')
                 sleep(self.__updateTime)
 

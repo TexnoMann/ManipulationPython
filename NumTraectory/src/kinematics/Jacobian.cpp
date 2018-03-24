@@ -5,24 +5,24 @@
 #include "Jacobian.h"
 #include "ManipulatorConfiguration.h"
 
-Jacobian::Jacobian(ManipulatorConfiguration configuration) {
-    _a=configuration.getaM();
-    _d=configuration.getdM();
+Jacobian::Jacobian(ManipulatorConfiguration configuration): _configuration(configuration) {
+    _configuration=configuration;
 }
 
 
-mat Jacobian::getAbsoluteCoords(mat relativeCoords, mat relativeSpeed) {
-    mat absoluteCoords = inv(getJacobianMatrixCoordsfromRRR(relativeCoords))*relativeSpeed;
-    return absoluteCoords;
+mat Jacobian::getAbsoluteCoordsSpeed(mat relativeCoords, mat relativeSpeed) {
+    mat absoluteSpeed = getJacobianMatrixCoordsfromRRR(relativeCoords)*relativeSpeed;
+    return absoluteSpeed;
 }
 
-mat Jacobian::getRelativeCoords(mat absoluteCoords, mat absoluteSpeed) {
-    mat relativeSpeed = getJacobianMatrixCoordsfromRRR(absoluteCoords)*absoluteSpeed;
+mat Jacobian::getRelativeCoordsSpeed(mat relativeCoords, mat absoluteSpeed) {
+    mat relativeSpeed = inv(getJacobianMatrixCoordsfromRRR(relativeCoords))*absoluteSpeed;
     return relativeSpeed;
 }
 
 mat Jacobian::getJacobianMatrixCoordsfromRRR(mat coordsMatrix) {
-
+    float* _a=_configuration.getaM();
+    float* _d=_configuration.getdM();
     float theta0=coordsMatrix(0,0);
     float theta1=coordsMatrix(1,0);
     float theta2=coordsMatrix(2,0);

@@ -5,15 +5,14 @@
 #include "CoordsTranslator.h"
 #include <cmath>
 
-CoordsTranslator::CoordsTranslator(ManipulatorConfiguration configuration) {
-    _a=configuration.getaM();
-    _d=configuration.getdM();
-    _numberJoint=configuration.getNumberJoint();
-
+CoordsTranslator::CoordsTranslator(ManipulatorConfiguration configuration): _configuration(configuration) {
+    _configuration=configuration;
 }
 
 mat CoordsTranslator::getRelativeCoords(mat absoluteCoords) {
-    mat q(_numberJoint,1);
+    mat q(_configuration.getNumberJoint(),1);
+    float* _a= _configuration.getaM();
+    float* _d= _configuration.getdM();
 
     float X03=absoluteCoords(0,0);
     float Y03=absoluteCoords(1,0);
@@ -51,16 +50,22 @@ mat CoordsTranslator::getAbsCoords(mat relativeCoords) {
 
 
 float CoordsTranslator::_getX(mat relativeCoords) {
+    float* _a= _configuration.getaM();
+    float* _d= _configuration.getdM();
     float X= _a[0] * cos(relativeCoords(0,0)) + _d[1] * sin(relativeCoords(0,0)) + _d[2] * sin(relativeCoords(0,0)) + _a[1] * cos(relativeCoords(0,0)) * -sin(relativeCoords(1,0)) + _a[2] * cos(relativeCoords(0,0)) * -sin(relativeCoords(1,0)) * cos(relativeCoords(2,0)) - _a[2] * cos(relativeCoords(0,0)) * cos(relativeCoords(1,0)) * sin(relativeCoords(2,0));
     return X;
 }
 
 float CoordsTranslator::_getY(mat relativeCoords){
+    float* _a= _configuration.getaM();
+    float* _d= _configuration.getdM();
     float Y = _a[0] * sin(relativeCoords(0,0)) - _d[2] * cos(relativeCoords(0,0)) - _d[1] * cos(relativeCoords(0,0)) + _a[1] * -sin(relativeCoords(1,0)) * sin(relativeCoords(0,0)) + _a[2] * -sin(relativeCoords(1,0)) * cos(relativeCoords(2,0)) * sin(relativeCoords(0,0)) - _a[2] * sin(relativeCoords(0,0)) * cos(relativeCoords(1,0)) * sin(relativeCoords(2,0));
     return Y;
 }
 
 float CoordsTranslator::_getZ(mat relativeCoords) {
+    float* _a= _configuration.getaM();
+    float* _d= _configuration.getdM();
     float Z = _d[0] + _a[1] * cos(relativeCoords(1,0)) + _a[2] * -sin(relativeCoords(1,0)) * sin(relativeCoords(2,0)) + _a[2] * cos(relativeCoords(2,0)) * cos(relativeCoords(1,0));
     return Z;
 }

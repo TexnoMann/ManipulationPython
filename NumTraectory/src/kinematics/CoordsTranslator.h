@@ -18,9 +18,7 @@ class CoordsTranslator {
         mat getAbsCoords(mat relativeCoords);
         mat getRelativeCoords(mat absoluteCoords);
     private:
-        float* _a;
-        float* _d;
-        int _numberJoint;
+        ManipulatorConfiguration _configuration;
         float _getX(mat relativeCoords);
         float _getY(mat relativeCoords);
         float _getZ(mat relativeCoords);
