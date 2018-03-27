@@ -16,12 +16,12 @@ using namespace std;
 class KinematicSolver {
     public:
         KinematicSolver (ManipulatorConfiguration configuration);
-        colvec getRelativeCoords(colvec absCoords);
+        colvec getVectorMoving(colvec absCoords);
         colvec getAbsCoords(colvec relCoords);
     private:
         ManipulatorConfiguration _configuration;
-        Jacobian _jacobian;
         CoordsTranslator _coordsTranslator;
+        Jacobian _jacobian;
         float _defaultAbsLinearSpeed;
         float _defaultAbsLinearAcceleration;
 

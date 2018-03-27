@@ -53,4 +53,6 @@ J=[cross(z00,(p0N-p00)),    cross(z01,(p0N-p01)),   cross(z02,(p0N-p02));
         z00             ,           z01         ,           z02         ];
 dJdt=diff(J);
 S=J*[qs0;qs1;qs2];
+
+b
     

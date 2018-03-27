@@ -19,6 +19,7 @@ public:
     Data(string filename);
     vector<colvec> getDesiredCoords();
     float getNormTime();
+    float getControllerUpdateTime();
     int getN();
 
 private:
@@ -27,6 +28,7 @@ private:
     ifstream _file;
     int _n;
     float _normTime;
+    float _controllerUpdateTime;
     void _convertDataToMatrix();
     vector <float> _splitLine(string line, string splitter);
 };

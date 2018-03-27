@@ -13,8 +13,9 @@ using namespace arma;
 
 Data::Data(string filename){
     _n=0;
-    _normTime=0;    //TODO: get normTime and scalePolynome in file.
-    _filename=  filename;
+    _normTime=0;
+    _controllerUpdateTime=0;
+    _filename = filename;
     _file.open(_filename);
     if(!_file) {
         std::perror("File opening failed");
@@ -33,6 +34,7 @@ void Data::_convertDataToMatrix(){
     getline(_file,line);
     num= _splitLine(line,splitter);
     _normTime=num[0];
+    _controllerUpdateTime=num[1];
 
     while(getline(_file,line)){
         num = _splitLine(line,splitter);
@@ -41,7 +43,7 @@ void Data::_convertDataToMatrix(){
         coords.fill(0.0);
 
         for(int i=0;i<_n;i++){
-            coords(i)=num[i];
+            coords(i,0)=num[i];
         }
 
         _desiredCoords.push_back(coords);
@@ -70,11 +72,15 @@ int Data::getN(){
     return _n;
 }
 
-vector <colvec> Data::getDesiredCoords(){ // (X, Y, Z, timeTravel)
+vector <colvec> Data::getDesiredCoords(){ // (X, Y, Z, fullspeed, fullaceleration)
     return _desiredCoords;
 };
 
 float Data::getNormTime() {
     return _normTime;
+}
+
+float Data::getControllerUpdateTime() {
+    return _controllerUpdateTime;
 }
 
