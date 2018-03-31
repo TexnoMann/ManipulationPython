@@ -2,14 +2,14 @@
 // Created by texnoman on 16.03.18.
 //
 
-#include "CoordsTranslator.h"
+#include "CoordsTranslatorRRR.h"
 #include <cmath>
 
-CoordsTranslator::CoordsTranslator(ManipulatorConfiguration configuration): _configuration(configuration) {
+CoordsTranslatorRRR::CoordsTranslatorRRR(ManipulatorConfiguration configuration): _configuration(configuration) {
     _configuration=configuration;
 }
 
-colvec CoordsTranslator::getRelativeCoords(colvec absoluteCoords) {
+colvec CoordsTranslatorRRR::getRelativeCoords(colvec absoluteCoords) {
     colvec q(_configuration.getNumberJoint(),1);
     float* _a= _configuration.getaM();
     float* _d= _configuration.getdM();
@@ -36,12 +36,11 @@ colvec CoordsTranslator::getRelativeCoords(colvec absoluteCoords) {
     float cq2 = (d2 - pow(_a[1], 2) - pow(_a[2], 2))/(2*_a[1]*_a[2]);
     q(2,0) = atan2(-sqrt(1-pow(cq2, 2)), cq2);
     q(1,0) = -(M_PI/2-(atan2(c, b) - atan2(_a[2]*sin(q(2,0)), _a[1]+cq2*_a[2])));
-
     return q;
 }
 
 
-colvec CoordsTranslator::getAbsCoords(colvec relativeCoords) {
+colvec CoordsTranslatorRRR::getAbsCoords(colvec relativeCoords) {
     colvec xyz = {_getX(relativeCoords), _getY(relativeCoords), _getZ(relativeCoords)};
     return xyz;
 }
@@ -49,21 +48,21 @@ colvec CoordsTranslator::getAbsCoords(colvec relativeCoords) {
 
 
 
-float CoordsTranslator::_getX(colvec relativeCoords) {
+float CoordsTranslatorRRR::_getX(colvec relativeCoords) {
     float* _a= _configuration.getaM();
     float* _d= _configuration.getdM();
     float X= _a[0] * cos(relativeCoords(0,0)) + _d[1] * sin(relativeCoords(0,0)) + _d[2] * sin(relativeCoords(0,0)) + _a[1] * cos(relativeCoords(0,0)) * -sin(relativeCoords(1,0)) + _a[2] * cos(relativeCoords(0,0)) * -sin(relativeCoords(1,0)) * cos(relativeCoords(2,0)) - _a[2] * cos(relativeCoords(0,0)) * cos(relativeCoords(1,0)) * sin(relativeCoords(2,0));
     return X;
 }
 
-float CoordsTranslator::_getY(colvec relativeCoords){
+float CoordsTranslatorRRR::_getY(colvec relativeCoords){
     float* _a= _configuration.getaM();
     float* _d= _configuration.getdM();
     float Y = _a[0] * sin(relativeCoords(0,0)) - _d[2] * cos(relativeCoords(0,0)) - _d[1] * cos(relativeCoords(0,0)) + _a[1] * -sin(relativeCoords(1,0)) * sin(relativeCoords(0,0)) + _a[2] * -sin(relativeCoords(1,0)) * cos(relativeCoords(2,0)) * sin(relativeCoords(0,0)) - _a[2] * sin(relativeCoords(0,0)) * cos(relativeCoords(1,0)) * sin(relativeCoords(2,0));
     return Y;
 }
 
-float CoordsTranslator::_getZ(colvec relativeCoords) {
+float CoordsTranslatorRRR::_getZ(colvec relativeCoords) {
     float* _a= _configuration.getaM();
     float* _d= _configuration.getdM();
     float Z = _d[0] + _a[1] * cos(relativeCoords(1,0)) + _a[2] * -sin(relativeCoords(1,0)) * sin(relativeCoords(2,0)) + _a[2] * cos(relativeCoords(2,0)) * cos(relativeCoords(1,0));

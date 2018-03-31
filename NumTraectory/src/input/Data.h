@@ -20,7 +20,7 @@ public:
     vector<colvec> getDesiredCoords();
     float getNormTime();
     float getControllerUpdateTime();
-    int getN();
+    int getCountCoords();
 
 private:
     vector <colvec> _desiredCoords;

@@ -11,6 +11,8 @@
 using namespace std;
 using namespace arma;
 
+
+
 Data::Data(string filename){
     _n=0;
     _normTime=0;
@@ -35,17 +37,15 @@ void Data::_convertDataToMatrix(){
     num= _splitLine(line,splitter);
     _normTime=num[0];
     _controllerUpdateTime=num[1];
-
     while(getline(_file,line)){
         num = _splitLine(line,splitter);
         colvec coords(num.size());
-        _n= num.size()-1;
+        _n= num.size();
         coords.fill(0.0);
 
         for(int i=0;i<_n;i++){
             coords(i,0)=num[i];
         }
-
         _desiredCoords.push_back(coords);
     }
 
@@ -68,7 +68,7 @@ vector <float> Data::_splitLine(string line, string splitter){
     return number;
 }
 
-int Data::getN(){
+int Data::getCountCoords(){
     return _n;
 }
 

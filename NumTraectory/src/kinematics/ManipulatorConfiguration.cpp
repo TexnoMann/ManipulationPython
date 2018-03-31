@@ -7,7 +7,7 @@
 
 ManipulatorConfiguration::ManipulatorConfiguration(float* a, float* d) {
 
-    _numberJoint= sizeof(a)/ sizeof(*a);
+    _numberJoint= sizeof(a)/ sizeof(*a)+1;
     _aM=a;
     _dM=d;
 }

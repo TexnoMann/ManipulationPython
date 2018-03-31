@@ -12,9 +12,9 @@
 
 using namespace arma;
 
-class Jacobian {
+class JacobianRRR {
     public:
-        Jacobian(ManipulatorConfiguration configuration);
+        JacobianRRR(ManipulatorConfiguration configuration);
         colvec getRelativeCoordsSpeed(colvec relativeCoords, colvec absoluteSpeed);
         mat getRelativeCoordsOrientation(colvec absoluteCoords, colvec absoluteSpeedOrientation);
         colvec getAbsoluteCoordsSpeed(colvec relativeCoords, colvec relativeSpeed);

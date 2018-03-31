@@ -2,25 +2,25 @@
 // Created by texnoman on 07.03.18.
 //
 
-#include "Jacobian.h"
+#include "JacobianRRR.h"
 #include "ManipulatorConfiguration.h"
 
-Jacobian::Jacobian(ManipulatorConfiguration configuration): _configuration(configuration) {
+JacobianRRR::JacobianRRR(ManipulatorConfiguration configuration): _configuration(configuration) {
     _configuration=configuration;
 }
 
 
-colvec Jacobian::getAbsoluteCoordsSpeed(colvec relativeCoords, colvec relativeSpeed) {
+colvec JacobianRRR::getAbsoluteCoordsSpeed(colvec relativeCoords, colvec relativeSpeed) {
     mat absoluteSpeed = getJacobianMatrixCoordsfromRRR(relativeCoords)*relativeSpeed;
     return absoluteSpeed;
 }
 
-colvec Jacobian::getRelativeCoordsSpeed(colvec relativeCoords, colvec absoluteSpeed) {
+colvec JacobianRRR::getRelativeCoordsSpeed(colvec relativeCoords, colvec absoluteSpeed) {
     mat relativeSpeed = inv(getJacobianMatrixCoordsfromRRR(relativeCoords))*absoluteSpeed;
     return relativeSpeed;
 }
 
-mat Jacobian::getJacobianMatrixCoordsfromRRR(colvec coordsMatrix) {
+mat JacobianRRR::getJacobianMatrixCoordsfromRRR(colvec coordsMatrix) {
     float* _a=_configuration.getaM();
     float* _d=_configuration.getdM();
     float theta0=coordsMatrix(0,0);

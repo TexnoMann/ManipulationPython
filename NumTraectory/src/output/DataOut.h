@@ -14,11 +14,13 @@ using namespace arma;
 
 class DataOut {
     public:
-        DataOut(string filename);
+        DataOut(string filenameOut);
+        void putToFile(vector <colvec> lastCoords);
     private:
-        string _filename;
-        vector <mat> _input;
+        string _filenameOut;
+        vector <mat> _inputCoords;
         int _numberLine;
+        ofstream _fileOut;
 };
 
 

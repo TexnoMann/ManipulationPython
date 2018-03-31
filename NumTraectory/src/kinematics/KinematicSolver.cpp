@@ -1,43 +1,76 @@
 //
-// Created by texnoman on 24.03.18.
+// Created by texnoman on 31.03.18.
 //
 
 #include "KinematicSolver.h"
 
-KinematicSolver::KinematicSolver(ManipulatorConfiguration configuration) :
-        _configuration(configuration),
-        _coordsTranslator(CoordsTranslator(_configuration)),
-        _jacobian(Jacobian(_configuration)){
+KinematicSolver::KinematicSolver(ManipulatorConfiguration config)
+        : _config(config),
+          _relCoords(CoordsTranslatorRRR(config)),
+          _relSpeed(JacobianRRR(config)){
 
 }
 
-colvec KinematicSolver::getVectorMoving(colvec initCoords) { //Matrix initCoords: (time, X,Y,Z, X',Y',Z', X'',Y'',Z'')
 
+mat KinematicSolver::_translateDataLineToCoords(colvec startPos, colvec finishPos) {
+    mat coordsfromSolv(2,startPos.size());
 
-    colvec absCoordinats = {initCoords(0,0),initCoords(1,0),initCoords(2,0)};
-    colvec relCoordinats = _coordsTranslator.getRelativeCoords(absCoordinats);
-
-    colvec absSpeed = { initCoords(3,0),initCoords(4,0), initCoords(5,0)};
-    colvec relSpeed = _jacobian.getRelativeCoordsSpeed(relCoordinats, absSpeed);
-
-    colvec moving(initCoords.size());
-
-    if(initCoords.size()>6) {
-        colvec absAcceleration = {initCoords(6,0), initCoords(7,0), initCoords(8,0)}; //TODO Derivated Jacobian
-        colvec relAcceleration;
-
-        moving = {relCoordinats(0,0), relCoordinats(1,0), relCoordinats(2,0),
-                         relSpeed(0,0), relSpeed(1,0), relSpeed(2,0),
-                         relAcceleration(0,0), relAcceleration(1,0), relAcceleration(2,0)};
+    coordsfromSolv.fill(0.0);
+    for(int i=0; i<startPos.size(); i++){
+        coordsfromSolv(0,i)=startPos(i);
+        coordsfromSolv(1,i)=finishPos(i);
     }
 
+    return coordsfromSolv;
+}
+
+mat KinematicSolver::getfullCoordsfromPlaning(colvec startPos, colvec finishPos) {
+    mat dataMatrix= _translateDataLineToCoords(startPos,finishPos);
+    mat fullCoords= _solvDataMatrix(dataMatrix);
+    return fullCoords;
+}
+
+mat KinematicSolver::_solvDataMatrix(mat dataMatrix) {
+    mat solvmatrix(2,((colvec)(dataMatrix.col(1))).size());
+
+    if (((colvec)(dataMatrix.col(1))).size()<=6){
+        colvec startXYZ = {dataMatrix(0,0),dataMatrix(0,1),dataMatrix(0,2)};
+        colvec startderivatedXYZ = {dataMatrix(0,3), dataMatrix(0,4), dataMatrix(0,5)};
+        colvec startq1q2q3= _relCoords.getRelativeCoords(startXYZ);
+        colvec startderivatedq1q2q3 = _relSpeed.getRelativeCoordsSpeed(startq1q2q3,startderivatedXYZ);
+
+        colvec finishXYZ = {dataMatrix(1,0),dataMatrix(1,1),dataMatrix(1,2)};
+        colvec finishderivatedXYZ = {dataMatrix(1,3), dataMatrix(1,4), dataMatrix(1,5)};
+        colvec finishq1q2q3= _relCoords.getRelativeCoords(finishXYZ);
+        colvec finishderivatedq1q2q3 = _relSpeed.getRelativeCoordsSpeed(finishq1q2q3,finishderivatedXYZ);
+
+        solvmatrix={{startq1q2q3(0), startderivatedq1q2q3(0),startq1q2q3(1), startderivatedq1q2q3(1),startq1q2q3(2), startderivatedq1q2q3(2)},
+                    {finishq1q2q3(0),finishderivatedq1q2q3(0),finishq1q2q3(1),finishderivatedq1q2q3(1),finishq1q2q3(2),finishderivatedq1q2q3(2)}};
+
+    }
+    else if(((colvec)(dataMatrix.col(1))).size()<=9){
+        colvec startXYZ = {dataMatrix(0,0),dataMatrix(0,1),dataMatrix(0,2)};
+        colvec startderivatedXYZ = {dataMatrix(0,3), dataMatrix(0,4), dataMatrix(0,5)};
+        colvec startq1q2q3= _relCoords.getRelativeCoords(startXYZ);
+        colvec startderivatedq1q2q3 = _relSpeed.getRelativeCoordsSpeed(startq1q2q3,startderivatedXYZ);
+        //TODO: DerivatedJacobian
+
+
+        colvec finishXYZ = {dataMatrix(1,0),dataMatrix(1,1),dataMatrix(1,2)};
+        colvec finishderivatedXYZ = {dataMatrix(1,3), dataMatrix(1,4), dataMatrix(1,5)};
+        colvec finishq1q2q3= _relCoords.getRelativeCoords(startXYZ);
+        colvec finishderivatedq1q2q3 = _relSpeed.getRelativeCoordsSpeed(startq1q2q3,startderivatedXYZ);
+        //TODO: DerivatedJacobian
+
+        solvmatrix={{startq1q2q3(0), startderivatedq1q2q3(0),startq1q2q3(1), startderivatedq1q2q3(1),startq1q2q3(2), startderivatedq1q2q3(2)},
+                    {finishq1q2q3(0),finishderivatedq1q2q3(0),finishq1q2q3(1),finishderivatedq1q2q3(1),finishq1q2q3(2),finishderivatedq1q2q3(2)}};
+
+
+    }
     else {
-        moving = {relCoordinats(0,0), relCoordinats(1,0), relCoordinats(2,0),
-                         relSpeed(0,0), relSpeed(1,0), relSpeed(2,0)};
+        cout<< "Error KinematicSolver: error dimension";
+        exit(0);
     }
 
-    return moving;
-
-    }
-
-
+    return trans(solvmatrix);
+}

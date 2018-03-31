@@ -17,16 +17,17 @@ Spline::Spline(int n, float normTime) {
 }
 
 colvec Spline::getCoefficient(colvec initCoords){
-    _a=inv( _make_Q(_normTime) )* initCoords;
+    _a=inv( _make_Q(_normTime) ) * initCoords;
+
     return _a;
     }
 
 
 mat Spline:: _make_Q(float time){
+
     _Q.fill(0.0);
     float TT; // Current degree of time
     for(int j=0;j<_n;j++) _Q(0,j)=(j==0)? 1: 0;
-
     for (int i = 1; i <_n; i++) {
         for (int j = 0; j <_n; j++) {
             if(i<_n/2){
@@ -41,6 +42,7 @@ mat Spline:: _make_Q(float time){
             }
         }
     }
+
     _Q(_n/2,0)=1.0;
     return _Q;
 }

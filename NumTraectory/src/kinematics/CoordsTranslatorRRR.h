@@ -12,9 +12,9 @@
 using namespace std;
 using namespace arma;
 
-class CoordsTranslator {
+class CoordsTranslatorRRR {
     public:
-        CoordsTranslator(ManipulatorConfiguration configuration);
+        CoordsTranslatorRRR(ManipulatorConfiguration configuration);
         colvec getAbsCoords(colvec relativeCoords);
         colvec getRelativeCoords(colvec absoluteCoords);
     private:
