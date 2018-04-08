@@ -12,11 +12,11 @@
 
 using namespace arma;
 
-class JacobianRRR {
+class SpeedTranslatorRRR {
     public:
-        JacobianRRR(ManipulatorConfiguration configuration);
+        SpeedTranslatorRRR(ManipulatorConfiguration configuration);
         colvec getRelativeCoordsSpeed(colvec relativeCoords, colvec absoluteSpeed);
-        mat getRelativeCoordsOrientation(colvec absoluteCoords, colvec absoluteSpeedOrientation);
+        colvec getRelativeCoordsOrientation(colvec absoluteCoords, colvec absoluteSpeedOrientation);
         colvec getAbsoluteCoordsSpeed(colvec relativeCoords, colvec relativeSpeed);
         colvec getAbsoluteCoordsOrientation(colvec relativeCoords, colvec relativeSpeedOrientation);
 

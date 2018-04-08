@@ -7,24 +7,28 @@
 DataOut::DataOut(string filenameOut) {
 
     _filenameOut = filenameOut;
-    _fileOut.open(_filenameOut);
-    if(!_fileOut){
-        cout<<"Creating File!......";
+    _fileOutAngle.open(_filenameOut+".angle.out");
+    _fileOutSpeed.open(_filenameOut+".speed.out");
+
+    if(!_fileOutAngle){
+        cout<<"Creating File from Angle!......";
+    }
+
+    if(!_fileOutSpeed){
+        cout<<"Creating File from Speed!......";
     }
 }
 
-void DataOut::putToFile(vector <colvec> lastCoords) {
-    cout<<"=================================================================================\n";
-    cout<<" Traectory Generated                                                            |\n";
-    cout<<"=================================================================================\n";
+void DataOut::putToFileAngle(rowvec lastCoords) {
+    _fileOutAngle << lastCoords;
+}
 
-    _fileOut<<"=================================================================================\n";
-    _fileOut<<" Traectory Generated                                                            |\n";
-    _fileOut<<"=================================================================================\n";
-    for(int i=0;i<lastCoords.size(); i++) {
-        _fileOut << trans(lastCoords[i]);
-        cout<<trans(lastCoords[i]);
-    }
-    _fileOut.flush();
-    _fileOut.close();
+void DataOut::putToFileSpeed(rowvec lastSpeed) {
+    _fileOutSpeed << lastSpeed;
+}
+void DataOut::writeClose() {
+    _fileOutAngle.flush();
+    _fileOutSpeed.flush();
+    _fileOutAngle.close();
+    _fileOutSpeed.close();
 }

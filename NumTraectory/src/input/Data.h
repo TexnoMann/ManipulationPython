@@ -21,6 +21,7 @@ public:
     float getNormTime();
     float getControllerUpdateTime();
     int getCountCoords();
+    int getCountPoints();
 
 private:
     vector <colvec> _desiredCoords;

@@ -2,12 +2,12 @@
 // Created by texnoman on 31.03.18.
 //
 
-#include "KinematicSolver.h"
+#include "KinematicSolverRRR.h"
 
 KinematicSolver::KinematicSolver(ManipulatorConfiguration config)
         : _config(config),
           _relCoords(CoordsTranslatorRRR(config)),
-          _relSpeed(JacobianRRR(config)){
+          _relSpeed(SpeedTranslatorRRR(config)){
 
 }
 
@@ -31,7 +31,7 @@ mat KinematicSolver::getfullCoordsfromPlaning(colvec startPos, colvec finishPos)
 }
 
 mat KinematicSolver::_solvDataMatrix(mat dataMatrix) {
-    mat solvmatrix(2,((colvec)(dataMatrix.col(1))).size());
+    mat solvmatrix(_config.getNumberJoint(),((colvec)(dataMatrix.col(1))).size());
 
     if (((colvec)(dataMatrix.col(1))).size()<=6){
         colvec startXYZ = {dataMatrix(0,0),dataMatrix(0,1),dataMatrix(0,2)};
@@ -44,8 +44,9 @@ mat KinematicSolver::_solvDataMatrix(mat dataMatrix) {
         colvec finishq1q2q3= _relCoords.getRelativeCoords(finishXYZ);
         colvec finishderivatedq1q2q3 = _relSpeed.getRelativeCoordsSpeed(finishq1q2q3,finishderivatedXYZ);
 
-        solvmatrix={{startq1q2q3(0), startderivatedq1q2q3(0),startq1q2q3(1), startderivatedq1q2q3(1),startq1q2q3(2), startderivatedq1q2q3(2)},
-                    {finishq1q2q3(0),finishderivatedq1q2q3(0),finishq1q2q3(1),finishderivatedq1q2q3(1),finishq1q2q3(2),finishderivatedq1q2q3(2)}};
+        solvmatrix={{startq1q2q3(0), startderivatedq1q2q3(0),finishq1q2q3(0),finishderivatedq1q2q3(0)},
+                    {startq1q2q3(1), startderivatedq1q2q3(1),finishq1q2q3(1),finishderivatedq1q2q3(1)},
+                    {startq1q2q3(2), startderivatedq1q2q3(2),finishq1q2q3(2),finishderivatedq1q2q3(2)}};
 
     }
     else if(((colvec)(dataMatrix.col(1))).size()<=9){
@@ -62,9 +63,9 @@ mat KinematicSolver::_solvDataMatrix(mat dataMatrix) {
         colvec finishderivatedq1q2q3 = _relSpeed.getRelativeCoordsSpeed(startq1q2q3,startderivatedXYZ);
         //TODO: DerivatedJacobian
 
-        solvmatrix={{startq1q2q3(0), startderivatedq1q2q3(0),startq1q2q3(1), startderivatedq1q2q3(1),startq1q2q3(2), startderivatedq1q2q3(2)},
-                    {finishq1q2q3(0),finishderivatedq1q2q3(0),finishq1q2q3(1),finishderivatedq1q2q3(1),finishq1q2q3(2),finishderivatedq1q2q3(2)}};
-
+        solvmatrix={{startq1q2q3(0), startderivatedq1q2q3(0),finishq1q2q3(0),finishderivatedq1q2q3(0)},
+                    {startq1q2q3(1), startderivatedq1q2q3(1),finishq1q2q3(1),finishderivatedq1q2q3(1)},
+                    {startq1q2q3(2), startderivatedq1q2q3(2),finishq1q2q3(2),finishderivatedq1q2q3(2)}};
 
     }
     else {

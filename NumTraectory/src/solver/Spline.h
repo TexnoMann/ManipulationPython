@@ -10,9 +10,7 @@ using namespace arma;
 class Spline {
     public:
         Spline(int n, float normTime);
-
-
-    colvec getCoefficient(colvec initCoords);
+        colvec getCoefficient(colvec initCoords);
 
     private:
         float _normTime;

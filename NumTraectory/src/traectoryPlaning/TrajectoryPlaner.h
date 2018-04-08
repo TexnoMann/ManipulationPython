@@ -10,18 +10,26 @@
 #include "../solver/Spline.h"
 #include "../solver/Solver.h"
 #include "../kinematics/ManipulatorConfiguration.h"
+#include "../kinematics/KinematicSolverRRR.h"
 
 class TrajectoryPlaner {
 
 public:
-    TrajectoryPlaner(ManipulatorConfiguration config);
-    vector <colvec> getFullCordinats();
+    TrajectoryPlaner(ManipulatorConfiguration config, string datainput, string dataout);
+    void getFullCordinatsJoints();
 
 private:
     ManipulatorConfiguration _config;
+    DataOut _dataout;
+    Data _datainput;
+    KinematicSolver _kinematicSolver;
     Spline _spline;
     Solver _solver;
-    colvec getCoordinatsfromJoint(float time);
+    void getCoordinatsOneSegment(int startNumberPointPosition, int finishNumberPointPosition);
+    mat getStartAndFinishPositionJoint(int startNumberPointPosition, int finishNumberPointPosition);
+
+
+
 
 };
 

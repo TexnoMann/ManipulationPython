@@ -15,12 +15,16 @@ using namespace arma;
 class DataOut {
     public:
         DataOut(string filenameOut);
-        void putToFile(vector <colvec> lastCoords);
+        void putToFileAngle(rowvec lastCoords);
+        void putToFileSpeed(rowvec lastSpeed);
+        void writeClose();
     private:
         string _filenameOut;
         vector <mat> _inputCoords;
         int _numberLine;
-        ofstream _fileOut;
+        ofstream _fileOutAngle;
+        ofstream _fileOutSpeed;
+
 };
 
 

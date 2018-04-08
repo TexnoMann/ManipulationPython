@@ -8,7 +8,7 @@
 #include <armadillo>
 #include "ManipulatorConfiguration.h"
 #include "CoordsTranslatorRRR.h"
-#include "JacobianRRR.h"
+#include "SpeedTranslatorRRR.h"
 
 using namespace std;
 using namespace arma;
@@ -23,7 +23,7 @@ public:
 private:
     ManipulatorConfiguration _config;
     CoordsTranslatorRRR _relCoords;
-    JacobianRRR _relSpeed;
+    SpeedTranslatorRRR _relSpeed;
     mat _translateDataLineToCoords(colvec startPos, colvec finishPos);
     mat _solvDataMatrix(mat dataMatrix);
 };

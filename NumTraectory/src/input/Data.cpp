@@ -76,6 +76,10 @@ vector <colvec> Data::getDesiredCoords(){ // (X, Y, Z, fullspeed, fullaceleratio
     return _desiredCoords;
 };
 
+int Data:: getCountPoints(){
+    return _desiredCoords.size();
+}
+
 float Data::getNormTime() {
     return _normTime;
 }
