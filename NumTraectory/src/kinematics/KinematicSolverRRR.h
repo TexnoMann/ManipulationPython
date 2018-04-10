@@ -9,6 +9,7 @@
 #include "ManipulatorConfiguration.h"
 #include "CoordsTranslatorRRR.h"
 #include "SpeedTranslatorRRR.h"
+#include "AccelerationTranslatorRRR.h"
 
 using namespace std;
 using namespace arma;
@@ -24,6 +25,7 @@ private:
     ManipulatorConfiguration _config;
     CoordsTranslatorRRR _relCoords;
     SpeedTranslatorRRR _relSpeed;
+    AccelerationTranslator _relAcc;
     mat _translateDataLineToCoords(colvec startPos, colvec finishPos);
     mat _solvDataMatrix(mat dataMatrix);
 };

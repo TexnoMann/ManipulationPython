@@ -19,10 +19,11 @@ class SpeedTranslatorRRR {
         colvec getRelativeCoordsOrientation(colvec absoluteCoords, colvec absoluteSpeedOrientation);
         colvec getAbsoluteCoordsSpeed(colvec relativeCoords, colvec relativeSpeed);
         colvec getAbsoluteCoordsOrientation(colvec relativeCoords, colvec relativeSpeedOrientation);
+        mat getJacobianMatrixCoordsfromRRR(colvec coordsMatrix);
 
     private:
         ManipulatorConfiguration _configuration;
-        mat getJacobianMatrixCoordsfromRRR(colvec coordsMatrix);
+
 };
 
 

@@ -3,13 +3,13 @@ J1=M(:,1);
 J2=M(:,2);
 J3=M(:,3);
 
-a0=0.55;
+a0=0.055;
 a1=0.15;
 a2=0.20;
 d0=0.17;
 d1=0;
 d2=0;
-for i=1:20
+for i=1:82
     theta0=J1(i);
     theta1=J2(i);
     theta2=J3(i);
@@ -67,6 +67,7 @@ XYZ(i,:)=p0N;
 
 end
 
+figure()
 plot(XYZ(:,1),XYZ(:,2));
 
 % J=[cross(z00,(p0N-p00)),    cross(z01,(p0N-p01)),   cross(z02,(p0N-p02));

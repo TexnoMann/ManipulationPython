@@ -30,7 +30,7 @@ void TrajectoryPlaner::getCoordinatsOneSegment(int startNumberPointPosition, int
 
     }
 
-        for (float time = 0; time <= _datainput.getNormTime(); time += _datainput.getControllerUpdateTime()) {
+        for (float time = 0; time < _datainput.getNormTime(); time += _datainput.getControllerUpdateTime()) {
             mat currentPos(_datainput.getCountCoords()/_config.getNumberJoint()*2,_config.getNumberJoint());
             currentPos.fill(0.0);
             for(int i=0;i<_config.getNumberJoint();i++){

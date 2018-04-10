@@ -1,4 +1,4 @@
-M= dlmread('/media/files/Man/interpolTest.data');
+
 syms theta0 theta1 theta2 a0 a1 a2 a3 d0 d1 d2 alpha0 alpha1 alpha2 f
 syms qs0 qs1 qs2
 
