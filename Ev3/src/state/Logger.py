@@ -3,7 +3,6 @@ from ev3dev.ev3 import  *
 from threading import *
 from multiprocessing import *
 from time import*
-from src.util.Manipulator import *
 
 class Logger():
     def __init__(self, __man, __logTime):

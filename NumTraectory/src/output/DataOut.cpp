@@ -7,28 +7,29 @@
 DataOut::DataOut(string filenameOut) {
 
     _filenameOut = filenameOut;
-    _fileOutAngle.open(_filenameOut+".angle.out");
-    _fileOutSpeed.open(_filenameOut+".speed.out");
+    _fileOut.open(_filenameOut);
 
-    if(!_fileOutAngle){
-        cout<<"Creating File from Angle!......";
-    }
-
-    if(!_fileOutSpeed){
-        cout<<"Creating File from Speed!......";
+    if(!_fileOut){
+        cout<<"Creating File!......";
     }
 }
 
-void DataOut::putToFileAngle(rowvec lastCoords) {
-    _fileOutAngle << lastCoords;
+void DataOut::putToFile(rowvec lastAngle, rowvec lastSpeed ) {
+    rowvec temp(lastAngle.size()*2);
+    for( int i=0; i<lastAngle.size();i++) {
+        temp[i] = lastAngle[i];
+        if (isnan(temp[i])) temp[i]=0;
+    }
+    for( int i=0; i<lastSpeed.size();i++){
+        temp[i+lastAngle.size()]=lastSpeed[i];
+        if (isnan(temp[i])) temp[i]=0;
+    }
+    _fileOut << temp;
 }
 
-void DataOut::putToFileSpeed(rowvec lastSpeed) {
-    _fileOutSpeed << lastSpeed;
-}
+
 void DataOut::writeClose() {
-    _fileOutAngle.flush();
-    _fileOutSpeed.flush();
-    _fileOutAngle.close();
-    _fileOutSpeed.close();
+    _fileOut.flush();
+    _fileOut.close();
+
 }

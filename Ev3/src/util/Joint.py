@@ -2,41 +2,42 @@ from time import sleep
 
 from threading import Thread, Lock
 
-DT = 0.010
 
 
 class Joint:
 
-    def __init__(self, controllerJoint, __invertMotor):
-        self.__invertMotor = __invertMotor
-        self.controllerJoint = controllerJoint
-        self.controllerJoint.getMotor().reset()
+    def __init__(self, speedControllerJoint):
+        self.speedControllerJoint = speedControllerJoint
+        self.__mode = False
+        self.speedControllerJoint.getMotor().reset()
 
     def moveForever(self, speed):
-        self.controllerJoint.setDesiredSpeed(speed*self.__invertMotor)
-        self.controllerJoint.moveForever()
+        self.speedControllerJoint.setDesiredSpeed(speed)
+        self.speedControllerJoint.moveForever()
 
-    def moveToAngle(self, speed, angle):
+    def moveToAngle(self, angle, speed):
         if angle < self.getCurrentAngle():
             speed = -speed
-        self.controllerJoint.setDesiredSpeed(speed*self.__invertMotor)
-        self.controllerJoint.setDesiredAngle(angle*self.__invertMotor)
-        self.controllerJoint.moveToAngle()
+        self.speedControllerJoint.setDesiredSpeed(speed)
+        self.speedControllerJoint.setDesiredAngle(angle)
+
+        self.speedControllerJoint.moveToAngle()
 
     def getCurrentAngle(self):
-        return self.controllerJoint.stateJoint.getCurrentAngle()*self.__invertMotor
+        return self.speedControllerJoint.stateJoint.getCurrentAngle()
 
     def getCurrentSpeed(self):
-        return self.controllerJoint.stateJoint.getCurrentSpeed()*self.__invertMotor
+        return self.speedControllerJoint.stateJoint.getCurrentSpeed()
 
     def stop(self, holding):
-        self.controllerJoint.stop(holding)
+        self.speedControllerJoint.stop(holding)
 
     def isMoving(self):
-        return not self.controllerJoint.stateJoint.isStalled()
+        return not self.speedControllerJoint.stateJoint.isStalled()
 
     def reset(self):
         self.stop(False)
-        self.controllerJoint.resetController()
+        self.speedControllerJoint.resetController()
 
-
+    def controllerOff(self):
+        self.speedControllerJoint.off()

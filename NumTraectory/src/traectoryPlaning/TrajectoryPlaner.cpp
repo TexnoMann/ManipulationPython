@@ -16,6 +16,7 @@ TrajectoryPlaner::TrajectoryPlaner(ManipulatorConfiguration config, string datai
 
 mat TrajectoryPlaner:: getStartAndFinishPositionJoint(int startNumberPointPosition, int finishNumberPointPosition){
     mat pos=_kinematicSolver.getfullCoordsfromPlaning(_datainput.getDesiredCoords()[startNumberPointPosition], _datainput.getDesiredCoords()[finishNumberPointPosition]);
+
     return pos;
 }
 
@@ -37,15 +38,14 @@ void TrajectoryPlaner::getCoordinatsOneSegment(int startNumberPointPosition, int
                 colvec coords= _solver.getCoords(time, a[i]);
                 currentPos.col(i)=coords;
             }
-            _dataout.putToFileAngle((rowvec)(currentPos.row(0)));
-            _dataout.putToFileSpeed((rowvec)(currentPos.row(1)));
+            _dataout.putToFile((rowvec)(currentPos.row(0)),(rowvec)(currentPos.row(1)));
         }
 
 }
 
 void TrajectoryPlaner::getFullCordinatsJoints() {
-    for(int segmentCount=0;segmentCount<_datainput.getCountPoints();segmentCount++){
-        getCoordinatsOneSegment(segmentCount,segmentCount+1);
-
+    for(int segmentCount=0;segmentCount<_datainput.getCountPoints();segmentCount++) {
+        getCoordinatsOneSegment(segmentCount, segmentCount + 1);
     }
+    _dataout.writeClose();
 }

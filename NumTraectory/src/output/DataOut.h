@@ -8,6 +8,7 @@
 #include <string.h>
 #include <array>
 #include <armadillo>
+#include <string>
 
 using namespace std;
 using namespace arma;
@@ -15,15 +16,13 @@ using namespace arma;
 class DataOut {
     public:
         DataOut(string filenameOut);
-        void putToFileAngle(rowvec lastCoords);
-        void putToFileSpeed(rowvec lastSpeed);
+        void putToFile(rowvec lastAngle, rowvec lastSpeed);
         void writeClose();
     private:
         string _filenameOut;
         vector <mat> _inputCoords;
         int _numberLine;
-        ofstream _fileOutAngle;
-        ofstream _fileOutSpeed;
+        ofstream _fileOut;
 
 };
 

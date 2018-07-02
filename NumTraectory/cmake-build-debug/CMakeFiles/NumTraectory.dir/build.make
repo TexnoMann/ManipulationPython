@@ -177,13 +177,188 @@ CMakeFiles/NumTraectory.dir/src/Test.cpp.o.provides: CMakeFiles/NumTraectory.dir
 CMakeFiles/NumTraectory.dir/src/Test.cpp.o.provides.build: CMakeFiles/NumTraectory.dir/src/Test.cpp.o
 
 
+CMakeFiles/NumTraectory.dir/src/kinematics/SpeedTranslatorRRR.cpp.o: CMakeFiles/NumTraectory.dir/flags.make
+CMakeFiles/NumTraectory.dir/src/kinematics/SpeedTranslatorRRR.cpp.o: ../src/kinematics/SpeedTranslatorRRR.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/files/Man/NumTraectory/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/NumTraectory.dir/src/kinematics/SpeedTranslatorRRR.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/NumTraectory.dir/src/kinematics/SpeedTranslatorRRR.cpp.o -c /media/files/Man/NumTraectory/src/kinematics/SpeedTranslatorRRR.cpp
+
+CMakeFiles/NumTraectory.dir/src/kinematics/SpeedTranslatorRRR.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/NumTraectory.dir/src/kinematics/SpeedTranslatorRRR.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/files/Man/NumTraectory/src/kinematics/SpeedTranslatorRRR.cpp > CMakeFiles/NumTraectory.dir/src/kinematics/SpeedTranslatorRRR.cpp.i
+
+CMakeFiles/NumTraectory.dir/src/kinematics/SpeedTranslatorRRR.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NumTraectory.dir/src/kinematics/SpeedTranslatorRRR.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/files/Man/NumTraectory/src/kinematics/SpeedTranslatorRRR.cpp -o CMakeFiles/NumTraectory.dir/src/kinematics/SpeedTranslatorRRR.cpp.s
+
+CMakeFiles/NumTraectory.dir/src/kinematics/SpeedTranslatorRRR.cpp.o.requires:
+
+.PHONY : CMakeFiles/NumTraectory.dir/src/kinematics/SpeedTranslatorRRR.cpp.o.requires
+
+CMakeFiles/NumTraectory.dir/src/kinematics/SpeedTranslatorRRR.cpp.o.provides: CMakeFiles/NumTraectory.dir/src/kinematics/SpeedTranslatorRRR.cpp.o.requires
+	$(MAKE) -f CMakeFiles/NumTraectory.dir/build.make CMakeFiles/NumTraectory.dir/src/kinematics/SpeedTranslatorRRR.cpp.o.provides.build
+.PHONY : CMakeFiles/NumTraectory.dir/src/kinematics/SpeedTranslatorRRR.cpp.o.provides
+
+CMakeFiles/NumTraectory.dir/src/kinematics/SpeedTranslatorRRR.cpp.o.provides.build: CMakeFiles/NumTraectory.dir/src/kinematics/SpeedTranslatorRRR.cpp.o
+
+
+CMakeFiles/NumTraectory.dir/src/kinematics/ManipulatorConfiguration.cpp.o: CMakeFiles/NumTraectory.dir/flags.make
+CMakeFiles/NumTraectory.dir/src/kinematics/ManipulatorConfiguration.cpp.o: ../src/kinematics/ManipulatorConfiguration.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/files/Man/NumTraectory/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/NumTraectory.dir/src/kinematics/ManipulatorConfiguration.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/NumTraectory.dir/src/kinematics/ManipulatorConfiguration.cpp.o -c /media/files/Man/NumTraectory/src/kinematics/ManipulatorConfiguration.cpp
+
+CMakeFiles/NumTraectory.dir/src/kinematics/ManipulatorConfiguration.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/NumTraectory.dir/src/kinematics/ManipulatorConfiguration.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/files/Man/NumTraectory/src/kinematics/ManipulatorConfiguration.cpp > CMakeFiles/NumTraectory.dir/src/kinematics/ManipulatorConfiguration.cpp.i
+
+CMakeFiles/NumTraectory.dir/src/kinematics/ManipulatorConfiguration.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NumTraectory.dir/src/kinematics/ManipulatorConfiguration.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/files/Man/NumTraectory/src/kinematics/ManipulatorConfiguration.cpp -o CMakeFiles/NumTraectory.dir/src/kinematics/ManipulatorConfiguration.cpp.s
+
+CMakeFiles/NumTraectory.dir/src/kinematics/ManipulatorConfiguration.cpp.o.requires:
+
+.PHONY : CMakeFiles/NumTraectory.dir/src/kinematics/ManipulatorConfiguration.cpp.o.requires
+
+CMakeFiles/NumTraectory.dir/src/kinematics/ManipulatorConfiguration.cpp.o.provides: CMakeFiles/NumTraectory.dir/src/kinematics/ManipulatorConfiguration.cpp.o.requires
+	$(MAKE) -f CMakeFiles/NumTraectory.dir/build.make CMakeFiles/NumTraectory.dir/src/kinematics/ManipulatorConfiguration.cpp.o.provides.build
+.PHONY : CMakeFiles/NumTraectory.dir/src/kinematics/ManipulatorConfiguration.cpp.o.provides
+
+CMakeFiles/NumTraectory.dir/src/kinematics/ManipulatorConfiguration.cpp.o.provides.build: CMakeFiles/NumTraectory.dir/src/kinematics/ManipulatorConfiguration.cpp.o
+
+
+CMakeFiles/NumTraectory.dir/src/kinematics/CoordsTranslatorRRR.cpp.o: CMakeFiles/NumTraectory.dir/flags.make
+CMakeFiles/NumTraectory.dir/src/kinematics/CoordsTranslatorRRR.cpp.o: ../src/kinematics/CoordsTranslatorRRR.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/files/Man/NumTraectory/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/NumTraectory.dir/src/kinematics/CoordsTranslatorRRR.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/NumTraectory.dir/src/kinematics/CoordsTranslatorRRR.cpp.o -c /media/files/Man/NumTraectory/src/kinematics/CoordsTranslatorRRR.cpp
+
+CMakeFiles/NumTraectory.dir/src/kinematics/CoordsTranslatorRRR.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/NumTraectory.dir/src/kinematics/CoordsTranslatorRRR.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/files/Man/NumTraectory/src/kinematics/CoordsTranslatorRRR.cpp > CMakeFiles/NumTraectory.dir/src/kinematics/CoordsTranslatorRRR.cpp.i
+
+CMakeFiles/NumTraectory.dir/src/kinematics/CoordsTranslatorRRR.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NumTraectory.dir/src/kinematics/CoordsTranslatorRRR.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/files/Man/NumTraectory/src/kinematics/CoordsTranslatorRRR.cpp -o CMakeFiles/NumTraectory.dir/src/kinematics/CoordsTranslatorRRR.cpp.s
+
+CMakeFiles/NumTraectory.dir/src/kinematics/CoordsTranslatorRRR.cpp.o.requires:
+
+.PHONY : CMakeFiles/NumTraectory.dir/src/kinematics/CoordsTranslatorRRR.cpp.o.requires
+
+CMakeFiles/NumTraectory.dir/src/kinematics/CoordsTranslatorRRR.cpp.o.provides: CMakeFiles/NumTraectory.dir/src/kinematics/CoordsTranslatorRRR.cpp.o.requires
+	$(MAKE) -f CMakeFiles/NumTraectory.dir/build.make CMakeFiles/NumTraectory.dir/src/kinematics/CoordsTranslatorRRR.cpp.o.provides.build
+.PHONY : CMakeFiles/NumTraectory.dir/src/kinematics/CoordsTranslatorRRR.cpp.o.provides
+
+CMakeFiles/NumTraectory.dir/src/kinematics/CoordsTranslatorRRR.cpp.o.provides.build: CMakeFiles/NumTraectory.dir/src/kinematics/CoordsTranslatorRRR.cpp.o
+
+
+CMakeFiles/NumTraectory.dir/src/output/DataOut.cpp.o: CMakeFiles/NumTraectory.dir/flags.make
+CMakeFiles/NumTraectory.dir/src/output/DataOut.cpp.o: ../src/output/DataOut.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/files/Man/NumTraectory/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/NumTraectory.dir/src/output/DataOut.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/NumTraectory.dir/src/output/DataOut.cpp.o -c /media/files/Man/NumTraectory/src/output/DataOut.cpp
+
+CMakeFiles/NumTraectory.dir/src/output/DataOut.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/NumTraectory.dir/src/output/DataOut.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/files/Man/NumTraectory/src/output/DataOut.cpp > CMakeFiles/NumTraectory.dir/src/output/DataOut.cpp.i
+
+CMakeFiles/NumTraectory.dir/src/output/DataOut.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NumTraectory.dir/src/output/DataOut.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/files/Man/NumTraectory/src/output/DataOut.cpp -o CMakeFiles/NumTraectory.dir/src/output/DataOut.cpp.s
+
+CMakeFiles/NumTraectory.dir/src/output/DataOut.cpp.o.requires:
+
+.PHONY : CMakeFiles/NumTraectory.dir/src/output/DataOut.cpp.o.requires
+
+CMakeFiles/NumTraectory.dir/src/output/DataOut.cpp.o.provides: CMakeFiles/NumTraectory.dir/src/output/DataOut.cpp.o.requires
+	$(MAKE) -f CMakeFiles/NumTraectory.dir/build.make CMakeFiles/NumTraectory.dir/src/output/DataOut.cpp.o.provides.build
+.PHONY : CMakeFiles/NumTraectory.dir/src/output/DataOut.cpp.o.provides
+
+CMakeFiles/NumTraectory.dir/src/output/DataOut.cpp.o.provides.build: CMakeFiles/NumTraectory.dir/src/output/DataOut.cpp.o
+
+
+CMakeFiles/NumTraectory.dir/src/kinematics/KinematicSolverRRR.cpp.o: CMakeFiles/NumTraectory.dir/flags.make
+CMakeFiles/NumTraectory.dir/src/kinematics/KinematicSolverRRR.cpp.o: ../src/kinematics/KinematicSolverRRR.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/files/Man/NumTraectory/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/NumTraectory.dir/src/kinematics/KinematicSolverRRR.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/NumTraectory.dir/src/kinematics/KinematicSolverRRR.cpp.o -c /media/files/Man/NumTraectory/src/kinematics/KinematicSolverRRR.cpp
+
+CMakeFiles/NumTraectory.dir/src/kinematics/KinematicSolverRRR.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/NumTraectory.dir/src/kinematics/KinematicSolverRRR.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/files/Man/NumTraectory/src/kinematics/KinematicSolverRRR.cpp > CMakeFiles/NumTraectory.dir/src/kinematics/KinematicSolverRRR.cpp.i
+
+CMakeFiles/NumTraectory.dir/src/kinematics/KinematicSolverRRR.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NumTraectory.dir/src/kinematics/KinematicSolverRRR.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/files/Man/NumTraectory/src/kinematics/KinematicSolverRRR.cpp -o CMakeFiles/NumTraectory.dir/src/kinematics/KinematicSolverRRR.cpp.s
+
+CMakeFiles/NumTraectory.dir/src/kinematics/KinematicSolverRRR.cpp.o.requires:
+
+.PHONY : CMakeFiles/NumTraectory.dir/src/kinematics/KinematicSolverRRR.cpp.o.requires
+
+CMakeFiles/NumTraectory.dir/src/kinematics/KinematicSolverRRR.cpp.o.provides: CMakeFiles/NumTraectory.dir/src/kinematics/KinematicSolverRRR.cpp.o.requires
+	$(MAKE) -f CMakeFiles/NumTraectory.dir/build.make CMakeFiles/NumTraectory.dir/src/kinematics/KinematicSolverRRR.cpp.o.provides.build
+.PHONY : CMakeFiles/NumTraectory.dir/src/kinematics/KinematicSolverRRR.cpp.o.provides
+
+CMakeFiles/NumTraectory.dir/src/kinematics/KinematicSolverRRR.cpp.o.provides.build: CMakeFiles/NumTraectory.dir/src/kinematics/KinematicSolverRRR.cpp.o
+
+
+CMakeFiles/NumTraectory.dir/src/traectoryPlaning/TrajectoryPlaner.cpp.o: CMakeFiles/NumTraectory.dir/flags.make
+CMakeFiles/NumTraectory.dir/src/traectoryPlaning/TrajectoryPlaner.cpp.o: ../src/traectoryPlaning/TrajectoryPlaner.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/files/Man/NumTraectory/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/NumTraectory.dir/src/traectoryPlaning/TrajectoryPlaner.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/NumTraectory.dir/src/traectoryPlaning/TrajectoryPlaner.cpp.o -c /media/files/Man/NumTraectory/src/traectoryPlaning/TrajectoryPlaner.cpp
+
+CMakeFiles/NumTraectory.dir/src/traectoryPlaning/TrajectoryPlaner.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/NumTraectory.dir/src/traectoryPlaning/TrajectoryPlaner.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/files/Man/NumTraectory/src/traectoryPlaning/TrajectoryPlaner.cpp > CMakeFiles/NumTraectory.dir/src/traectoryPlaning/TrajectoryPlaner.cpp.i
+
+CMakeFiles/NumTraectory.dir/src/traectoryPlaning/TrajectoryPlaner.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NumTraectory.dir/src/traectoryPlaning/TrajectoryPlaner.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/files/Man/NumTraectory/src/traectoryPlaning/TrajectoryPlaner.cpp -o CMakeFiles/NumTraectory.dir/src/traectoryPlaning/TrajectoryPlaner.cpp.s
+
+CMakeFiles/NumTraectory.dir/src/traectoryPlaning/TrajectoryPlaner.cpp.o.requires:
+
+.PHONY : CMakeFiles/NumTraectory.dir/src/traectoryPlaning/TrajectoryPlaner.cpp.o.requires
+
+CMakeFiles/NumTraectory.dir/src/traectoryPlaning/TrajectoryPlaner.cpp.o.provides: CMakeFiles/NumTraectory.dir/src/traectoryPlaning/TrajectoryPlaner.cpp.o.requires
+	$(MAKE) -f CMakeFiles/NumTraectory.dir/build.make CMakeFiles/NumTraectory.dir/src/traectoryPlaning/TrajectoryPlaner.cpp.o.provides.build
+.PHONY : CMakeFiles/NumTraectory.dir/src/traectoryPlaning/TrajectoryPlaner.cpp.o.provides
+
+CMakeFiles/NumTraectory.dir/src/traectoryPlaning/TrajectoryPlaner.cpp.o.provides.build: CMakeFiles/NumTraectory.dir/src/traectoryPlaning/TrajectoryPlaner.cpp.o
+
+
+CMakeFiles/NumTraectory.dir/src/kinematics/AccelerationTranslatorRRR.cpp.o: CMakeFiles/NumTraectory.dir/flags.make
+CMakeFiles/NumTraectory.dir/src/kinematics/AccelerationTranslatorRRR.cpp.o: ../src/kinematics/AccelerationTranslatorRRR.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/files/Man/NumTraectory/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/NumTraectory.dir/src/kinematics/AccelerationTranslatorRRR.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/NumTraectory.dir/src/kinematics/AccelerationTranslatorRRR.cpp.o -c /media/files/Man/NumTraectory/src/kinematics/AccelerationTranslatorRRR.cpp
+
+CMakeFiles/NumTraectory.dir/src/kinematics/AccelerationTranslatorRRR.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/NumTraectory.dir/src/kinematics/AccelerationTranslatorRRR.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/files/Man/NumTraectory/src/kinematics/AccelerationTranslatorRRR.cpp > CMakeFiles/NumTraectory.dir/src/kinematics/AccelerationTranslatorRRR.cpp.i
+
+CMakeFiles/NumTraectory.dir/src/kinematics/AccelerationTranslatorRRR.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NumTraectory.dir/src/kinematics/AccelerationTranslatorRRR.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/files/Man/NumTraectory/src/kinematics/AccelerationTranslatorRRR.cpp -o CMakeFiles/NumTraectory.dir/src/kinematics/AccelerationTranslatorRRR.cpp.s
+
+CMakeFiles/NumTraectory.dir/src/kinematics/AccelerationTranslatorRRR.cpp.o.requires:
+
+.PHONY : CMakeFiles/NumTraectory.dir/src/kinematics/AccelerationTranslatorRRR.cpp.o.requires
+
+CMakeFiles/NumTraectory.dir/src/kinematics/AccelerationTranslatorRRR.cpp.o.provides: CMakeFiles/NumTraectory.dir/src/kinematics/AccelerationTranslatorRRR.cpp.o.requires
+	$(MAKE) -f CMakeFiles/NumTraectory.dir/build.make CMakeFiles/NumTraectory.dir/src/kinematics/AccelerationTranslatorRRR.cpp.o.provides.build
+.PHONY : CMakeFiles/NumTraectory.dir/src/kinematics/AccelerationTranslatorRRR.cpp.o.provides
+
+CMakeFiles/NumTraectory.dir/src/kinematics/AccelerationTranslatorRRR.cpp.o.provides.build: CMakeFiles/NumTraectory.dir/src/kinematics/AccelerationTranslatorRRR.cpp.o
+
+
 # Object files for target NumTraectory
 NumTraectory_OBJECTS = \
 "CMakeFiles/NumTraectory.dir/src/main.cpp.o" \
 "CMakeFiles/NumTraectory.dir/src/solver/Solver.cpp.o" \
 "CMakeFiles/NumTraectory.dir/src/solver/Spline.cpp.o" \
 "CMakeFiles/NumTraectory.dir/src/input/Data.cpp.o" \
-"CMakeFiles/NumTraectory.dir/src/Test.cpp.o"
+"CMakeFiles/NumTraectory.dir/src/Test.cpp.o" \
+"CMakeFiles/NumTraectory.dir/src/kinematics/SpeedTranslatorRRR.cpp.o" \
+"CMakeFiles/NumTraectory.dir/src/kinematics/ManipulatorConfiguration.cpp.o" \
+"CMakeFiles/NumTraectory.dir/src/kinematics/CoordsTranslatorRRR.cpp.o" \
+"CMakeFiles/NumTraectory.dir/src/output/DataOut.cpp.o" \
+"CMakeFiles/NumTraectory.dir/src/kinematics/KinematicSolverRRR.cpp.o" \
+"CMakeFiles/NumTraectory.dir/src/traectoryPlaning/TrajectoryPlaner.cpp.o" \
+"CMakeFiles/NumTraectory.dir/src/kinematics/AccelerationTranslatorRRR.cpp.o"
 
 # External object files for target NumTraectory
 NumTraectory_EXTERNAL_OBJECTS =
@@ -193,9 +368,17 @@ NumTraectory: CMakeFiles/NumTraectory.dir/src/solver/Solver.cpp.o
 NumTraectory: CMakeFiles/NumTraectory.dir/src/solver/Spline.cpp.o
 NumTraectory: CMakeFiles/NumTraectory.dir/src/input/Data.cpp.o
 NumTraectory: CMakeFiles/NumTraectory.dir/src/Test.cpp.o
+NumTraectory: CMakeFiles/NumTraectory.dir/src/kinematics/SpeedTranslatorRRR.cpp.o
+NumTraectory: CMakeFiles/NumTraectory.dir/src/kinematics/ManipulatorConfiguration.cpp.o
+NumTraectory: CMakeFiles/NumTraectory.dir/src/kinematics/CoordsTranslatorRRR.cpp.o
+NumTraectory: CMakeFiles/NumTraectory.dir/src/output/DataOut.cpp.o
+NumTraectory: CMakeFiles/NumTraectory.dir/src/kinematics/KinematicSolverRRR.cpp.o
+NumTraectory: CMakeFiles/NumTraectory.dir/src/traectoryPlaning/TrajectoryPlaner.cpp.o
+NumTraectory: CMakeFiles/NumTraectory.dir/src/kinematics/AccelerationTranslatorRRR.cpp.o
 NumTraectory: CMakeFiles/NumTraectory.dir/build.make
+NumTraectory: /usr/lib/libarmadillo.so
 NumTraectory: CMakeFiles/NumTraectory.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/media/files/Man/NumTraectory/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable NumTraectory"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/media/files/Man/NumTraectory/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable NumTraectory"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/NumTraectory.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -208,6 +391,13 @@ CMakeFiles/NumTraectory.dir/requires: CMakeFiles/NumTraectory.dir/src/solver/Sol
 CMakeFiles/NumTraectory.dir/requires: CMakeFiles/NumTraectory.dir/src/solver/Spline.cpp.o.requires
 CMakeFiles/NumTraectory.dir/requires: CMakeFiles/NumTraectory.dir/src/input/Data.cpp.o.requires
 CMakeFiles/NumTraectory.dir/requires: CMakeFiles/NumTraectory.dir/src/Test.cpp.o.requires
+CMakeFiles/NumTraectory.dir/requires: CMakeFiles/NumTraectory.dir/src/kinematics/SpeedTranslatorRRR.cpp.o.requires
+CMakeFiles/NumTraectory.dir/requires: CMakeFiles/NumTraectory.dir/src/kinematics/ManipulatorConfiguration.cpp.o.requires
+CMakeFiles/NumTraectory.dir/requires: CMakeFiles/NumTraectory.dir/src/kinematics/CoordsTranslatorRRR.cpp.o.requires
+CMakeFiles/NumTraectory.dir/requires: CMakeFiles/NumTraectory.dir/src/output/DataOut.cpp.o.requires
+CMakeFiles/NumTraectory.dir/requires: CMakeFiles/NumTraectory.dir/src/kinematics/KinematicSolverRRR.cpp.o.requires
+CMakeFiles/NumTraectory.dir/requires: CMakeFiles/NumTraectory.dir/src/traectoryPlaning/TrajectoryPlaner.cpp.o.requires
+CMakeFiles/NumTraectory.dir/requires: CMakeFiles/NumTraectory.dir/src/kinematics/AccelerationTranslatorRRR.cpp.o.requires
 
 .PHONY : CMakeFiles/NumTraectory.dir/requires
 

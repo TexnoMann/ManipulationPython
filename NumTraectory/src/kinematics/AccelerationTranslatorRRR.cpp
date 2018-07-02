@@ -25,9 +25,11 @@ mat AccelerationTranslator::getDerivatedJacodian(colvec relativeAngle) {
 
 colvec AccelerationTranslator::getDerivatedComponent(colvec absoluteAcceleration, colvec derivatedJacobian,
                                                      colvec relativeSpeed) {
+
     return absoluteAcceleration-derivatedJacobian*relativeSpeed;
 }
 
 colvec AccelerationTranslator::getRelativeAcceleration(colvec relativeSpeed, colvec absoluteAcceleration, mat Jacobian, colvec relativeCoords) {
+
     return inv(Jacobian)*getDerivatedComponent(absoluteAcceleration,getDerivatedJacodian(relativeCoords),relativeSpeed);
 }

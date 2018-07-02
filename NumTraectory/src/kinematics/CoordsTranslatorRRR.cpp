@@ -69,9 +69,3 @@ float CoordsTranslatorRRR::_getZ(colvec relativeCoords) {
     return Z;
 }
 
-/*
- * a0*cos(theta0) + d1*sin(theta0) + d2*sin(theta0) + a1*cos(theta0)*cos(theta1 + pi/2) + a2*cos(theta0)*cos(theta2)*cos(theta1 + pi/2) - a2*cos(theta0)*sin(theta2)*sin(theta1 + pi/2)
- a0*sin(theta0) - d2*cos(theta0) - d1*cos(theta0) + a1*cos(theta1 + pi/2)*sin(theta0) + a2*cos(theta2)*cos(theta1 + pi/2)*sin(theta0) - a2*sin(theta0)*sin(theta2)*sin(theta1 + pi/2)
-                                                                                   d0 + a1*sin(theta1 + pi/2) + a2*cos(theta2)*sin(theta1 + pi/2) + a2*cos(theta1 + pi/2)*sin(theta2)
-
- */

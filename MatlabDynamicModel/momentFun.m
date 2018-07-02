@@ -1,0 +1,21 @@
+J=0.0025;
+Kf=0;
+Kspeed=2000
+Km=4.8;
+Ke=4.8;
+R=5.2;
+K=Kf*R/Km+Ke;
+maxV=6.8;
+Mu=maxV*Km/R;
+Ml=Mu/5;
+w0=6.3/0.6;
+Kn=[(2*w0-K) , w0^2, (1-J*R/Km)];
+Kp=Kn(1);
+Ki=Kn(2);
+Kd=Kn(3);
+% 
+% U=maxV;
+% B=[Km/(J*R);Km/(J*R);Km/(J*R)];
+Kr=[Ki,Kp,Kd];
+Kk=Kr*100/6.85
+% C=[1,0,0;0,1,0; 0,0,1];

@@ -93,7 +93,43 @@
 		<Unit filename="/media/files/Man/NumTraectory/src/input/Data.h">
 			<Option target="NumTraectory"/>
 		</Unit>
+		<Unit filename="/media/files/Man/NumTraectory/src/kinematics/AccelerationTranslatorRRR.cpp">
+			<Option target="NumTraectory"/>
+		</Unit>
+		<Unit filename="/media/files/Man/NumTraectory/src/kinematics/AccelerationTranslatorRRR.h">
+			<Option target="NumTraectory"/>
+		</Unit>
+		<Unit filename="/media/files/Man/NumTraectory/src/kinematics/CoordsTranslatorRRR.cpp">
+			<Option target="NumTraectory"/>
+		</Unit>
+		<Unit filename="/media/files/Man/NumTraectory/src/kinematics/CoordsTranslatorRRR.h">
+			<Option target="NumTraectory"/>
+		</Unit>
+		<Unit filename="/media/files/Man/NumTraectory/src/kinematics/KinematicSolverRRR.cpp">
+			<Option target="NumTraectory"/>
+		</Unit>
+		<Unit filename="/media/files/Man/NumTraectory/src/kinematics/KinematicSolverRRR.h">
+			<Option target="NumTraectory"/>
+		</Unit>
+		<Unit filename="/media/files/Man/NumTraectory/src/kinematics/ManipulatorConfiguration.cpp">
+			<Option target="NumTraectory"/>
+		</Unit>
+		<Unit filename="/media/files/Man/NumTraectory/src/kinematics/ManipulatorConfiguration.h">
+			<Option target="NumTraectory"/>
+		</Unit>
+		<Unit filename="/media/files/Man/NumTraectory/src/kinematics/SpeedTranslatorRRR.cpp">
+			<Option target="NumTraectory"/>
+		</Unit>
+		<Unit filename="/media/files/Man/NumTraectory/src/kinematics/SpeedTranslatorRRR.h">
+			<Option target="NumTraectory"/>
+		</Unit>
 		<Unit filename="/media/files/Man/NumTraectory/src/main.cpp">
+			<Option target="NumTraectory"/>
+		</Unit>
+		<Unit filename="/media/files/Man/NumTraectory/src/output/DataOut.cpp">
+			<Option target="NumTraectory"/>
+		</Unit>
+		<Unit filename="/media/files/Man/NumTraectory/src/output/DataOut.h">
 			<Option target="NumTraectory"/>
 		</Unit>
 		<Unit filename="/media/files/Man/NumTraectory/src/solver/Solver.cpp">
@@ -106,6 +142,12 @@
 			<Option target="NumTraectory"/>
 		</Unit>
 		<Unit filename="/media/files/Man/NumTraectory/src/solver/Spline.h">
+			<Option target="NumTraectory"/>
+		</Unit>
+		<Unit filename="/media/files/Man/NumTraectory/src/traectoryPlaning/TrajectoryPlaner.cpp">
+			<Option target="NumTraectory"/>
+		</Unit>
+		<Unit filename="/media/files/Man/NumTraectory/src/traectoryPlaning/TrajectoryPlaner.h">
 			<Option target="NumTraectory"/>
 		</Unit>
 		<Unit filename="/media/files/Man/NumTraectory/CMakeLists.txt">

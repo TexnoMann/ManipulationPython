@@ -177,6 +177,141 @@ src/input/Data.cpp.s:
 	$(MAKE) -f CMakeFiles/NumTraectory.dir/build.make CMakeFiles/NumTraectory.dir/src/input/Data.cpp.s
 .PHONY : src/input/Data.cpp.s
 
+src/kinematics/AccelerationTranslatorRRR.o: src/kinematics/AccelerationTranslatorRRR.cpp.o
+
+.PHONY : src/kinematics/AccelerationTranslatorRRR.o
+
+# target to build an object file
+src/kinematics/AccelerationTranslatorRRR.cpp.o:
+	$(MAKE) -f CMakeFiles/NumTraectory.dir/build.make CMakeFiles/NumTraectory.dir/src/kinematics/AccelerationTranslatorRRR.cpp.o
+.PHONY : src/kinematics/AccelerationTranslatorRRR.cpp.o
+
+src/kinematics/AccelerationTranslatorRRR.i: src/kinematics/AccelerationTranslatorRRR.cpp.i
+
+.PHONY : src/kinematics/AccelerationTranslatorRRR.i
+
+# target to preprocess a source file
+src/kinematics/AccelerationTranslatorRRR.cpp.i:
+	$(MAKE) -f CMakeFiles/NumTraectory.dir/build.make CMakeFiles/NumTraectory.dir/src/kinematics/AccelerationTranslatorRRR.cpp.i
+.PHONY : src/kinematics/AccelerationTranslatorRRR.cpp.i
+
+src/kinematics/AccelerationTranslatorRRR.s: src/kinematics/AccelerationTranslatorRRR.cpp.s
+
+.PHONY : src/kinematics/AccelerationTranslatorRRR.s
+
+# target to generate assembly for a file
+src/kinematics/AccelerationTranslatorRRR.cpp.s:
+	$(MAKE) -f CMakeFiles/NumTraectory.dir/build.make CMakeFiles/NumTraectory.dir/src/kinematics/AccelerationTranslatorRRR.cpp.s
+.PHONY : src/kinematics/AccelerationTranslatorRRR.cpp.s
+
+src/kinematics/CoordsTranslatorRRR.o: src/kinematics/CoordsTranslatorRRR.cpp.o
+
+.PHONY : src/kinematics/CoordsTranslatorRRR.o
+
+# target to build an object file
+src/kinematics/CoordsTranslatorRRR.cpp.o:
+	$(MAKE) -f CMakeFiles/NumTraectory.dir/build.make CMakeFiles/NumTraectory.dir/src/kinematics/CoordsTranslatorRRR.cpp.o
+.PHONY : src/kinematics/CoordsTranslatorRRR.cpp.o
+
+src/kinematics/CoordsTranslatorRRR.i: src/kinematics/CoordsTranslatorRRR.cpp.i
+
+.PHONY : src/kinematics/CoordsTranslatorRRR.i
+
+# target to preprocess a source file
+src/kinematics/CoordsTranslatorRRR.cpp.i:
+	$(MAKE) -f CMakeFiles/NumTraectory.dir/build.make CMakeFiles/NumTraectory.dir/src/kinematics/CoordsTranslatorRRR.cpp.i
+.PHONY : src/kinematics/CoordsTranslatorRRR.cpp.i
+
+src/kinematics/CoordsTranslatorRRR.s: src/kinematics/CoordsTranslatorRRR.cpp.s
+
+.PHONY : src/kinematics/CoordsTranslatorRRR.s
+
+# target to generate assembly for a file
+src/kinematics/CoordsTranslatorRRR.cpp.s:
+	$(MAKE) -f CMakeFiles/NumTraectory.dir/build.make CMakeFiles/NumTraectory.dir/src/kinematics/CoordsTranslatorRRR.cpp.s
+.PHONY : src/kinematics/CoordsTranslatorRRR.cpp.s
+
+src/kinematics/KinematicSolverRRR.o: src/kinematics/KinematicSolverRRR.cpp.o
+
+.PHONY : src/kinematics/KinematicSolverRRR.o
+
+# target to build an object file
+src/kinematics/KinematicSolverRRR.cpp.o:
+	$(MAKE) -f CMakeFiles/NumTraectory.dir/build.make CMakeFiles/NumTraectory.dir/src/kinematics/KinematicSolverRRR.cpp.o
+.PHONY : src/kinematics/KinematicSolverRRR.cpp.o
+
+src/kinematics/KinematicSolverRRR.i: src/kinematics/KinematicSolverRRR.cpp.i
+
+.PHONY : src/kinematics/KinematicSolverRRR.i
+
+# target to preprocess a source file
+src/kinematics/KinematicSolverRRR.cpp.i:
+	$(MAKE) -f CMakeFiles/NumTraectory.dir/build.make CMakeFiles/NumTraectory.dir/src/kinematics/KinematicSolverRRR.cpp.i
+.PHONY : src/kinematics/KinematicSolverRRR.cpp.i
+
+src/kinematics/KinematicSolverRRR.s: src/kinematics/KinematicSolverRRR.cpp.s
+
+.PHONY : src/kinematics/KinematicSolverRRR.s
+
+# target to generate assembly for a file
+src/kinematics/KinematicSolverRRR.cpp.s:
+	$(MAKE) -f CMakeFiles/NumTraectory.dir/build.make CMakeFiles/NumTraectory.dir/src/kinematics/KinematicSolverRRR.cpp.s
+.PHONY : src/kinematics/KinematicSolverRRR.cpp.s
+
+src/kinematics/ManipulatorConfiguration.o: src/kinematics/ManipulatorConfiguration.cpp.o
+
+.PHONY : src/kinematics/ManipulatorConfiguration.o
+
+# target to build an object file
+src/kinematics/ManipulatorConfiguration.cpp.o:
+	$(MAKE) -f CMakeFiles/NumTraectory.dir/build.make CMakeFiles/NumTraectory.dir/src/kinematics/ManipulatorConfiguration.cpp.o
+.PHONY : src/kinematics/ManipulatorConfiguration.cpp.o
+
+src/kinematics/ManipulatorConfiguration.i: src/kinematics/ManipulatorConfiguration.cpp.i
+
+.PHONY : src/kinematics/ManipulatorConfiguration.i
+
+# target to preprocess a source file
+src/kinematics/ManipulatorConfiguration.cpp.i:
+	$(MAKE) -f CMakeFiles/NumTraectory.dir/build.make CMakeFiles/NumTraectory.dir/src/kinematics/ManipulatorConfiguration.cpp.i
+.PHONY : src/kinematics/ManipulatorConfiguration.cpp.i
+
+src/kinematics/ManipulatorConfiguration.s: src/kinematics/ManipulatorConfiguration.cpp.s
+
+.PHONY : src/kinematics/ManipulatorConfiguration.s
+
+# target to generate assembly for a file
+src/kinematics/ManipulatorConfiguration.cpp.s:
+	$(MAKE) -f CMakeFiles/NumTraectory.dir/build.make CMakeFiles/NumTraectory.dir/src/kinematics/ManipulatorConfiguration.cpp.s
+.PHONY : src/kinematics/ManipulatorConfiguration.cpp.s
+
+src/kinematics/SpeedTranslatorRRR.o: src/kinematics/SpeedTranslatorRRR.cpp.o
+
+.PHONY : src/kinematics/SpeedTranslatorRRR.o
+
+# target to build an object file
+src/kinematics/SpeedTranslatorRRR.cpp.o:
+	$(MAKE) -f CMakeFiles/NumTraectory.dir/build.make CMakeFiles/NumTraectory.dir/src/kinematics/SpeedTranslatorRRR.cpp.o
+.PHONY : src/kinematics/SpeedTranslatorRRR.cpp.o
+
+src/kinematics/SpeedTranslatorRRR.i: src/kinematics/SpeedTranslatorRRR.cpp.i
+
+.PHONY : src/kinematics/SpeedTranslatorRRR.i
+
+# target to preprocess a source file
+src/kinematics/SpeedTranslatorRRR.cpp.i:
+	$(MAKE) -f CMakeFiles/NumTraectory.dir/build.make CMakeFiles/NumTraectory.dir/src/kinematics/SpeedTranslatorRRR.cpp.i
+.PHONY : src/kinematics/SpeedTranslatorRRR.cpp.i
+
+src/kinematics/SpeedTranslatorRRR.s: src/kinematics/SpeedTranslatorRRR.cpp.s
+
+.PHONY : src/kinematics/SpeedTranslatorRRR.s
+
+# target to generate assembly for a file
+src/kinematics/SpeedTranslatorRRR.cpp.s:
+	$(MAKE) -f CMakeFiles/NumTraectory.dir/build.make CMakeFiles/NumTraectory.dir/src/kinematics/SpeedTranslatorRRR.cpp.s
+.PHONY : src/kinematics/SpeedTranslatorRRR.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -203,6 +338,33 @@ src/main.s: src/main.cpp.s
 src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/NumTraectory.dir/build.make CMakeFiles/NumTraectory.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
+
+src/output/DataOut.o: src/output/DataOut.cpp.o
+
+.PHONY : src/output/DataOut.o
+
+# target to build an object file
+src/output/DataOut.cpp.o:
+	$(MAKE) -f CMakeFiles/NumTraectory.dir/build.make CMakeFiles/NumTraectory.dir/src/output/DataOut.cpp.o
+.PHONY : src/output/DataOut.cpp.o
+
+src/output/DataOut.i: src/output/DataOut.cpp.i
+
+.PHONY : src/output/DataOut.i
+
+# target to preprocess a source file
+src/output/DataOut.cpp.i:
+	$(MAKE) -f CMakeFiles/NumTraectory.dir/build.make CMakeFiles/NumTraectory.dir/src/output/DataOut.cpp.i
+.PHONY : src/output/DataOut.cpp.i
+
+src/output/DataOut.s: src/output/DataOut.cpp.s
+
+.PHONY : src/output/DataOut.s
+
+# target to generate assembly for a file
+src/output/DataOut.cpp.s:
+	$(MAKE) -f CMakeFiles/NumTraectory.dir/build.make CMakeFiles/NumTraectory.dir/src/output/DataOut.cpp.s
+.PHONY : src/output/DataOut.cpp.s
 
 src/solver/Solver.o: src/solver/Solver.cpp.o
 
@@ -258,6 +420,33 @@ src/solver/Spline.cpp.s:
 	$(MAKE) -f CMakeFiles/NumTraectory.dir/build.make CMakeFiles/NumTraectory.dir/src/solver/Spline.cpp.s
 .PHONY : src/solver/Spline.cpp.s
 
+src/traectoryPlaning/TrajectoryPlaner.o: src/traectoryPlaning/TrajectoryPlaner.cpp.o
+
+.PHONY : src/traectoryPlaning/TrajectoryPlaner.o
+
+# target to build an object file
+src/traectoryPlaning/TrajectoryPlaner.cpp.o:
+	$(MAKE) -f CMakeFiles/NumTraectory.dir/build.make CMakeFiles/NumTraectory.dir/src/traectoryPlaning/TrajectoryPlaner.cpp.o
+.PHONY : src/traectoryPlaning/TrajectoryPlaner.cpp.o
+
+src/traectoryPlaning/TrajectoryPlaner.i: src/traectoryPlaning/TrajectoryPlaner.cpp.i
+
+.PHONY : src/traectoryPlaning/TrajectoryPlaner.i
+
+# target to preprocess a source file
+src/traectoryPlaning/TrajectoryPlaner.cpp.i:
+	$(MAKE) -f CMakeFiles/NumTraectory.dir/build.make CMakeFiles/NumTraectory.dir/src/traectoryPlaning/TrajectoryPlaner.cpp.i
+.PHONY : src/traectoryPlaning/TrajectoryPlaner.cpp.i
+
+src/traectoryPlaning/TrajectoryPlaner.s: src/traectoryPlaning/TrajectoryPlaner.cpp.s
+
+.PHONY : src/traectoryPlaning/TrajectoryPlaner.s
+
+# target to generate assembly for a file
+src/traectoryPlaning/TrajectoryPlaner.cpp.s:
+	$(MAKE) -f CMakeFiles/NumTraectory.dir/build.make CMakeFiles/NumTraectory.dir/src/traectoryPlaning/TrajectoryPlaner.cpp.s
+.PHONY : src/traectoryPlaning/TrajectoryPlaner.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -273,15 +462,36 @@ help:
 	@echo "... src/input/Data.o"
 	@echo "... src/input/Data.i"
 	@echo "... src/input/Data.s"
+	@echo "... src/kinematics/AccelerationTranslatorRRR.o"
+	@echo "... src/kinematics/AccelerationTranslatorRRR.i"
+	@echo "... src/kinematics/AccelerationTranslatorRRR.s"
+	@echo "... src/kinematics/CoordsTranslatorRRR.o"
+	@echo "... src/kinematics/CoordsTranslatorRRR.i"
+	@echo "... src/kinematics/CoordsTranslatorRRR.s"
+	@echo "... src/kinematics/KinematicSolverRRR.o"
+	@echo "... src/kinematics/KinematicSolverRRR.i"
+	@echo "... src/kinematics/KinematicSolverRRR.s"
+	@echo "... src/kinematics/ManipulatorConfiguration.o"
+	@echo "... src/kinematics/ManipulatorConfiguration.i"
+	@echo "... src/kinematics/ManipulatorConfiguration.s"
+	@echo "... src/kinematics/SpeedTranslatorRRR.o"
+	@echo "... src/kinematics/SpeedTranslatorRRR.i"
+	@echo "... src/kinematics/SpeedTranslatorRRR.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/output/DataOut.o"
+	@echo "... src/output/DataOut.i"
+	@echo "... src/output/DataOut.s"
 	@echo "... src/solver/Solver.o"
 	@echo "... src/solver/Solver.i"
 	@echo "... src/solver/Solver.s"
 	@echo "... src/solver/Spline.o"
 	@echo "... src/solver/Spline.i"
 	@echo "... src/solver/Spline.s"
+	@echo "... src/traectoryPlaning/TrajectoryPlaner.o"
+	@echo "... src/traectoryPlaning/TrajectoryPlaner.i"
+	@echo "... src/traectoryPlaning/TrajectoryPlaner.s"
 .PHONY : help
 
 
