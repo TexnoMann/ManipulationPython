@@ -27,7 +27,7 @@ private:
     vector <colvec> _desiredCoords;
     string _filename;
     ifstream _file;
-    int _n;
+    long _n;
     float _normTime;
     float _controllerUpdateTime;
     void _convertDataToMatrix();

@@ -41,3 +41,6 @@ class Joint:
 
     def controllerOff(self):
         self.speedControllerJoint.off()
+
+    def controllerOn(self):
+        self.speedControllerJoint.on()

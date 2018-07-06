@@ -18,7 +18,6 @@ Spline::Spline(int n, float normTime) {
 
 colvec Spline::getCoefficient(colvec initCoords){
     _a=inv( _make_Q(_normTime) ) * initCoords;
-
     return _a;
     }
 

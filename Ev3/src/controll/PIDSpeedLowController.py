@@ -12,10 +12,11 @@ from src.state.State import StateJoint
 
 class PIDSpeedController:
 
-    def __init__(self, _P, _I, _D, _updateTime, _motor, _jointLock, _state):
+    def __init__(self, _P, _I, _D, _updateTime, _motor, _state, __hardResetTouch):
+        self.__hardResetTouch = __hardResetTouch
         self.__controllerOn = True
-        self._jointLock = _jointLock
         self.stateJoint = _state
+        self._jointLock = self.stateJoint.jointLock
         self._P = _P
         self._I = _I
         self._D = _D
@@ -88,6 +89,7 @@ class PIDSpeedController:
                         self._motor.stop(duty_cycle_sp='0')
                     sleep(self._updateTime)
             else: break
+        self.__controllerOn=False
 
     def moveForever(self):
         self._jointLock.acquire()

@@ -3,42 +3,24 @@ from math import copysign,pi
 
 from time import *
 
-P=3.63
-I=50.3
-updateTime=0.050
+#Umax=6.89V
 
 def main():
-    currenttime=0
-    firstAngle=0
-    desiredSpeed = 0.4
-    currentSpeed=0
-    currentAngle=0
-    firstSpeed=0
-    currentSpeedError = 0
-    p=0
-    i=0
-    u=0
-    motor= LargeMotor(OUTPUT_A)
-    lcd= Screen()
-
-    motor.reset()
-    while True:
-        lasttime=time()
-        firstAngle = currentAngle
-        currentAngle = motor.position*pi/180
-        firstSpeed = currentSpeed
-        currentSpeed = (currentAngle-firstAngle)/updateTime
-        firstSpeedError = currentSpeedError
-        currentSpeedError = desiredSpeed-currentSpeed
-
-        p = currentSpeedError*P
-        i += currentSpeedError*updateTime*I
-        u = (p+i)
-        if abs(u) > 100:
-            u = copysign(1, u)*100
-        motor.run_direct(duty_cycle_sp=u)
-        currenttime = time()
-        sleep(updateTime-(currenttime-lasttime))
-
-
+    motor0=LargeMotor(OUTPUT_C)
+    motor0.reset()
+    file = open("dataAngleMaxMoments.out", "w")
+    sleep(4)
+    for u in range(20, 100, 10):
+        input("Go")
+        maxaccel=0
+        speed=0
+        accel=0
+        Sound.tone(1000, 100).wait()
+        motor0.reset()
+        firsttime=time()
+        motor0.run_direct(duty_cycle_sp=u)
+        while motor0.position < 2000 :
+            maxaccel=max(maxaccel,)
+        motor0.stop(duty_cycle_sp=0)
+        print("Time:" + str(time()-firsttime))
 main()

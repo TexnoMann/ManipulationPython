@@ -37,10 +37,14 @@ void Data::_convertDataToMatrix(){
     num= _splitLine(line,splitter);
     _normTime=num[0];
     _controllerUpdateTime=num[1];
+    bool flag=false;
     while(getline(_file,line)){
         num = _splitLine(line,splitter);
+        if (!flag){
+            _n= num.size();
+            flag=true;
+        }
         colvec coords(num.size());
-        _n= num.size();
         coords.fill(0.0);
 
         for(int i=0;i<_n;i++){

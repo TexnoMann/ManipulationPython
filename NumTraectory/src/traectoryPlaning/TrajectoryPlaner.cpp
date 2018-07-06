@@ -16,15 +16,13 @@ TrajectoryPlaner::TrajectoryPlaner(ManipulatorConfiguration config, string datai
 
 mat TrajectoryPlaner:: getStartAndFinishPositionJoint(int startNumberPointPosition, int finishNumberPointPosition){
     mat pos=_kinematicSolver.getfullCoordsfromPlaning(_datainput.getDesiredCoords()[startNumberPointPosition], _datainput.getDesiredCoords()[finishNumberPointPosition]);
-
     return pos;
 }
 
 
-void TrajectoryPlaner::getCoordinatsOneSegment(int startNumberPointPosition, int finishNumberPointPosit){
+void TrajectoryPlaner::getCoordinatsOneSegment(int startNumberPointPosition, int finishNumberPointPosition){
 
-    mat position=getStartAndFinishPositionJoint(startNumberPointPosition,finishNumberPointPosit);
-
+    mat position=getStartAndFinishPositionJoint(startNumberPointPosition,finishNumberPointPosition);
     colvec a[_config.getNumberJoint()];
     for(int i=0;i<_config.getNumberJoint();i++){
         a[i]=_spline.getCoefficient(position.col(i));

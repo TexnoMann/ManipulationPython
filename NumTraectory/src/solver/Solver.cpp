@@ -22,6 +22,7 @@ Solver::Solver(int n) {
 
 colvec Solver::getCoords(float currentTime, colvec a){
     _coords=(_getPoly(currentTime) * a);
+    cout<<_coords<<endl;
     return _coords;
 }
 
