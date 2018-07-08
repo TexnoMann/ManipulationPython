@@ -16,11 +16,11 @@ using namespace arma;
 class DataOut {
     public:
         DataOut(string filenameOut);
-        void putToFile(rowvec lastAngle, rowvec lastSpeed);
+        void putToFile(fmat lastCoord);
         void writeClose();
     private:
         string _filenameOut;
-        vector <mat> _inputCoords;
+        vector <fmat> _inputCoords;
         int _numberLine;
         ofstream _fileOut;
 

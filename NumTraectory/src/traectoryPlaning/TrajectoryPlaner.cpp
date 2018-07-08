@@ -9,41 +9,40 @@ TrajectoryPlaner::TrajectoryPlaner(ManipulatorConfiguration config, string datai
              _dataout(DataOut(dataout)),
              _datainput(Data(datainput)),
              _kinematicSolver(_config),
-             _spline(Spline(_datainput.getCountCoords()/_config.getNumberJoint()*2,_datainput.getNormTime())),
-             _solver(Solver(_datainput.getCountCoords()/_config.getNumberJoint()*2))
+             _spline(Spline(_datainput.getCountParameters()*2,_datainput.getNormTime())),
+             _solver(SolverSpline(_datainput.getCountParameters()*2))
             {
-}
 
-mat TrajectoryPlaner:: getStartAndFinishPositionJoint(int startNumberPointPosition, int finishNumberPointPosition){
-    mat pos=_kinematicSolver.getfullCoordsfromPlaning(_datainput.getDesiredCoords()[startNumberPointPosition], _datainput.getDesiredCoords()[finishNumberPointPosition]);
-    return pos;
 }
 
 
-void TrajectoryPlaner::getCoordinatsOneSegment(int startNumberPointPosition, int finishNumberPointPosition){
 
-    mat position=getStartAndFinishPositionJoint(startNumberPointPosition,finishNumberPointPosition);
-    colvec a[_config.getNumberJoint()];
+void TrajectoryPlaner::getCoordinatsOneSegment(fmat firstPos, fmat secondPos){
+
+    fmat firstRelCoords = _kinematicSolver._getRelCoords(firstPos);
+    fmat secondRelCoords = _kinematicSolver._getRelCoords(secondPos);
+    fmat FSPosition = arma::join_rows(firstRelCoords,secondRelCoords);
+    fcolvec a[_config.getNumberJoint()];
     for(int i=0;i<_config.getNumberJoint();i++){
-        a[i]=_spline.getCoefficient(position.col(i));
+        a[i]=_spline.getCoefficient(trans(FSPosition.row(i)));
 
     }
 
         for (float time = 0; time < _datainput.getNormTime(); time += _datainput.getControllerUpdateTime()) {
-            mat currentPos(_datainput.getCountCoords()/_config.getNumberJoint()*2,_config.getNumberJoint());
+            fmat currentPos(_config.getNumberJoint(),_datainput.getCountParameters());
             currentPos.fill(0.0);
             for(int i=0;i<_config.getNumberJoint();i++){
-                colvec coords= _solver.getCoords(time, a[i]);
-                currentPos.col(i)=coords;
+                fcolvec coords = _solver.getCoords(time, a[i]).rows(0,_datainput.getCountParameters()-1);
+                currentPos.row(i)=trans(coords);
             }
-            _dataout.putToFile((rowvec)(currentPos.row(0)),(rowvec)(currentPos.row(1)));
+            _dataout.putToFile(currentPos);
         }
 
 }
 
 void TrajectoryPlaner::getFullCordinatsJoints() {
     for(int segmentCount=0;segmentCount<_datainput.getCountPoints();segmentCount++) {
-        getCoordinatsOneSegment(segmentCount, segmentCount + 1);
+        getCoordinatsOneSegment(_datainput.getDesiredCoords()[segmentCount], _datainput.getDesiredCoords()[segmentCount + 1]);
     }
     _dataout.writeClose();
 }

@@ -42,19 +42,15 @@ void Data::_convertDataToMatrix(){
         num = _splitLine(line,splitter);
         if (!flag){
             _n= num.size();
+            _countParameters=_n/3;
             flag=true;
         }
-        colvec coords(num.size());
-        coords.fill(0.0);
-
-        for(int i=0;i<_n;i++){
-            coords(i,0)=num[i];
+        fmat coords(3, _countParameters);
+        for( int i=0; i<_n; i++){
+            coords(i%3,i/3)=num[i];
         }
         _desiredCoords.push_back(coords);
     }
-
-
-
 }
 
 
@@ -76,7 +72,12 @@ int Data::getCountCoords(){
     return _n;
 }
 
-vector <colvec> Data::getDesiredCoords(){ // (X, Y, Z, fullspeed, fullaceleration)
+
+int Data::getCountParameters(){
+    return _countParameters;
+}
+
+vector <fmat> Data::getDesiredCoords(){ // (X, Y, Z, fullspeed, fullaceleration)
     return _desiredCoords;
 };
 

@@ -11,18 +11,18 @@
 using namespace arma;
 using namespace std;
 
-class Solver {
+class SolverSpline {
     public:
-        Solver(int n);
+        SolverSpline(int n);
 
 
-    colvec getCoords(float currentTime, colvec a);
+    fcolvec getCoords(float currentTime, fcolvec a);
 
     private:
-        mat _Q;
+        fmat _Q;
         int _n;
-        colvec _coords;
-        mat _getPoly(float currentTime);
+        fcolvec _coords;
+        fmat _getPoly(float currentTime);
 
 
 };

@@ -14,7 +14,7 @@ using namespace std;
 int main() {
     float a[] ={0.055, 0.15, 0.20};
     float d[] ={0.17, 0.0, 0.0};
-    ManipulatorConfiguration config(a,d);
+    ManipulatorConfiguration config(a,d, sizeof(a)/sizeof(*a));
     TrajectoryPlaner planer(config,"/media/files/Man/NumTraectory/test", "/media/files/Man/NumTraectory/test.out");
     planer.getFullCordinatsJoints();
 //    cout<<"===================================================================================================";

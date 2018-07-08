@@ -10,19 +10,19 @@ using namespace arma;
 Spline::Spline(int n, float normTime) {
     _n = n;
     _normTime=normTime;
-    _a=colvec(_n, 1);
+    _a=fcolvec(_n, 1);
     _a.fill(0.0);
-    _Q=mat(_n, _n);
+    _Q=fmat(_n, _n);
     _Q.fill(0.0);
 }
 
-colvec Spline::getCoefficient(colvec initCoords){
+fcolvec Spline::getCoefficient(fcolvec initCoords){
     _a=inv( _make_Q(_normTime) ) * initCoords;
     return _a;
     }
 
 
-mat Spline:: _make_Q(float time){
+fmat Spline:: _make_Q(float time){
 
     _Q.fill(0.0);
     float TT; // Current degree of time

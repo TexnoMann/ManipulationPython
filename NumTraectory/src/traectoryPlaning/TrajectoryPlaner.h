@@ -7,8 +7,8 @@
 
 
 #include "../output/DataOut.h"
-#include "../solver/Spline.h"
-#include "../solver/Solver.h"
+#include "../splineSolver/Spline.h"
+#include "../splineSolver/SolverSpline.h"
 #include "../kinematics/ManipulatorConfiguration.h"
 #include "../kinematics/KinematicSolverRRR.h"
 
@@ -24,9 +24,8 @@ private:
     Data _datainput;
     KinematicSolver _kinematicSolver;
     Spline _spline;
-    Solver _solver;
-    void getCoordinatsOneSegment(int startNumberPointPosition, int finishNumberPointPosition);
-    mat getStartAndFinishPositionJoint(int startNumberPointPosition, int finishNumberPointPosition);
+    SolverSpline _solver;
+    void getCoordinatsOneSegment(fmat firstPos,fmat finishNumberPointPosition);
 
 
 

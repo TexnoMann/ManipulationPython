@@ -18,16 +18,15 @@ class KinematicSolver {
 
 
 public:
-    KinematicSolver(ManipulatorConfiguration config);
-    mat getfullCoordsfromPlaning(colvec startPos, colvec finishPos);
+    KinematicSolver(const ManipulatorConfiguration config);
+    fmat _getRelCoords(fmat point);
 
 private:
     ManipulatorConfiguration _config;
     CoordsTranslatorRRR _relCoords;
     SpeedTranslatorRRR _relSpeed;
     AccelerationTranslator _relAcc;
-    mat _translateDataLineToCoords(colvec startPos, colvec finishPos);
-    mat _solvDataMatrix(mat dataMatrix);
+
 };
 
 

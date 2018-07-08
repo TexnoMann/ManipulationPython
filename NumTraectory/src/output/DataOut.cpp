@@ -14,14 +14,11 @@ DataOut::DataOut(string filenameOut) {
     }
 }
 
-void DataOut::putToFile(rowvec lastAngle, rowvec lastSpeed ) {
-    rowvec temp(lastAngle.size()*2);
-    for( int i=0; i<lastAngle.size();i++) {
-        temp[i] = lastAngle[i];
-        if (isnan(temp[i])) temp[i]=0;
-    }
-    for( int i=0; i<lastSpeed.size();i++){
-        temp[i+lastAngle.size()]=lastSpeed[i];
+void DataOut::putToFile(fmat lastCoord) {
+
+    frowvec temp(lastCoord.n_elem);
+    for( int i=0; i<lastCoord.n_elem;i++) {
+        temp(i) = lastCoord(i%lastCoord.n_rows,i/lastCoord.n_rows);
         if (isnan(temp[i])) temp[i]=0;
     }
     _fileOut << temp;

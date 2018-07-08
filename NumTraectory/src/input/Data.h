@@ -17,17 +17,19 @@ using namespace arma;
 class Data {
 public:
     Data(string filename);
-    vector<colvec> getDesiredCoords();
+    vector<fmat> getDesiredCoords();
     float getNormTime();
     float getControllerUpdateTime();
     int getCountCoords();
+    int getCountParameters();
     int getCountPoints();
 
 private:
-    vector <colvec> _desiredCoords;
+    vector <fmat> _desiredCoords;
     string _filename;
     ifstream _file;
     long _n;
+    long _countParameters;
     float _normTime;
     float _controllerUpdateTime;
     void _convertDataToMatrix();

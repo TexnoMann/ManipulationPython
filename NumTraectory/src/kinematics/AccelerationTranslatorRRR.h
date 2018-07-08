@@ -14,12 +14,12 @@ using namespace arma;
 class AccelerationTranslator {
     public:
         AccelerationTranslator(ManipulatorConfiguration configuration);
-    colvec getRelativeAcceleration(colvec relativeSpeed, colvec absoluteAcceleration, mat Jacobian, colvec relativeCoords);
+    fcolvec getRelativeAcceleration(fcolvec relativeSpeed, fcolvec absoluteAcceleration, fmat Jacobian, fcolvec relativeCoords);
 
 private:
         ManipulatorConfiguration _configuration;
-        mat getDerivatedJacodian(colvec relativeAngle);
-        colvec getDerivatedComponent(colvec absoluteAcceleration, colvec derivatedJacobian, colvec relativeSpeed);
+        fmat getDerivatedJacodian(fcolvec relativeAngle);
+        fcolvec getDerivatedComponent(fcolvec absoluteAcceleration, fcolvec derivatedJacobian, fcolvec relativeSpeed);
 
     };
 

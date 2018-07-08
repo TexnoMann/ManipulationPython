@@ -15,11 +15,11 @@ using namespace arma;
 class SpeedTranslatorRRR {
     public:
         SpeedTranslatorRRR(ManipulatorConfiguration configuration);
-        colvec getRelativeCoordsSpeed(colvec relativeCoords, colvec absoluteSpeed);
-        colvec getRelativeCoordsOrientation(colvec absoluteCoords, colvec absoluteSpeedOrientation);
-        colvec getAbsoluteCoordsSpeed(colvec relativeCoords, colvec relativeSpeed);
-        colvec getAbsoluteCoordsOrientation(colvec relativeCoords, colvec relativeSpeedOrientation);
-        mat getJacobianMatrixCoordsfromRRR(colvec coordsMatrix);
+        fcolvec getRelativeCoordsSpeed(fcolvec relativeCoords, fcolvec absoluteSpeed);
+        fcolvec getRelativeCoordsOrientation(fcolvec absoluteCoords, fcolvec absoluteSpeedOrientation);
+        fcolvec getAbsoluteCoordsSpeed(fcolvec relativeCoords, fcolvec relativeSpeed);
+        fcolvec getAbsoluteCoordsOrientation(fcolvec relativeCoords, fcolvec relativeSpeedOrientation);
+        fmat getJacobianMatrixCoordsfromRRR(fcolvec coordsMatrix);
 
     private:
         ManipulatorConfiguration _configuration;

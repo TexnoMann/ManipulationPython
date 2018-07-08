@@ -3,31 +3,29 @@
 //
 #include "Spline.h"
 #include "../input/Data.h"
-#include "Solver.h"
+#include "SolverSpline.h"
 #include <armadillo>
-#include <math.h>
 
 using namespace std;
 using namespace arma;
 
 
 
-Solver::Solver(int n) {
+SolverSpline::SolverSpline(int n) {
     _n=n;
-    _Q=mat(_n, _n);
+    _Q=fmat(_n, _n);
     _Q.fill(0.0);
-    _coords=colvec(_n,1);
+    _coords=fcolvec(_n,1);
     _coords.fill(0.0);
 }
 
-colvec Solver::getCoords(float currentTime, colvec a){
+fcolvec SolverSpline::getCoords(float currentTime, fcolvec a){
     _coords=(_getPoly(currentTime) * a);
-    cout<<_coords<<endl;
     return _coords;
 }
 
 
-mat Solver::_getPoly(float currentTime) {
+fmat SolverSpline::_getPoly(float currentTime) {
     _Q.fill(0.0);
     float TT; // Current degree of time
     for(int j=0;j<_n;j++) _Q(0,j)=(j==0)? 1: 0;

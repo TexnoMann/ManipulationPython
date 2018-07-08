@@ -1,3 +1,4 @@
+
 class TrajectoryPlaning():
     def __init__(self, __filename):
         self.__file = open(__filename)

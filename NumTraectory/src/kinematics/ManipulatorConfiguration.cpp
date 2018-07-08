@@ -5,9 +5,9 @@
 #include "ManipulatorConfiguration.h"
 #include "../input/Data.h"
 
-ManipulatorConfiguration::ManipulatorConfiguration(float* a, float* d) {
+ManipulatorConfiguration::ManipulatorConfiguration(float* a, float* d, int countJoint) {
 
-    _numberJoint= sizeof(a)/ sizeof(*a)+1;
+    _numberJoint= countJoint;
     _aM=a;
     _dM=d;
 }
@@ -20,11 +20,11 @@ float* ManipulatorConfiguration::getdM() {
     return _dM;
 }
 
-void ManipulatorConfiguration::setaM(float* a) {
+void ManipulatorConfiguration::setaM(float a[]) {
     _aM=a;
 }
 
-void ManipulatorConfiguration::setdM(float* d) {
+void ManipulatorConfiguration::setdM(float d[]) {
     _dM=d;
 }
 
