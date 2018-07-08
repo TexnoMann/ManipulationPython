@@ -41,7 +41,7 @@ void TrajectoryPlaner::getCoordinatsOneSegment(fmat firstPos, fmat secondPos){
 }
 
 void TrajectoryPlaner::getFullCordinatsJoints() {
-    for(int segmentCount=0;segmentCount<_datainput.getCountPoints();segmentCount++) {
+    for(int segmentCount=0;segmentCount<_datainput.getCountPoints()-1;segmentCount++) {
         getCoordinatsOneSegment(_datainput.getDesiredCoords()[segmentCount], _datainput.getDesiredCoords()[segmentCount + 1]);
     }
     _dataout.writeClose();

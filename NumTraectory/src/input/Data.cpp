@@ -49,6 +49,7 @@ void Data::_convertDataToMatrix(){
         for( int i=0; i<_n; i++){
             coords(i%3,i/3)=num[i];
         }
+        cout<<coords;
         _desiredCoords.push_back(coords);
     }
 }
