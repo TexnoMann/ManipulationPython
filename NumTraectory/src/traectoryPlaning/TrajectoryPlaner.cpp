@@ -17,7 +17,7 @@ TrajectoryPlaner::TrajectoryPlaner(ManipulatorConfiguration config, string datai
 
 
 
-void TrajectoryPlaner::getCoordinatsOneSegment(fmat firstPos, fmat secondPos){
+void TrajectoryPlaner::getCoordinatsOneSplineSegment(fmat firstPos, fmat secondPos){
 
     fmat firstRelCoords = _kinematicSolver._getRelCoords(firstPos);
     fmat secondRelCoords = _kinematicSolver._getRelCoords(secondPos);
@@ -42,7 +42,8 @@ void TrajectoryPlaner::getCoordinatsOneSegment(fmat firstPos, fmat secondPos){
 
 void TrajectoryPlaner::getFullCordinatsJoints() {
     for(int segmentCount=0;segmentCount<_datainput.getCountPoints()-1;segmentCount++) {
-        getCoordinatsOneSegment(_datainput.getDesiredCoords()[segmentCount], _datainput.getDesiredCoords()[segmentCount + 1]);
+        getCoordinatsOneSplineSegment(_datainput.getDesiredCoords()[segmentCount],
+                                      _datainput.getDesiredCoords()[segmentCount + 1]);
     }
     _dataout.writeClose();
 }

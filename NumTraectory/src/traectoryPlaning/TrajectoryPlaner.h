@@ -25,7 +25,7 @@ private:
     KinematicSolver _kinematicSolver;
     Spline _spline;
     SolverSpline _solver;
-    void getCoordinatsOneSegment(fmat firstPos,fmat finishNumberPointPosition);
+    void getCoordinatsOneSplineSegment(fmat firstPos, fmat finishNumberPointPosition);
 
 
 
