@@ -1,4 +1,0 @@
-/media/files/Programm/LINUXProgramm/clion-2017.3.1/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /media/files/ManipulatorProject/Man/PictureTranslator
--- Configuring done
--- Generating done
--- Build files have been written to: /media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug

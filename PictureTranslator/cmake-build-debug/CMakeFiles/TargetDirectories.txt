@@ -1,3 +1,0 @@
-/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/edit_cache.dir
-/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/PictureTranslator.dir
