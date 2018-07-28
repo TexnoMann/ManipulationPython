@@ -70,8 +70,8 @@ class TrajectoryController:
                             pA[i] = self.__currentAngleError[i]*self.__PA
                             iA[i] = self.__currentAngleError[i]*self.__updateTime*self.__updateTime*self.__IA
                             dA[i] = (self.__currentAngleError[i] - self.__lastAngleError[i])/self.__updateTime*self.__DA
-                            uA[i] = pA[i] + iA[i] + dA[i]
-
+                            uA[i] = pA[i]+iA[i]+dA[i]
+                            uA[i] = round(uA[i], 2)
                             self.__currentSpeedError[i] = self.__desiredSpeed[i] + uA[i] - self.stateMan[i].getCurrentSpeed()
 
                             pS[i] = self.__currentSpeedError[i]*self.__P
@@ -82,12 +82,13 @@ class TrajectoryController:
                             uS[i] = pS[i] + iS[i] + dS[i]
                             if abs(uS[i]) > 100:
                                 uS[i] = copysign(1, uS[i]) * 100
-
+                            uS[i] = round(uS[i], 2)
                         for m in range(len(self.__motor)):
                             self.__motor[m].run_direct(duty_cycle_sp=uS[m]*self.stateMan[m].inverted)
-
                         currenttime = time()
-                        sleep(self.__updateTime - (currenttime - lasttime))
+                        deltaTime = self.__updateTime - (currenttime - lasttime)
+                        if deltaTime<0: deltaTime=0
+                        sleep(deltaTime)
                     self.stop(True)
 
                 else:

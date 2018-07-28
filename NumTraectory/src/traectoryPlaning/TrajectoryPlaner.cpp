@@ -25,7 +25,6 @@ void TrajectoryPlaner::getCoordinatsOneSplineSegment(fmat firstPos, fmat secondP
     fcolvec a[_config.getNumberJoint()];
     for(int i=0;i<_config.getNumberJoint();i++){
         a[i]=_spline.getCoefficient(trans(FSPosition.row(i)));
-
     }
 
         for (float time = 0; time < _datainput.getNormTime(); time += _datainput.getControllerUpdateTime()) {

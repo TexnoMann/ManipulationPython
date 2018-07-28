@@ -14,7 +14,7 @@ class Calibration:
         self.startAngle = list(0 for i in range(0, len(self.__Joints)))
         for i in range(len(self.__Joints)):
             self.startAngle[i] = initAngle[i] * self.__Joints[i].speedControllerJoint.stateJoint.inverted
-        self.__defaultSpeed = 0.9
+        self.__defaultSpeed = 0.6
         self.__currentCalibrationState = False
 
     def setDefaultCheckTime(self, defaultCheckTime):
@@ -30,6 +30,7 @@ class Calibration:
         sleep(0.8)
 
         while (self.__currentCalibrationState):
+            self.__currentCalibrationState=False
             for joint in self.__Joints:
                 self.__currentCalibrationState = self.__currentCalibrationState or joint.isMoving()
             for jnumber in range(len(self.__Joints)):

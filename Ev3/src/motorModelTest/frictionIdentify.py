@@ -4,10 +4,10 @@ from math import copysign, pi, sin
 from time import *
 
 def main():
-    maxV=
-    motor0=LargeMotor(OUTPUT_C)
+    maxV = 7.66
+    motor0=LargeMotor(OUTPUT_A)
     motor0.reset()
-    file = open("dataAngleMaxMoments.out", "w")
+    file = open("frictionTestMotor0.out", "w")
     sleep(1)
     times = 0
     angle = 0
@@ -17,7 +17,7 @@ def main():
         u = 100*sin(times)
         motor0.run_direct(duty_cycle_sp=u)
         angle = motor0.position*pi/180.0/PCount
-        s=str(angle) + " " + u/100*maxV;
+        s=str(angle) + " " + str(u/100*maxV) + " " + str(times) +"\n"
         file.writelines(s)
         times = time()-firstTime
 

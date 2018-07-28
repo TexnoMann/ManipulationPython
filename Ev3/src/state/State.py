@@ -35,18 +35,18 @@ class StateJoint:
     def stateUpdate(self):
         self.__lastAngle = self.__currentAngle
         self.__lastSpeed = self.__currentSpeed
-        self.__jointLock.acquire()
-        self.__currentAngle = round((self.__motor.position*pi/180.0/self.__pCount*self.inverted+self.__calibCoord), 5)
-        self.__currentSpeed = round(((self.__currentAngle - self.__lastAngle)/self.__updateTime), 5)
-        self.__jointLock.release()
-        if abs(self.__currentSpeed) <= 0.007:
-            self.__jointLock.acquire()
+        self.jointLock.acquire()
+        self.__currentAngle = round((self.__motor.position*pi/180.0/self.__pCount*self.inverted+self.__calibCoord), 3)
+        self.__currentSpeed = round(((self.__currentAngle - self.__lastAngle)/self.__updateTime), 4)
+        self.jointLock.release()
+        if abs(self.__currentSpeed) <= 0.005:
+            self.jointLock.acquire()
             self.__stalled = True
-            self.__jointLock.release()
+            self.jointLock.release()
         else:
-            self.__jointLock.acquire()
+            self.jointLock.acquire()
             self.__stalled = False
-            self.__jointLock.release()
+            self.jointLock.release()
 
     def isStalled(self):
         return self.__stalled
