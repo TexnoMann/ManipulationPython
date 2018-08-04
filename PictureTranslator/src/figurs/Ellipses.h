@@ -10,7 +10,7 @@
 
 class Ellipses: public Figure {
 public:
-    Ellipses(float x0, float y0, float rx, float ry, bool fill, double rgb[]);
+    Ellipses(float x0, float y0, float rx, float ry, bool fill, double rgb[], int id);
 private:
     float _rx;
     float _ry;

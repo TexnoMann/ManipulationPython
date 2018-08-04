@@ -3,4 +3,4 @@ project(PictureTranslator)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(PictureTranslator main.cpp src/figurs/Figure.cpp src/figurs/Figure.h src/figurs/Ellipses.cpp src/figurs/Ellipses.h src/util/MovingHandler.cpp src/util/MovingHandler.h src/parser/SVGParser.cpp src/parser/SVGParser.h src/input/SVGReader.cpp src/input/SVGReader.h)
+add_executable(PictureTranslator src/main.cpp src/figurs/Figure.cpp src/figurs/Figure.h src/figurs/Ellipses.cpp src/figurs/Ellipses.h src/util/MovingHandler.cpp src/util/MovingHandler.h src/parser/SVGReader.cpp src/parser/SVGReader.h src/figurs/Path.cpp src/figurs/Path.h)

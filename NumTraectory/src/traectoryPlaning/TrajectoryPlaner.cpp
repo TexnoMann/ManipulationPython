@@ -19,8 +19,10 @@ TrajectoryPlaner::TrajectoryPlaner(ManipulatorConfiguration config, string datai
 
 void TrajectoryPlaner::getCoordinatsOneSplineSegment(fmat firstPos, fmat secondPos){
 
-    fmat firstRelCoords = _kinematicSolver._getRelCoords(firstPos);
-    fmat secondRelCoords = _kinematicSolver._getRelCoords(secondPos);
+    //fmat firstRelCoords = _kinematicSolver._getRelCoords(firstPos);
+    //fmat secondRelCoords = _kinematicSolver._getRelCoords(secondPos);
+    fmat firstRelCoords={{0,0},{0,0},{0,2}};
+    fmat secondRelCoords={{0,0},{0,0},{1,2}};
     fmat FSPosition = arma::join_rows(firstRelCoords,secondRelCoords);
     fcolvec a[_config.getNumberJoint()];
     for(int i=0;i<_config.getNumberJoint();i++){
