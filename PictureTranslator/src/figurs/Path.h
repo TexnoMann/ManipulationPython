@@ -10,7 +10,7 @@
 
 class Path: public Figure {
 public:
-    Path(float x0, float y0, bool fill, double rgb[], int id);
+    Path(float x0, float y0, bool fill, bool absCoords, double rgb[], long id, double stroke);
 private:
     
 };

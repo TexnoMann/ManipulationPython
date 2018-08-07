@@ -4,7 +4,7 @@
 
 #include "Path.h"
 
-Path::Path(float x0, float y0, bool fill, double *rgb, int id) :
-        Figure(x0, y0, fill, rgb, id) {
+Path::Path(float x0, float y0, bool fill, bool absCoords, double *rgb, long id, double stroke) :
+        Figure(x0, y0, fill, absCoords, rgb, id, stroke) {
 
 }

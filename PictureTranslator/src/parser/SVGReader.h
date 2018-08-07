@@ -22,7 +22,7 @@ private:
     enum _keyWordType{NONE=0, RECT=1, ELLIPSE=2, LINE=3, PATH=4, ENDFIGURE=5, XML=6, SVG=7,ENDSVG=8, LAY=9,ENDLAY=10};
     enum _keyWordSVG{VERSION=100, IDSVG=101, VIEWBOX=102, HEIGHT=103, WIDTH=104, OTHER=105};
     enum _keyWordLayer{STYLE=1001, IDLAYER=1002};
-    enum _keyWordFigure{ID=10000, D=10001, STYLEFIGURE=10002};
+    enum _keyWordFigure{IDFIGURE=10001, STYLEFIGURE=10002, moveto=10003,MOVETO=10004, cubicBezie=10005, CUBICBEZIE=10006, l=10007, L=10008};
     vector <string> _fileWords;
     string _filename;
     ifstream _file;
@@ -31,7 +31,7 @@ private:
     void _readFile();
     void _wordsParse();
     boolean _getWordType(string word);
-    Figure _pathParser(vector <string>);
+    void _pathParser(vector <string>);
 };
 
 

@@ -15,14 +15,14 @@ using namespace arma;
 
 class Figure {
 public:
-    Figure(float x0, float y0, bool fill, double rgb[], int id);
+    Figure(float x0, float y0, bool fill, bool absCoords, double rgb[], long id, double stroke);
     vector<fcolvec> getPoints();
 private:
     float _x0;
     float _y0;
     double* _rgb;
     double _fill;
-    int _id;
+    long _id;
 };
 
 
