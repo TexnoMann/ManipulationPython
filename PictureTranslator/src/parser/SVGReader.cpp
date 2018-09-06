@@ -8,6 +8,7 @@
 #include "../figurs/Path.h"
 
 SVGReader::SVGReader(string str) {
+    _segmentcount=0;
     _filename=str;
     _file.open(str);
     if(!_file) std::perror("File is not open!");
@@ -16,8 +17,8 @@ SVGReader::SVGReader(string str) {
     _file.close();
 }
 
-vector<Figure> SVGReader::getSegments() {
-    return _segments;
+vector<Curve> SVGReader::getCurves() {
+    return _curves;
 }
 
  void SVGReader::_readFile() {
@@ -73,7 +74,8 @@ int SVGReader::_getWordType(string word) {
 }
 
 bool SVGReader::_isFloat(string word){
-    std :: stringstream sstr (word);
+    vector <string> ws =_splitLine(word,",");
+    std :: stringstream sstr (ws[0]);
     float f ;
     return ! (( sstr >> noskipws >> f ). rdstate () ^ ios_base :: eofbit );
 }
@@ -100,77 +102,83 @@ void SVGReader::_wordsParse() {
 }
 
 void SVGReader::_pathParser(vector <string> path){
+
     float xStart=0;
     float yStart=0;
     bool fill=false;
-    int rgb[3]={0,0,0};
     int pathStart=0;
     bool absoluteCoords=true;
-    float startxy[]={0,0};
-    float fpoint[]={0,0};
-    float spoint[]={0,0};
-    float endxy[]={0,0};
+    frowvec startxy={0,0};
+    frowvec fpoint={0,0};
+    frowvec spoint={0,0};
+    frowvec endxy={0,0};
 
     for(int i=0;i<path.size();i++){
-        cout<<path[i]<<" "<< _getWordType(path[i])<< endl;
+        cout<<path[i]<<" : " <<_getWordType(path[i])<<endl;
         if ((_getWordType(path[i]) == moveto) || (_getWordType(path[i])==MOVETO)){
-            if(_getWordType(path[i]) == MOVETO) absoluteCoords=true;
-            else absoluteCoords=false;
+            absoluteCoords= _getWordType(path[i]) == MOVETO;
             vector <string> m = _splitLine(path[i+1],",");
-            cout << path[i+1]<<endl;
-            startxy[0]=stof(m[0]);
-            startxy[1]=stof(m[1]);
+            startxy={stof(m[0]),stof(m[1])};
             i+=1;
             pathStart=1;
         }
 
         else if(_getWordType(path[i])==CUBICBEZIE || _getWordType(path[i])==cubicBezie){
-            if(_getWordType(path[i]) == CUBICBEZIE) absoluteCoords=true;
-            else absoluteCoords=false;
+            absoluteCoords= _getWordType(path[i]) == CUBICBEZIE;
             vector <string> fp = _splitLine(path[i+1],",");
             vector <string> sp = _splitLine(path[i+2],",");
             vector <string> ep = _splitLine(path[i+3],",");
-            cout << path[i+1]<<"\n"<<path[i+2]<<"\n"<<path[i+3]<<endl;
-            fpoint[0]=stof(fp[0]);
-            fpoint[1]=stof(fp[1]);
-            spoint[0]=stof(sp[0]);
-            spoint[1]=stof(sp[1]);
-            endxy[0]=stof(ep[0]);
-            endxy[1]=stof(ep[1]);
+            if(absoluteCoords){
+                fpoint = {stof(fp[0]), stof(fp[1])};
+                spoint = {stof(sp[0]), stof(sp[1])};
+                endxy = {stof(ep[0]), stof(ep[1])};
+            }
+            else {
+                fpoint = {stof(fp[0]) + startxy[0], stof(fp[1]) + startxy[1]};
+                spoint = {stof(sp[0]) + startxy[0], stof(sp[1]) + startxy[1]};
+                endxy = {stof(ep[0]) + startxy[0], stof(ep[1]) + startxy[1]};
+            }
             i+=3;
             double rgbColor[]={0,0,0};
-            Path pathn(startxy[0],startxy[1], false, absoluteCoords,rgbColor,_segments.size(),0);
-            _segments.push_back(pathn);
+            Path pathn(startxy[0],startxy[1], false, absoluteCoords,rgbColor,_segmentcount,0);
+            pathn.initCubicBezie(fpoint,spoint,endxy);
+            _segments.push_back(new Path(pathn));
+            _segmentcount++;
             pathStart=2;
-            startxy[0]=endxy[0];
-            startxy[1]=endxy[1];
+            startxy=endxy;
         }
         else if(_getWordType(path[i])==NUMBER){
             if(pathStart==1){
                 //add Line
             }
             else if(pathStart==2){
-                cout <<"W"<<path[i+2]<<endl;
                 vector <string> fp = _splitLine(path[i],",");
                 vector <string> sp = _splitLine(path[i+1],",");
                 vector <string> ep = _splitLine(path[i+2],",");
-                fpoint[0]=stof(fp[0]);
-                fpoint[1]=stof(fp[1]);
-                spoint[0]=stof(sp[0]);
-                spoint[1]=stof(sp[1]);
-                endxy[0]=stof(ep[0]);
-                endxy[1]=stof(ep[1]);
+                if(absoluteCoords){
+                    fpoint = {stof(fp[0]), stof(fp[1])};
+                    spoint = {stof(sp[0]), stof(sp[1])};
+                    endxy = {stof(ep[0]), stof(ep[1])};
+                }
+                else {
+                    fpoint = {stof(fp[0]) + startxy[0], stof(fp[1]) + startxy[1]};
+                    spoint = {stof(sp[0]) + startxy[0], stof(sp[1]) + startxy[1]};
+                    endxy = {stof(ep[0]) + startxy[0], stof(ep[1]) + startxy[1]};
+                }
                 i+=2;
                 double rgbColor[]={0,0,0};
-                Path pathn(startxy[0],startxy[1], false, absoluteCoords,rgbColor,_segments.size(),0);
-                _segments.push_back(pathn);
+                Path pathn(startxy[0],startxy[1], false, absoluteCoords,rgbColor,_segmentcount,0);
+                pathn.initCubicBezie(fpoint,spoint,endxy);
+                _segments.push_back(new Path(pathn));
+                _segmentcount++;
                 pathStart=2;
-                startxy[0]=endxy[0];
-                startxy[1]=endxy[1];
+                startxy=endxy;
             }
         }
+        else break;
     }
-
+    Curve curve(_segments,Curve::PATH);
+    _curves.push_back(curve);
 }
 
 

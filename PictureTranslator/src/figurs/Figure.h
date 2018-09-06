@@ -16,14 +16,23 @@ using namespace arma;
 class Figure {
 public:
     Figure(float x0, float y0, bool fill, bool absCoords, double *rgb, long id);
-    fmat getPointinTime(float time);
+    virtual frowvec getPoint(float param1);
+    virtual frowvec getKeyPoint(int numberPoint);
+    virtual float getLength();
+    virtual vector <frowvec> getPointsinDistance();
+
 protected:
+
     float _x0;
     float _y0;
     double* _rgb;
     double _fill;
     long _id;
     bool _absCoords;
+    float _length;
+    vector <frowvec> _points;
+
+    virtual void _findLength();
 };
 
 

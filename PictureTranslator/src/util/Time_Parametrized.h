@@ -6,17 +6,20 @@
 #define PICTURETRANSLATOR_TIME_PARAMETRIZED_H
 
 #include <armadillo>
+#include "../figurs/Curve.h"
 
 using namespace arma;
 using namespace std;
 
 class Time_Parametrized {
 public:
-    vector <fcolvec> figurTimeParametrized();
+    Time_Parametrized(float maxV, float maxA);
+    vector <frowvec> curveTimeParametrized(Curve curve);
 
 private:
-    float maxV;
-    float maxA;
+    float getTimeinDistance;
+    float _maxV;
+    float _maxA;
 
 };
 

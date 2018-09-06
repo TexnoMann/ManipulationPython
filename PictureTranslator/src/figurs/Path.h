@@ -12,8 +12,12 @@ using namespace arma;
 class Path: public Figure {
 public:
     Path(float x0, float y0, bool fill, bool absCoords, double rgb[], long id, double stroke);
-    void initCubicBezie(frowvec firstP, frowvec secondP, frowvec endP);
-    fmat getPointinTime(float time);
+    void virtual initCubicBezie(frowvec firstP, frowvec secondP, frowvec endP);
+    frowvec getPoint(float t);
+    frowvec getKeyPoint(int numberPoint);
+    void _findLength();
+    vector <frowvec> getPointsinDistance();
+
 private:
     fmat _pointMatrix;
     fmat _bezieMatrix;
