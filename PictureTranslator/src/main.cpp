@@ -9,5 +9,5 @@ int main() {
     vector<Curve> c=reader.getCurves();
     vector<Figure *> f=c[0].getSegments();
     Path* p = dynamic_cast<Path *>(f[0]);
-    cout<<p->getKeyPoint(0);
+
 }

@@ -4,6 +4,8 @@
 
 #include "Curve.h"
 
+//Curve is base container for continuous Spline
+
 Curve::Curve(vector<Figure *> segments, int type):
         type(type){
     _segments=segments;
@@ -26,7 +28,7 @@ float Curve::getLengthCurve() {
 }
 
 float Curve::_getDistanceForSegments(long numberSegments){
-    if(numberSegments<0 || numberSegments>_EndDistanceForSegments.size()) std::perror("Curve:: NumberSegments in curve error. Invalid index")
+    if(numberSegments<0 || numberSegments>_EndDistanceForSegments.size()) std::perror("Curve:: NumberSegments in curve error. Invalid index");
     return _EndDistanceForSegments[numberSegments];
 }
 
@@ -43,5 +45,6 @@ frowvec Curve::getPointinDistance(float distance) {
         }
     }
     if (pointnumber==-1) std::perror("Curve:: Error in find distance!");
-    return _segments[pointnumber].;
+    frowvec desiredPoint=_segments[pointnumber]->getPointinDistance(distance);
+    return desiredPoint;
 }

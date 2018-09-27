@@ -13,6 +13,7 @@
 #include "../figurs/Figure.h"
 #include "../figurs/Path.h"
 #include "../figurs/Curve.h"
+#include "CoordsTranslator.h"
 
 using namespace std;
 using namespace arma;
@@ -30,6 +31,7 @@ private:
     vector <string> _fileWords;
     string _filename;
     ifstream _file;
+    CoordsTranslator coordsTranslator;
     vector <Curve> _curves;
     vector <Figure *> _segments;
     vector<string> _splitLine(string line, string splitter);

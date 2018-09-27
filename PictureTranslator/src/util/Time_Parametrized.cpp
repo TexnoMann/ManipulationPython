@@ -12,9 +12,10 @@ Time_Parametrized::Time_Parametrized(float maxV, float maxA) {
 
 vector <frowvec> Time_Parametrized::curveTimeParametrized(Curve curve) {
     vector <frowvec> trajectory;
-    float figL =curve.getLengthCurve();
-    for(float l=0;l<figL;l+=DISTANCE_PRECISION){
-        frowvec point=figure.getPointinTime(time);
+    float curveL =curve.getLengthCurve();
+
+    for(float l=0;l<curveL;l+=DISTANCE_PRECISION){
+        frowvec point=curve.getPointinDistance(l);
         trajectory.push_back(point);
     }
     return trajectory;

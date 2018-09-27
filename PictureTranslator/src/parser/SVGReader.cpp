@@ -7,7 +7,9 @@
 #include "SVGReader.h"
 #include "../figurs/Path.h"
 
-SVGReader::SVGReader(string str) {
+SVGReader::SVGReader(string str):
+coordsTranslator({0,0})
+{
     _segmentcount=0;
     _filename=str;
     _file.open(str);
@@ -15,15 +17,17 @@ SVGReader::SVGReader(string str) {
     _readFile();
     _wordsParse();
     _file.close();
-}
+}6
+
 
 vector<Curve> SVGReader::getCurves() {
     return _curves;
 }
 
+//Read File and split lines
  void SVGReader::_readFile() {
      string line;
-     string splitter=" \"";
+     string splitter="\" ";
      _fileWords.clear();
      while(getline(_file,line)){
          vector<string> s;
@@ -31,6 +35,9 @@ vector<Curve> SVGReader::getCurves() {
          _fileWords.insert(_fileWords.end(),s.begin(),s.end());
      }
  }
+
+//Split line with diferent splitter template.
+// Create "vector" with words.
 
 vector <string> SVGReader::_splitLine(string line, string splitter){
     vector <string> sen;
@@ -46,6 +53,8 @@ vector <string> SVGReader::_splitLine(string line, string splitter){
     free(token);
     return sen;
 }
+
+//Check that word is keyword and return keyword type of enum list.
 
 int SVGReader::_getWordType(string word) {
     smatch s;
@@ -73,6 +82,7 @@ int SVGReader::_getWordType(string word) {
     return NONE;
 }
 
+
 bool SVGReader::_isFloat(string word){
     vector <string> ws =_splitLine(word,",");
     std :: stringstream sstr (ws[0]);
@@ -80,7 +90,7 @@ bool SVGReader::_isFloat(string word){
     return ! (( sstr >> noskipws >> f ). rdstate () ^ ios_base :: eofbit );
 }
 
-
+//Base code part. Read svg file and base algorithm detect and write curves in vector.
 void SVGReader::_wordsParse() {
     if (_getWordType(_fileWords[0]) != XML) std::perror("Svg file is not correct!");
     int figureType = NONE;
@@ -101,8 +111,10 @@ void SVGReader::_wordsParse() {
     }
 }
 
-void SVGReader::_pathParser(vector <string> path){
+//Specific parser for path: Read keywords after word "path"
+// and generate line or Cubic Bezie Spline with absoluteCoordinats.
 
+void SVGReader::_pathParser(vector <string> path){ cout<<"   ";
     float xStart=0;
     float yStart=0;
     bool fill=false;
@@ -114,7 +126,6 @@ void SVGReader::_pathParser(vector <string> path){
     frowvec endxy={0,0};
 
     for(int i=0;i<path.size();i++){
-        cout<<path[i]<<" : " <<_getWordType(path[i])<<endl;
         if ((_getWordType(path[i]) == moveto) || (_getWordType(path[i])==MOVETO)){
             absoluteCoords= _getWordType(path[i]) == MOVETO;
             vector <string> m = _splitLine(path[i+1],",");
@@ -140,6 +151,7 @@ void SVGReader::_pathParser(vector <string> path){
             }
             i+=3;
             double rgbColor[]={0,0,0};
+            cout<<startxy[0]<<" "<<startxy[1]<<" "<<fpoint[0]<<" "<< fpoint[1]<<" "<<spoint[0]<<" "<< spoint[1]<<" "<<endxy[0]<<" "<< endxy[1]<<endl;
             Path pathn(startxy[0],startxy[1], false, absoluteCoords,rgbColor,_segmentcount,0);
             pathn.initCubicBezie(fpoint,spoint,endxy);
             _segments.push_back(new Path(pathn));
@@ -147,6 +159,7 @@ void SVGReader::_pathParser(vector <string> path){
             pathStart=2;
             startxy=endxy;
         }
+
         else if(_getWordType(path[i])==NUMBER){
             if(pathStart==1){
                 //add Line
@@ -167,6 +180,7 @@ void SVGReader::_pathParser(vector <string> path){
                 }
                 i+=2;
                 double rgbColor[]={0,0,0};
+                cout<<startxy[0]<<" "<<startxy[1]<<" "<<fpoint[0]<<" "<< fpoint[1]<<" "<<spoint[0]<<" "<< spoint[1]<<" "<<endxy[0]<<" "<< endxy[1]<<endl;
                 Path pathn(startxy[0],startxy[1], false, absoluteCoords,rgbColor,_segmentcount,0);
                 pathn.initCubicBezie(fpoint,spoint,endxy);
                 _segments.push_back(new Path(pathn));
@@ -175,7 +189,7 @@ void SVGReader::_pathParser(vector <string> path){
                 startxy=endxy;
             }
         }
-        else break;
+        else continue;
     }
     Curve curve(_segments,Curve::PATH);
     _curves.push_back(curve);

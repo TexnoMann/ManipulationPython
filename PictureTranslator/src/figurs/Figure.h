@@ -19,7 +19,7 @@ public:
     virtual frowvec getPoint(float param1);
     virtual frowvec getKeyPoint(int numberPoint);
     virtual float getLength();
-    virtual vector <frowvec> getPointsinDistance();
+    virtual frowvec getPointinDistance(float param1);
 
 protected:
 

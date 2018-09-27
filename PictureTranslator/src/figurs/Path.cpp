@@ -43,11 +43,10 @@ frowvec Path::getKeyPoint(int numberPoint){
 }
 
 void Path::_findLength() {
-    for (float t=TIMEPATH_PRECISION; t<1; t+=TIMEPATH_PRECISION){
+    for (float t=TIMEPATH_PRECISION; t<=1; t+=TIMEPATH_PRECISION){
         frowvec v=getPoint(t)-getPoint(t-TIMEPATH_PRECISION);
         _length+=sqrt(pow(v[0],2) + pow(v[1],2));
-        frowvec p={v[0],v[1],_length};
+        frowvec p={v[0],v[1],t,_length};
         _points.push_back(p);
     }
 }
-
