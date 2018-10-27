@@ -11,7 +11,7 @@ using namespace arma;
 
 class Path: public Figure {
 public:
-    Path(float x0, float y0, bool fill, bool absCoords, double rgb[], long id, double stroke);
+    Path(frowvec startxy, bool fill, bool absCoords, double rgb[], long id, double stroke);
     void virtual initCubicBezie(frowvec firstP, frowvec secondP, frowvec endP);
     frowvec getPoint(float t);
     frowvec getKeyPoint(int numberPoint);

@@ -15,7 +15,7 @@ using namespace arma;
 
 class Figure {
 public:
-    Figure(float x0, float y0, bool fill, bool absCoords, double *rgb, long id);
+    Figure(frowvec startxy, bool fill, bool absCoords, double *rgb, long id);
     virtual frowvec getPoint(float param1);
     virtual frowvec getKeyPoint(int numberPoint);
     virtual float getLength();
@@ -23,8 +23,7 @@ public:
 
 protected:
 
-    float _x0;
-    float _y0;
+    frowvec _startxy;
     double* _rgb;
     double _fill;
     long _id;

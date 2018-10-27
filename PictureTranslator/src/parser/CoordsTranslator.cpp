@@ -11,7 +11,7 @@ CoordsTranslator::CoordsTranslator(frowvec manipulatorPosition) {
 void CoordsTranslator::initSizeField(frowvec XYmaxGraph, frowvec XYmaxWork) {
     _XYmaxGraphField=XYmaxGraph;
     _XYmaxWorkField=XYmaxWork;
-    _K=_XYmaxWorkField./_XYmaxGraphField;
+    _K=_XYmaxWorkField/_XYmaxGraphField;
 }
 
 frowvec CoordsTranslator::getPointinWorkField(frowvec point) {

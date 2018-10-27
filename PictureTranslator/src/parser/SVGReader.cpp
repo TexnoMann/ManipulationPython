@@ -6,9 +6,11 @@
 #include <regex>
 #include "SVGReader.h"
 #include "../figurs/Path.h"
+#include "../util/Configuration.h"
+
 
 SVGReader::SVGReader(string str):
-coordsTranslator({0,0})
+_coordsTranslator({MANIPULATOR_POSITION_X,MANIPULATOR_POSITION_Y})
 {
     _segmentcount=0;
     _filename=str;
@@ -17,7 +19,7 @@ coordsTranslator({0,0})
     _readFile();
     _wordsParse();
     _file.close();
-}6
+}
 
 
 vector<Curve> SVGReader::getCurves() {
@@ -78,6 +80,8 @@ int SVGReader::_getWordType(string word) {
     if(word=="C") return CUBICBEZIE;
     if(word=="l") return l;
     if(word=="L") return L;
+    if(word=="height=") return HEIGHT;
+    if(word=="width=") return WIDTH;
     if(_isFloat(word)) return NUMBER;
     return NONE;
 }
@@ -95,8 +99,9 @@ void SVGReader::_wordsParse() {
     if (_getWordType(_fileWords[0]) != XML) std::perror("Svg file is not correct!");
     int figureType = NONE;
     vector<string> stringFigure;
-
+    frowvec imageSize = {0,0};
     for (int i = 1; i < _fileWords.size(); i++) {
+        //cout<<_fileWords[i]<<"    "<< _getWordType(_fileWords[i])<<endl;
         if (_getWordType(_fileWords[i]) == ENDFIGURE) {
             switch (figureType) {
                 case PATH:
@@ -107,6 +112,16 @@ void SVGReader::_wordsParse() {
             stringFigure.clear();
         }
         else if (_getWordType(_fileWords[i]) < 5 && _getWordType(_fileWords[i]) != 0) figureType = _getWordType(_fileWords[i]);
+        else if ((_getWordType(_fileWords[i])) == HEIGHT){
+            imageSize(1)=stof(_fileWords[i+1]);
+            i++;
+            _coordsTranslator.initSizeField(imageSize,{WORKSPACE_SIZE_X, WORKSPACE_SIZE_Y});
+        }
+        else if ((_getWordType(_fileWords[i])) == WIDTH){
+            imageSize(0)=stof(_fileWords[i+1]);
+            i++;
+            _coordsTranslator.initSizeField(imageSize,{WORKSPACE_SIZE_X, WORKSPACE_SIZE_Y});
+        }
         else if(figureType!=NONE) stringFigure.push_back(_fileWords[i]);
     }
 }
@@ -114,7 +129,10 @@ void SVGReader::_wordsParse() {
 //Specific parser for path: Read keywords after word "path"
 // and generate line or Cubic Bezie Spline with absoluteCoordinats.
 
-void SVGReader::_pathParser(vector <string> path){ cout<<"   ";
+void SVGReader::_pathParser(vector <string> path){
+    _segmentcount=0;
+    _segments.clear();
+    cout<<"   ";
     float xStart=0;
     float yStart=0;
     bool fill=false;
@@ -149,11 +167,15 @@ void SVGReader::_pathParser(vector <string> path){ cout<<"   ";
                 spoint = {stof(sp[0]) + startxy[0], stof(sp[1]) + startxy[1]};
                 endxy = {stof(ep[0]) + startxy[0], stof(ep[1]) + startxy[1]};
             }
+            frowvec startxyP=_coordsTranslator.getPointinWorkField(startxy);
+            frowvec fpointP=_coordsTranslator.getPointinWorkField(fpoint);
+            frowvec spointP=_coordsTranslator.getPointinWorkField(spoint);
+            frowvec endxyP=_coordsTranslator.getPointinWorkField(endxy);
             i+=3;
             double rgbColor[]={0,0,0};
-            cout<<startxy[0]<<" "<<startxy[1]<<" "<<fpoint[0]<<" "<< fpoint[1]<<" "<<spoint[0]<<" "<< spoint[1]<<" "<<endxy[0]<<" "<< endxy[1]<<endl;
-            Path pathn(startxy[0],startxy[1], false, absoluteCoords,rgbColor,_segmentcount,0);
-            pathn.initCubicBezie(fpoint,spoint,endxy);
+            cout<<startxyP[0]<<" "<<startxyP[1]<<" "<<fpointP[0]<<" "<< fpointP[1]<<" "<<spointP[0]<<" "<< spointP[1]<<" "<<endxyP[0]<<" "<< endxyP[1]<<endl;
+            Path pathn(startxyP, false, absoluteCoords,rgbColor,_segmentcount,0);
+            pathn.initCubicBezie(fpointP,spointP,endxyP);
             _segments.push_back(new Path(pathn));
             _segmentcount++;
             pathStart=2;
@@ -178,11 +200,15 @@ void SVGReader::_pathParser(vector <string> path){ cout<<"   ";
                     spoint = {stof(sp[0]) + startxy[0], stof(sp[1]) + startxy[1]};
                     endxy = {stof(ep[0]) + startxy[0], stof(ep[1]) + startxy[1]};
                 }
+                frowvec startxyP=_coordsTranslator.getPointinWorkField(startxy);
+                frowvec fpointP=_coordsTranslator.getPointinWorkField(fpoint);
+                frowvec spointP=_coordsTranslator.getPointinWorkField(spoint);
+                frowvec endxyP=_coordsTranslator.getPointinWorkField(endxy);
                 i+=2;
                 double rgbColor[]={0,0,0};
-                cout<<startxy[0]<<" "<<startxy[1]<<" "<<fpoint[0]<<" "<< fpoint[1]<<" "<<spoint[0]<<" "<< spoint[1]<<" "<<endxy[0]<<" "<< endxy[1]<<endl;
-                Path pathn(startxy[0],startxy[1], false, absoluteCoords,rgbColor,_segmentcount,0);
-                pathn.initCubicBezie(fpoint,spoint,endxy);
+                cout<<startxyP[0]<<" "<<startxyP[1]<<" "<<fpointP[0]<<" "<< fpointP[1]<<" "<<spointP[0]<<" "<< spointP[1]<<" "<<endxyP[0]<<" "<< endxyP[1]<<endl;
+                Path pathn(startxyP, false, absoluteCoords,rgbColor,_segmentcount,0);
+                pathn.initCubicBezie(fpointP,spointP,endxyP);
                 _segments.push_back(new Path(pathn));
                 _segmentcount++;
                 pathStart=2;

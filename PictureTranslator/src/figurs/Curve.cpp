@@ -22,6 +22,7 @@ float Curve::getLengthCurve() {
     for(int i=0;i<getSize();i++){
         length += _segments[i]->getLength();
         EndDistanceForSegment=length;
+        //cout<<EndDistanceForSegment<<endl;
         _EndDistanceForSegments.push_back(EndDistanceForSegment);
     }
     return length;
@@ -39,12 +40,16 @@ long Curve::getSize(){
 frowvec Curve::getPointinDistance(float distance) {
     int pointnumber=-1;
     for(int i=0;i<getSize();i++){
-        if(distance>_EndDistanceForSegments[i]){
-            pointnumber=i-1;
+        if(distance<=_getDistanceForSegments(i)){
+            pointnumber=i;
             break;
+        }
+        else if(i==0){
+            pointnumber=0;
         }
     }
     if (pointnumber==-1) std::perror("Curve:: Error in find distance!");
-    frowvec desiredPoint=_segments[pointnumber]->getPointinDistance(distance);
+    frowvec desiredPoint=_segments[pointnumber]->getPointinDistance(distance-_EndDistanceForSegments[pointnumber-1]);
+   //cout<<desiredPoint<<endl;
     return desiredPoint;
 }

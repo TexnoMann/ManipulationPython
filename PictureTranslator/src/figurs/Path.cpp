@@ -5,11 +5,11 @@
 #include "Path.h"
 #include "../util/Configuration.h"
 
-Path::Path(float x0, float y0, bool fill, bool absCoords, double *rgb, long id, double stroke) :
-        Figure(x0, y0, fill, absCoords, rgb, id) {
+Path::Path(frowvec startxy, bool fill, bool absCoords, double *rgb, long id, double stroke) :
+        Figure(startxy, fill, absCoords, rgb, id) {
+    _length=0;
     _startP.resize(1,2);
-    _startP(0)=x0;
-    _startP(1)=y0;
+    _startP=startxy;
     _pointMatrix.resize(4,2);
     _pointMatrix.fill(0);
     _bezieMatrix={{-1, 3, -3, 1},
@@ -43,10 +43,15 @@ frowvec Path::getKeyPoint(int numberPoint){
 }
 
 void Path::_findLength() {
-    for (float t=TIMEPATH_PRECISION; t<=1; t+=TIMEPATH_PRECISION){
+    frowvec initP=getPoint(0);
+    frowvec p={initP(0),initP(1),0,0};
+    _points.push_back(p);
+    for (float t=TIMEPATH_PRECISION; t<=1+TIMEPATH_PRECISION; t+=TIMEPATH_PRECISION){
+        frowvec currentPoint=getPoint(t);
         frowvec v=getPoint(t)-getPoint(t-TIMEPATH_PRECISION);
-        _length+=sqrt(pow(v[0],2) + pow(v[1],2));
-        frowvec p={v[0],v[1],t,_length};
+        frowvec av=abs(v);
+        _length+=sqrt(pow(av[0],2) + pow(av[1],2));
+        frowvec p={currentPoint[0],currentPoint[1],t,_length};
         _points.push_back(p);
     }
 }

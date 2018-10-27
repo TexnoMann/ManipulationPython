@@ -4,9 +4,8 @@
 
 #include "Figure.h"
 
-Figure::Figure(float x0, float y0, bool fill, bool absCoords, double *rgb, long id) {
-    _x0=x0;
-    _y0=y0;
+Figure::Figure(frowvec startxy, bool fill, bool absCoords, double *rgb, long id) {
+    _startxy=startxy;
     _fill=fill;
     _rgb=rgb;
     _id=id;
@@ -32,10 +31,10 @@ float Figure::getLength() {
 void Figure::_findLength() {}
 
 frowvec Figure::getPointinDistance(float distance) {
-    int pointNumber;
-    for(int i=0;i<_points.size();i++){
+    int pointNumber=_points.size()-1;
+    for(int i=1;i<_points.size();i++){
         float currentLength=_points[i](3);
-        if(currentLength>distance){
+        if(currentLength>=distance){
             pointNumber=i-1;
             break;
         }

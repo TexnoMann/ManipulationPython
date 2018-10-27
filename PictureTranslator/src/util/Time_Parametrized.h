@@ -17,9 +17,15 @@ public:
     vector <frowvec> curveTimeParametrized(Curve curve);
 
 private:
-    float getTimeinDistance;
+    frowvec _getDistanceandVelocityinTime(float time);
+    frowvec _getVelocityVector(float linVelocity, frowvec firstPoint,frowvec secondPoint)
+    float _timeTb;
+    float _finalTime;
     float _maxV;
     float _maxA;
+    float _finishLength;
+    void _initTime(float finishLength);
+
 
 };
 
