@@ -8,9 +8,8 @@ from src.state.State import *
 
 
 class TrajectoryController:
-    def __init__(self, __P, __I, __D,__PA, __IA, __DA, __motor1, __motor2, __motor3, __updateTime, __stateList, __hardResetTouch):
+    def __init__(self, __P, __I, __D,__PA, __IA, __DA, __motor1, __motor2, __motor3, __updateTime, __stateList):
 
-        self.__hardResetTouch = __hardResetTouch
         self.__antiWindUpValue = 30
         self.__updateTime = __updateTime
         self.__controllerOn = False

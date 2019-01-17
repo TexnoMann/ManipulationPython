@@ -49,7 +49,8 @@ frowvec Curve::getPointinDistance(float distance) {
         }
     }
     if (pointnumber==-1) std::perror("Curve:: Error in find distance!");
-    frowvec desiredPoint=_segments[pointnumber]->getPointinDistance(distance-_EndDistanceForSegments[pointnumber-1]);
+    frowvec desiredPoint= _segments[pointnumber]->getPointsinDistance(
+            distance - _EndDistanceForSegments[pointnumber - 1]);
    //cout<<desiredPoint<<endl;
     return desiredPoint;
 }

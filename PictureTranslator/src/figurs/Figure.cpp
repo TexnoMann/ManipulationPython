@@ -30,7 +30,7 @@ float Figure::getLength() {
 
 void Figure::_findLength() {}
 
-frowvec Figure::getPointinDistance(float distance) {
+frowvec Figure::getPointsinDistance(float distance) {
     int pointNumber=_points.size()-1;
     for(int i=1;i<_points.size();i++){
         float currentLength=_points[i](3);

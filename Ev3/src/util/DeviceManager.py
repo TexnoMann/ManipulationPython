@@ -32,7 +32,7 @@ controllerJoint1 = PIDSpeedController(17.5, 81, 0.9, 0.06, motor1, state1, touch
 controllerJoint2 = PIDSpeedController(17.5, 81, 0.9, 0.06, motor2, state2, touchHardResetSensor)
 #trajectoryController = TrajectoryController(10.9500, 62.0156, 0.9971, 4.8140, 62.0156, 0, motor0, motor1, motor2, 0.06, [state0, state1, state2], touchHardResetSensor)
 
-trajectoryController = TrajectoryController(15.1, 81, 0.97, 20, 35, 0.1, motor0, motor1, motor2, 0.06, [state0, state1, state2], touchHardResetSensor)
+trajectoryController = TrajectoryController(15.1, 81, 0.97, 20, 35, 0.1, motor0, motor1, motor2, 0.06, [state0, state1, state2])
 
 
 # Initialization Joint

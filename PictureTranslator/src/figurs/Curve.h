@@ -16,10 +16,10 @@ public:
     float getLengthCurve();
     enum TYPE{PATH=0,LINE=1,RECT=2,ELLIPSE=3};
     const int type;
+    long getSize();
 private:
     vector <Figure *> _segments;
     vector<float> _EndDistanceForSegments;
-    long getSize();
     float _getDistanceForSegments(long numberSegments);
 
 };

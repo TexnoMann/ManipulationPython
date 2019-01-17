@@ -10,7 +10,7 @@
 
 
 SVGReader::SVGReader(string str):
-_coordsTranslator({MANIPULATOR_POSITION_X,MANIPULATOR_POSITION_Y})
+_coordsTranslator({MANIPULATOR_POSITION_X,MANIPULATOR_POSITION_Y},0,1)
 {
     _segmentcount=0;
     _filename=str;

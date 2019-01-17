@@ -6,5 +6,11 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O1 -larmadillo -fPIC")
 find_package(Armadillo REQUIRED)
 include_directories(${ARMADILLO_INCLUDE_DIRS})
 
-add_executable(PictureTranslator src/main.cpp src/figurs/Figure.h src/util/MovingHandler.cpp src/util/MovingHandler.h src/parser/SVGReader.cpp src/parser/SVGReader.h src/figurs/Path.cpp src/figurs/Path.h src/util/Time_Parametrized.cpp src/util/Time_Parametrized.h src/figurs/Figure.cpp src/figurs/Curve.cpp src/figurs/Curve.h src/util/Configuration.h src/parser/CoordsTranslator.cpp src/parser/CoordsTranslator.h)
+add_executable(PictureTranslator src/main.cpp src/figurs/Figure.h src/util/MovingHandler.cpp src/util/MovingHandler.h
+        src/parser/SVGReader.cpp src/parser/SVGReader.h src/figurs/Path.cpp src/figurs/Path.h
+        src/util/Time_Parametrized.cpp src/util/Time_Parametrized.h src/figurs/Figure.cpp src/figurs/Curve.cpp
+        src/figurs/Curve.h src/util/Configuration.h src/parser/CoordsTranslator.cpp src/parser/CoordsTranslator.h
+        src/kinematics/ManipulatorKinematic.cpp
+        src/freemoving/FreeMoving.cpp src/freemoving/FreeMoving.h src/figurs/Line.cpp src/figurs/Line.h)
+
 target_link_libraries(PictureTranslator ${ARMADILLO_LIBRARIES})

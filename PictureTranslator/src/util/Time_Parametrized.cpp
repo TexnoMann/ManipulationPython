@@ -17,17 +17,21 @@ vector <frowvec> Time_Parametrized::curveTimeParametrized(Curve curve) {
     _finishLength=curve.getLengthCurve();
     _initTime(_finishLength);
     frowvec paramDistanceandVelocity={0,0};
-    for(float time=0;time<=_finalTime;time+=MANIPULATOR_TIME_DESCRET){
+    frowvec firstpoint={0,0};
+    for(float time=0;time<=_finalTime;time+=MANIPULATOR_TIME_DISCRET){
         paramDistanceandVelocity=_getDistanceandVelocityinTime(time);
         float l=paramDistanceandVelocity[0];
         float v=paramDistanceandVelocity[1];
         frowvec point=curve.getPointinDistance(l);
-        frowvec manipulatorPoint={point[0],point[1],time};
-        cout<<manipulatorPoint<<endl;
+        frowvec xypoint={point[0],point[1]};
+        frowvec velocityVector=_getVelocityVector(v,firstpoint,xypoint);
+        frowvec manipulatorPoint={point[0],point[1],0 ,velocityVector[0],velocityVector[1], 0};
         trajectory.push_back(manipulatorPoint);
+        firstpoint=xypoint;
     }
     return trajectory;
 }
+
 
 void Time_Parametrized::_initTime(float finishLength) {
     _finalTime=((powf(_maxV,2)/_maxA)+finishLength)/_maxV;

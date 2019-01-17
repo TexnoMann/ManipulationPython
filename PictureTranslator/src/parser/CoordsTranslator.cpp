@@ -4,7 +4,10 @@
 
 #include "CoordsTranslator.h"
 
-CoordsTranslator::CoordsTranslator(frowvec manipulatorPosition) {
+CoordsTranslator::CoordsTranslator(frowvec manipulatorPosition, float angleRotation, float scale) {
+    _scale=scale;
+    _transformMat={{cosf(angleRotation),-sinf(angleRotation)},
+                   {sinf(angleRotation), cosf(angleRotation)}};
     _manipulatorPosition=manipulatorPosition;
 }
 
@@ -15,6 +18,6 @@ void CoordsTranslator::initSizeField(frowvec XYmaxGraph, frowvec XYmaxWork) {
 }
 
 frowvec CoordsTranslator::getPointinWorkField(frowvec point) {
-    frowvec workPoint=point%_K+_manipulatorPosition;
+    frowvec workPoint=(point%_K)*_transformMat*_scale-_manipulatorPosition;
     return workPoint;
 }

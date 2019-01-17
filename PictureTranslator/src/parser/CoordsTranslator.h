@@ -11,10 +11,12 @@ using namespace arma;
 
 class CoordsTranslator {
 public:
-    CoordsTranslator(frowvec manipulatorPosition);
+    CoordsTranslator(frowvec manipulatorPosition, float angleRotation, float scale);
     void initSizeField(frowvec XYmaxGraph, frowvec XYmaxWork);
     frowvec getPointinWorkField(frowvec point);
 private:
+    float _scale;
+    fmat _transformMat;
     frowvec _XYmaxGraphField;
     frowvec _XYmaxWorkField;
     frowvec _K;

@@ -15,7 +15,6 @@ public:
     void virtual initCubicBezie(frowvec firstP, frowvec secondP, frowvec endP);
     frowvec getPoint(float t);
     frowvec getKeyPoint(int numberPoint);
-    void _findLength();
     vector <frowvec> getPointsinDistance();
 
 private:
@@ -25,6 +24,7 @@ private:
     frowvec _firstP;
     frowvec _secondP;
     frowvec _endP;
+    void _findLength();
 };
 
 

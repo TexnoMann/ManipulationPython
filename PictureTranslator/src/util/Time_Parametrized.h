@@ -15,10 +15,12 @@ class Time_Parametrized {
 public:
     Time_Parametrized(float maxV, float maxA);
     vector <frowvec> curveTimeParametrized(Curve curve);
+    vector <frowvec> freeMovingParametrized(frowvec point1, frowvec point2);
+
 
 private:
     frowvec _getDistanceandVelocityinTime(float time);
-    frowvec _getVelocityVector(float linVelocity, frowvec firstPoint,frowvec secondPoint)
+    frowvec _getVelocityVector(float linVelocity, frowvec firstPoint,frowvec secondPoint);
     float _timeTb;
     float _finalTime;
     float _maxV;
