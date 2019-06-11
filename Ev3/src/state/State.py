@@ -1,8 +1,5 @@
-from ev3dev.ev3 import *
-from time import sleep, time
 from math import pi
-from threading import Thread, Lock
-from src.state.Logger import *
+from src.logger.Logger import *
 
 
 class StateJoint:

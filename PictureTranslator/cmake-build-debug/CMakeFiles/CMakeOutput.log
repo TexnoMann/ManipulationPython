@@ -1,0 +1,110 @@
+The system is: Linux - 4.15.0-43-generic - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/cc 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/3.13.3/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /usr/bin/c++ 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/3.13.3/CompilerIdCXX/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_35ab8/fast"
+/usr/bin/make -f CMakeFiles/cmTC_35ab8.dir/build.make CMakeFiles/cmTC_35ab8.dir/build
+make[1]: Entering directory '/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_35ab8.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_35ab8.dir/testCCompiler.c.o   -c /media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_35ab8
+/home/texnoman/clion-191.4212.38/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_35ab8.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_35ab8.dir/testCCompiler.c.o  -o cmTC_35ab8 
+make[1]: Leaving directory '/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_15277/fast"
+/usr/bin/make -f CMakeFiles/cmTC_15277.dir/build.make CMakeFiles/cmTC_15277.dir/build
+make[1]: Entering directory '/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_15277.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTC_15277.dir/testCXXCompiler.cxx.o -c /media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_15277
+/home/texnoman/clion-191.4212.38/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_15277.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_15277.dir/testCXXCompiler.cxx.o  -o cmTC_15277 
+make[1]: Leaving directory '/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+The system is: Linux - 4.15.0-43-generic - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/cc 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/3.13.4/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /usr/bin/c++ 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/3.13.4/CompilerIdCXX/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_2ba80/fast"
+/usr/bin/make -f CMakeFiles/cmTC_2ba80.dir/build.make CMakeFiles/cmTC_2ba80.dir/build
+make[1]: Entering directory '/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2ba80.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_2ba80.dir/testCCompiler.c.o   -c /media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_2ba80
+/home/texnoman/clion-191.4212.38/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2ba80.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_2ba80.dir/testCCompiler.c.o  -o cmTC_2ba80 
+make[1]: Leaving directory '/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_6431e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_6431e.dir/build.make CMakeFiles/cmTC_6431e.dir/build
+make[1]: Entering directory '/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_6431e.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTC_6431e.dir/testCXXCompiler.cxx.o -c /media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_6431e
+/home/texnoman/clion-191.4212.38/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6431e.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_6431e.dir/testCXXCompiler.cxx.o  -o cmTC_6431e 
+make[1]: Leaving directory '/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+

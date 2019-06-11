@@ -1,6 +1,4 @@
-from src.util.Joint import *
-from src.controll.Calibration import *
-from src.state.Logger import *
+from src.logger.Logger import *
 from src.util.TrajectoryPlaning import *
 from src.numKinematic.SolverKinematic import *
 

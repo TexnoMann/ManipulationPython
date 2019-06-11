@@ -1,0 +1,208 @@
+Detecting C compiler ABI info failed to compile with the following output:
+Change Dir: /media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_1ba74/fast"
+/usr/bin/make -f CMakeFiles/cmTC_1ba74.dir/build.make CMakeFiles/cmTC_1ba74.dir/build
+make[1]: Entering directory '/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1ba74.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_1ba74.dir/CMakeCCompilerABI.c.o   -c /home/texnoman/clion-191.4212.38/bin/cmake/linux/share/cmake-3.13/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_1ba74
+/home/texnoman/clion-191.4212.38/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1ba74.dir/link.txt --verbose=1
+/usr/bin/cc     -v CMakeFiles/cmTC_1ba74.dir/CMakeCCompilerABI.c.o  -o cmTC_1ba74 
+Using built-in specs.
+COLLECT_GCC=/usr/bin/cc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper
+OFFLOAD_TARGET_NAMES=nvptx-none
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 7.3.0-27ubuntu1~18.04' --with-bugurl=file:///usr/share/doc/gcc-7/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++ --prefix=/usr --with-gcc-major-version-only --program-suffix=-7 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 7.3.0 (Ubuntu 7.3.0-27ubuntu1~18.04) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_1ba74' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccIiinGv.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_1ba74 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_1ba74.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_1ba74' '-mtune=generic' '-march=x86-64'
+make[1]: Leaving directory '/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+Cannot copy output executable
+  '/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp/cmTC_1ba74'
+to destination specified by COPY_FILE:
+  '/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/3.13.3/CMakeDetermineCompilerABI_C.bin'
+
+
+Detecting C [-std=c11] compiler features failed to compile with the following output:
+Change Dir: /media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c6d40/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c6d40.dir/build.make CMakeFiles/cmTC_c6d40.dir/build
+make[1]: Entering directory '/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c6d40.dir/feature_tests.c.o
+/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_c6d40.dir/feature_tests.c.o   -c /media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/feature_tests.c
+Linking C executable cmTC_c6d40
+/home/texnoman/clion-191.4212.38/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c6d40.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_c6d40.dir/feature_tests.c.o  -o cmTC_c6d40 
+make[1]: Leaving directory '/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+Cannot copy output executable
+  '/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp/cmTC_c6d40'
+to destination specified by COPY_FILE:
+  '/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/feature_tests.bin'
+
+
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: /media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_0313b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_0313b.dir/build.make CMakeFiles/cmTC_0313b.dir/build
+make[1]: Entering directory '/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_0313b.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTC_0313b.dir/CMakeCXXCompilerABI.cpp.o -c /home/texnoman/clion-191.4212.38/bin/cmake/linux/share/cmake-3.13/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_0313b
+/home/texnoman/clion-191.4212.38/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0313b.dir/link.txt --verbose=1
+/usr/bin/c++      -v CMakeFiles/cmTC_0313b.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_0313b 
+Using built-in specs.
+COLLECT_GCC=/usr/bin/c++
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper
+OFFLOAD_TARGET_NAMES=nvptx-none
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 7.3.0-27ubuntu1~18.04' --with-bugurl=file:///usr/share/doc/gcc-7/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++ --prefix=/usr --with-gcc-major-version-only --program-suffix=-7 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 7.3.0 (Ubuntu 7.3.0-27ubuntu1~18.04) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_0313b' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccawh5Z4.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_0313b /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_0313b.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_0313b' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+make[1]: Leaving directory '/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+Cannot copy output executable
+  '/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp/cmTC_0313b'
+to destination specified by COPY_FILE:
+  '/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/3.13.3/CMakeDetermineCompilerABI_CXX.bin'
+
+
+Detecting CXX [-std=c++1z] compiler features failed to compile with the following output:
+Change Dir: /media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_64865/fast"
+/usr/bin/make -f CMakeFiles/cmTC_64865.dir/build.make CMakeFiles/cmTC_64865.dir/build
+make[1]: Entering directory '/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_64865.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_64865.dir/feature_tests.cxx.o -c /media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_64865
+/home/texnoman/clion-191.4212.38/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_64865.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_64865.dir/feature_tests.cxx.o  -o cmTC_64865 
+make[1]: Leaving directory '/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+Cannot copy output executable
+  '/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp/cmTC_64865'
+to destination specified by COPY_FILE:
+  '/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/feature_tests.bin'
+
+
+Detecting C compiler ABI info failed to compile with the following output:
+Change Dir: /media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_8c9bc/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8c9bc.dir/build.make CMakeFiles/cmTC_8c9bc.dir/build
+make[1]: Entering directory '/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8c9bc.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_8c9bc.dir/CMakeCCompilerABI.c.o   -c /home/texnoman/clion-191.4212.38/bin/cmake/linux/share/cmake-3.13/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_8c9bc
+/home/texnoman/clion-191.4212.38/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8c9bc.dir/link.txt --verbose=1
+/usr/bin/cc     -v CMakeFiles/cmTC_8c9bc.dir/CMakeCCompilerABI.c.o  -o cmTC_8c9bc 
+Using built-in specs.
+COLLECT_GCC=/usr/bin/cc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper
+OFFLOAD_TARGET_NAMES=nvptx-none
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 7.3.0-27ubuntu1~18.04' --with-bugurl=file:///usr/share/doc/gcc-7/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++ --prefix=/usr --with-gcc-major-version-only --program-suffix=-7 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 7.3.0 (Ubuntu 7.3.0-27ubuntu1~18.04) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8c9bc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cckL0LDC.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_8c9bc /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_8c9bc.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8c9bc' '-mtune=generic' '-march=x86-64'
+make[1]: Leaving directory '/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+Cannot copy output executable
+  '/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp/cmTC_8c9bc'
+to destination specified by COPY_FILE:
+  '/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/3.13.4/CMakeDetermineCompilerABI_C.bin'
+
+
+Detecting C [-std=c11] compiler features failed to compile with the following output:
+Change Dir: /media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_53295/fast"
+/usr/bin/make -f CMakeFiles/cmTC_53295.dir/build.make CMakeFiles/cmTC_53295.dir/build
+make[1]: Entering directory '/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_53295.dir/feature_tests.c.o
+/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_53295.dir/feature_tests.c.o   -c /media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/feature_tests.c
+Linking C executable cmTC_53295
+/home/texnoman/clion-191.4212.38/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_53295.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_53295.dir/feature_tests.c.o  -o cmTC_53295 
+make[1]: Leaving directory '/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+Cannot copy output executable
+  '/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp/cmTC_53295'
+to destination specified by COPY_FILE:
+  '/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/feature_tests.bin'
+
+
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: /media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c3aa1/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c3aa1.dir/build.make CMakeFiles/cmTC_c3aa1.dir/build
+make[1]: Entering directory '/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_c3aa1.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTC_c3aa1.dir/CMakeCXXCompilerABI.cpp.o -c /home/texnoman/clion-191.4212.38/bin/cmake/linux/share/cmake-3.13/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_c3aa1
+/home/texnoman/clion-191.4212.38/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c3aa1.dir/link.txt --verbose=1
+/usr/bin/c++      -v CMakeFiles/cmTC_c3aa1.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_c3aa1 
+Using built-in specs.
+COLLECT_GCC=/usr/bin/c++
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper
+OFFLOAD_TARGET_NAMES=nvptx-none
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 7.3.0-27ubuntu1~18.04' --with-bugurl=file:///usr/share/doc/gcc-7/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++ --prefix=/usr --with-gcc-major-version-only --program-suffix=-7 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 7.3.0 (Ubuntu 7.3.0-27ubuntu1~18.04) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c3aa1' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccr5xsIl.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_c3aa1 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_c3aa1.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c3aa1' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+make[1]: Leaving directory '/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+Cannot copy output executable
+  '/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp/cmTC_c3aa1'
+to destination specified by COPY_FILE:
+  '/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/3.13.4/CMakeDetermineCompilerABI_CXX.bin'
+
+
+Detecting CXX [-std=c++1z] compiler features failed to compile with the following output:
+Change Dir: /media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_064bf/fast"
+/usr/bin/make -f CMakeFiles/cmTC_064bf.dir/build.make CMakeFiles/cmTC_064bf.dir/build
+make[1]: Entering directory '/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_064bf.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_064bf.dir/feature_tests.cxx.o -c /media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_064bf
+/home/texnoman/clion-191.4212.38/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_064bf.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_064bf.dir/feature_tests.cxx.o  -o cmTC_064bf 
+make[1]: Leaving directory '/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+Cannot copy output executable
+  '/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeTmp/cmTC_064bf'
+to destination specified by COPY_FILE:
+  '/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/feature_tests.bin'
+
+

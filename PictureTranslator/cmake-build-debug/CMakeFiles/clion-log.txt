@@ -1,0 +1,48 @@
+/home/texnoman/clion-191.4212.38/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /media/files/ManipulatorProject/Man/PictureTranslator
+CMake Error at /home/texnoman/clion-191.4212.38/bin/cmake/linux/share/cmake-3.13/Modules/CMakeDetermineSystem.cmake:186 (configure_file):
+  configure_file Problem configuring file
+Call Stack (most recent call first):
+  CMakeLists.txt:2 (project)
+
+
+-- The C compiler identification is GNU 7.3.0
+CMake Error at /home/texnoman/clion-191.4212.38/bin/cmake/linux/share/cmake-3.13/Modules/CMakeDetermineCCompiler.cmake:192 (configure_file):
+  configure_file Problem configuring file
+Call Stack (most recent call first):
+  CMakeLists.txt:2 (project)
+
+
+-- The CXX compiler identification is GNU 7.3.0
+CMake Error at /home/texnoman/clion-191.4212.38/bin/cmake/linux/share/cmake-3.13/Modules/CMakeDetermineCXXCompiler.cmake:190 (configure_file):
+  configure_file Problem configuring file
+Call Stack (most recent call first):
+  CMakeLists.txt:2 (project)
+
+
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - failed
+-- Detecting C compile features
+-- Detecting C compile features - failed
+CMake Error at /home/texnoman/clion-191.4212.38/bin/cmake/linux/share/cmake-3.13/Modules/CMakeTestCCompiler.cmake:72 (configure_file):
+  configure_file Problem configuring file
+Call Stack (most recent call first):
+  CMakeLists.txt:2 (project)
+
+
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - failed
+-- Detecting CXX compile features
+-- Detecting CXX compile features - failed
+CMake Error at /home/texnoman/clion-191.4212.38/bin/cmake/linux/share/cmake-3.13/Modules/CMakeTestCXXCompiler.cmake:65 (configure_file):
+  configure_file Problem configuring file
+Call Stack (most recent call first):
+  CMakeLists.txt:2 (project)
+
+
+-- Configuring incomplete, errors occurred!
+See also "/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+See also "/media/files/ManipulatorProject/Man/PictureTranslator/cmake-build-debug/CMakeFiles/CMakeError.log".

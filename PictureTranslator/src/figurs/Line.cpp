@@ -14,5 +14,5 @@ void Line::initLine(frowvec secondPoint) {
 }
 
 void Figure::_findLength() {
-    _length=_
+
 }

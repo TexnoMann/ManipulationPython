@@ -1,5 +1,6 @@
 from ev3dev.ev3 import *
 
+from src.controll.Calibration import Calibration
 from src.controll.PIDSpeedLowController import PIDSpeedController
 from src.controll.TrajectoryController import TrajectoryController
 from src.numKinematic.DHParameters import DHParameters
@@ -42,8 +43,8 @@ J2 = Joint(controllerJoint2)
 joints = [J0, J1, J2]
 
 calibration = Calibration(joints, [-1, 1, -1], [1.55, 1.80, 2.8])
-DHparam = DHParameters([0.06, 0.15, 0.145], [0.163, 0.0, 0.0], [0, 0.0, 0.0], 0.07)
+DHparam = DHParameters([0.06, 0.15, 0.145], [0.163, 0.0, 0.0], [0, 0.0, 0.0], 0)
 
 man = Manipulator(joints, trajectoryController, DHparam, calibration)
-#logger = Logger(man, 0.3)
+logger = Logger(man, 0.005, True)
 sleep(1)

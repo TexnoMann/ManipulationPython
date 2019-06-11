@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.9)
+cmake_minimum_required(VERSION 3.10)
 project(PictureTranslator)
 
 set(CMAKE_CXX_STANDARD 11)
@@ -11,6 +11,6 @@ add_executable(PictureTranslator src/main.cpp src/figurs/Figure.h src/util/Movin
         src/util/Time_Parametrized.cpp src/util/Time_Parametrized.h src/figurs/Figure.cpp src/figurs/Curve.cpp
         src/figurs/Curve.h src/util/Configuration.h src/parser/CoordsTranslator.cpp src/parser/CoordsTranslator.h
         src/kinematics/ManipulatorKinematic.cpp
-        src/freemoving/FreeMoving.cpp src/freemoving/FreeMoving.h src/figurs/Line.cpp src/figurs/Line.h)
+        src/freemoving/FreeMoving.cpp src/freemoving/FreeMoving.h)
 
 target_link_libraries(PictureTranslator ${ARMADILLO_LIBRARIES})

@@ -3,7 +3,7 @@ class DHParameters:
         self.__gripperLong=gripperLong
         self.__a = a
         self.__d = d
-        self.__d[-1] += gripperLong
+        self.__a[-1] += gripperLong
         self.__alpha = alpha
 
     def getD(self):
